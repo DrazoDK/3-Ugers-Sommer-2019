@@ -2,10 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "I2C.h"
 #include <util/delay.h>
 #include <avr/pgmspace.h>
-#include "ssd1306.h"
 #include <avr/interrupt.h>
 #define F_CPU 16000000UL
 #define BAUD 19200

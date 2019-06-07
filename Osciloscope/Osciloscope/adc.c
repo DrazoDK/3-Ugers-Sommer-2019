@@ -1,6 +1,4 @@
 #include <avr/io.h>
-#include "I2C.h"
-#include "ssd1306.h"
 #include <stdio.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
