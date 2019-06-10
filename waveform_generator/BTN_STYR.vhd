@@ -20,7 +20,7 @@ architecture Behavioral of BTN_STYR is
 type StateType is(ctrl, shapeS, shapeE, ampS, ampE, freqS, freqE, run, check);
 signal State, NextState : StateType;
 signal CheckReg, xorRes: STD_LOGIC_VECTOR (7 downto 0);
-signal counter: STD_LOGIC_VECTOR (3 downto 0);
+signal counter: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 
 begin
 
@@ -53,17 +53,18 @@ Case State is
 	
 	when shapeS =>
 		if CLK'event and CLK = '1' and SS = '0' and counter < "1000" then
-			CheckReg <= CheckReg(6 downto 0) & MOSI;
-			counter <= counter + '1'; 
-			SW <= CheckReg;
-		else
-			xorRes <= CheckReg;
-			BTN0 <= '1';
+			CheckReg  <= CheckReg(6 downto 0) & MOSI;
+			counter   <= counter + '1'; 
+			SW        <= CheckReg;
+		elsif counter = "1000" then 
+			xorRes    <= CheckReg;
+			BTN0      <= '1';
 			NextState <= shapeE;
 		end if;
 	
 	when shapeE =>
-		BTN1 <= '1';
+		counter   <= "0000";
+		BTN1      <= '1';
 		NextState <= ampS;
 	
 	when ampS =>
@@ -71,28 +72,30 @@ Case State is
 			CheckReg <= CheckReg(6 downto 0) & MOSI;
 			counter <= counter + '1';
 			SW <= CheckReg;
-		else
+		elsif counter = "1000" then
 			xorRes <= CheckReg xor xorRes;
 			BTN0 <= '1';
 			NextState <= ampE;
 		end if;
 	
 	when ampE =>
+		counter   <= "0000";
 		BTN1 <= '1';
-		NextState <= ampS;
+		NextState <= FreqS;
 		
 	when freqS =>
 		if CLK'event and CLK = '1' and SS = '0' and counter < "1000" then
 			CheckReg <= CheckReg(6 downto 0) & MOSI;
 			counter <= counter + '1';
 			SW <= CheckReg;
-		else
+		elsif counter = "1000" then
 			xorRes <= CheckReg xor xorRes;
 			BTN0 <= '1';
-			NextState <= freqE;
+			NextState <= FreqE;
 		end if;
 	
 	when freqE =>
+		counter   <= "0000";
 		BTN1 <= '1';
 		NextState <= check;	
 
@@ -109,6 +112,7 @@ Case State is
 		end if;
 	
 	when run =>
+		counter   <= "0000";
 		BTN2 <= '1';
 		NextState <= ctrl;
 		
