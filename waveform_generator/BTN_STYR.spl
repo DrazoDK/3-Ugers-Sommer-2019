@@ -1,0 +1,12 @@
+[Inputs]
+CLK
+MOSI
+SS
+[Outputs]
+BTN0
+BTN1
+BTN2
+BTN3
+HANDSHAKE
+=SW[7:0]=
+[BiDir]

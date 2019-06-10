@@ -1,0 +1,10 @@
+vhdtdtfi -lib work BTN_STYR.vhd -prj waveform_generator -o BTN_STYR.spl -module BTN_STYR -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e BTN_STYR.spl C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.sym 
+xst -intstyle ise -ifn "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.xst" -ofn "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.xst" -ofn "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.syr" 
+vhdtdtfi -lib work BTN_STYR.vhd -prj waveform_generator -o BTN_STYR.spl -module BTN_STYR -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e BTN_STYR.spl C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.sym 
+vhdtdtfi -lib work BTN_STYR.vhd -prj waveform_generator -o BTN_STYR.spl -module BTN_STYR -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e BTN_STYR.spl C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.sym 
+vhdtdtfi -lib work BTN_STYR.vhd -prj waveform_generator -o BTN_STYR.spl -module BTN_STYR -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e BTN_STYR.spl C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.sym 

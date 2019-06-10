@@ -1,0 +1,30 @@
+Command line:
+   BTN_styr_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53329
+
+Mon Jun 10 13:55:57 2019
+
+
+ Elaboration Time: 0.125 sec
+
+ Current Memory Usage: 1158.96 Meg
+
+ Total Signals          : 23
+ Total Nets             : 38
+ Total Signal Drivers   : 14
+ Total Blocks           : 6
+ Total Primitive Blocks : 5
+ Total Processes        : 4
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 540
+Total Line Count : 73
+Total Line Count : 73
+
+ Total Simulation Time: 0.25 sec
+
+ Current Memory Usage: 843.858 Meg
+
+Mon Jun 10 14:02:14 2019
+

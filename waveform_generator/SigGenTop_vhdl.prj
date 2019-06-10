@@ -1,0 +1,7 @@
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\ipcore_dir\SinusLUT.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\BTNdb.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\SigGenDatapath.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\SigGenControl.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\SevenSeg5.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\DivClk.vhd"
+vhdl work "C:\Users\Bruger\Desktop\sk\digitalteq\waveform_generator\SigGenTop.vhd"

@@ -1,0 +1,66 @@
+V3 40
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd 2009/06/04.17:39:50 P.68d
+EN work/BTNdb 1559996682 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/BTNdb/Behavioral 1559996683 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd \
+      EN work/BTNdb 1559996682
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd 2019/06/10.13:23:57 P.68d
+EN work/BTN_STYR 1560166030 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/BTN_STYR/Behavioral 1560166031 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd \
+      EN work/BTN_STYR 1560166030
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd 2009/06/04.17:39:56 P.68d
+EN work/DivClk 1559996684 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/DivClk/DivClk_arch 1559996685 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd \
+      EN work/DivClk 1559996684
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/ipcore_dir/SinusLUT.vhd 2019/06/07.15:29:27 P.68d
+EN work/SinusLUT 1559996680 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/ipcore_dir/SinusLUT.vhd \
+      PB ieee/std_logic_1164 1370735607
+AR work/SinusLUT/SinusLUT_a 1559996681 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/ipcore_dir/SinusLUT.vhd \
+      EN work/SinusLUT 1559996680
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SevenSeg5.vhd 2009/06/04.17:40:06 P.68d
+EN work/SevenSeg5 1559996690 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SevenSeg5.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/SevenSeg5/SevenSeg_arch 1559996691 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SevenSeg5.vhd \
+      EN work/SevenSeg5 1559996690
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenControl.vhd 2009/06/04.17:40:12 P.68d
+EN work/SigGenControl 1559996686 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenControl.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/SigGenControl/Behavioral 1559996687 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenControl.vhd \
+      EN work/SigGenControl 1559996686 CP Disp CP BTNdb
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenDatapath.vhd 2009/06/04.17:40:32 P.68d
+EN work/SigGenDatapath 1559996688 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenDatapath.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/SigGenDatapath/Behavioral 1559996689 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenDatapath.vhd \
+      EN work/SigGenDatapath 1559996688 CP FreqCnt CP nSigCnt CP work/SinusLUT \
+      CP PWMwrap CP SigSquare CP SigSaw CP Sig CP PWM CP PWMout
+FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd 2019/06/07.15:39:27 P.68d
+EN work/SigGenTop 1559996692 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd \
+      PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/SigGenTop/Behavioral 1559996693 \
+      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd \
+      EN work/SigGenTop 1559996692 CP work/DivClk CP work/SigGenControl \
+      CP work/SigGenDataPath CP work/SevenSeg5 CP LD

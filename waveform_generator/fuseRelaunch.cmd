@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB_isim_beh.exe" -prj "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB_beh.prj" "work.BTN_styr_TB" 
