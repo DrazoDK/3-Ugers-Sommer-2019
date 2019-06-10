@@ -1,14 +1,14 @@
-Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB_isim_beh.exe -prj C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB_beh.prj work.BTN_styr_TB 
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_styr_TB_isim_beh.exe -prj C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_styr_TB_beh.prj work.BTN_styr_TB 
 ISim P.68d (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd" into library work
-Parsing VHDL file "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_styr_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 181932 KB
-Fuse CPU Usage: 421 ms
+Fuse Memory Usage: 181740 KB
+Fuse CPU Usage: 624 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -19,6 +19,6 @@ Compiling architecture behavior of entity btn_styr_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 8 VHDL Units
-Built simulation executable C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_styr_TB_isim_beh.exe
-Fuse Memory Usage: 201680 KB
-Fuse CPU Usage: 781 ms
+Built simulation executable C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_styr_TB_isim_beh.exe
+Fuse Memory Usage: 201488 KB
+Fuse CPU Usage: 1046 ms

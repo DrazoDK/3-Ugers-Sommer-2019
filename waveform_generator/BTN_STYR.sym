@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="BTN_STYR">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2019-6-10T11:44:40</timestamp>
+    <timestamp>2019-6-10T12:45:18</timestamp>
     <pin polarity="Input" x="0" y="-352" name="CLK" />
     <pin polarity="Input" x="0" y="-192" name="MOSI" />
     <pin polarity="Input" x="0" y="-32" name="SS" />
