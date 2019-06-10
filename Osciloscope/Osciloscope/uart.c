@@ -4,43 +4,39 @@
 #include <string.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
-#define F_CPU 16000000UL
-#define BAUD 19200
-#define MYUDRRF F_CPU/8/BAUD-1
-#include <util/delay.h>
 //#define MYUBRRH F_CPU/16/BAUD-1
 
 void uart_Init(unsigned int ubrr)
 {
-	UCSR0A=(1<<U2X0);
+	UCSR1A=(1<<U2X1);
 	
-	UCSR0B|=(1<<RXEN0)|(1<<TXEN0);
+	UCSR1B|=(1<<RXEN1)|(1<<TXEN1);
 	
-	UCSR0C|=(1<<UCSZ00)|(1<<UCSZ01);
+	UCSR1C|=(1<<UCSZ10)|(1<<UCSZ11);
 	
-	UBRR0H = (unsigned char)(ubrr>>8);
-	UBRR0L = (unsigned char)ubrr;
+	UBRR1H = (unsigned char)(ubrr>>8);
+	UBRR1L = (unsigned char)ubrr;
 }
 
-char getchUSART0(void){
-	while(!(UCSR0A & (1<<RXC0)));
-	return UDR0;
+char getchUSART1(void){
+	while(!(UCSR1A & (1<<RXC1)));
+	return UDR1;
 }
 
 
-void putchUSART0(char tx){
-	while(!(UCSR0A & (1<<UDRE0)));
-	UDR0 = tx;
+void putchUSART1(char tx){
+	while(!(UCSR1A & (1<<UDRE1)));
+	UDR1 = tx;
 }
 
-void getsUSART0(unsigned char *ptr){
+void getsUSART1(unsigned char *ptr){
 	char cx;
-	while ((cx = getchUSART0()) != '\r'){
+	while ((cx = getchUSART1()) != '\r'){
 		*ptr = cx;
-		putchUSART0(cx);
+		putchUSART1(cx);
 		if (cx == '\n'){
-			putchUSART0(' ');
-			putchUSART0('\n');
+			putchUSART1(' ');
+			putchUSART1('\n');
 			ptr--;
 		}
 		else ptr++;
@@ -48,9 +44,9 @@ void getsUSART0(unsigned char *ptr){
 	*ptr = '\0';
 }
 
-void putsUSART0(char *ptr){
+void putsUSART1(char *ptr){
 	while(*ptr){
-		putchUSART0(*ptr);
+		putchUSART1(*ptr);
 		ptr++;
 	}
 }
