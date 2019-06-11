@@ -11,15 +11,13 @@
 #include "adc.h"
 #include "I2C.h"
 #include "ssd1306.h"
-volatile char intrflag;
 volatile char Sample;
-volatile char flag;
-volatile unsigned int compareValue;
+volatile char flagTimer;
+volatile char flagADC;
+volatile char flagUART;
+volatile unsigned int test = 0x063f;
+unsigned int i=0;
 
-void init_intr(){
-	EICRB|=(1<<ISC41); //Interrupt sense control, Falling edge
-	EIMSK|=(1<<INT4); //External interrupt 4 enable
-}
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
 
@@ -48,16 +46,14 @@ const uint8_t logo16_glcd_bmp[] PROGMEM =
 /** example setting some text on the display*/
 
 void init_timer1(){
-	TCCR1B |=(1<<CS10); //No Prescaling
-	OCR1A=1599; // default samplerate (10.000 sps)
-	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
-	TCCR1B |=(1<<WGM12); //CTC mode
+	TCCR1B |=(1<<CS10)|(1<<WGM12); //No Prescaling, CTC mode
+	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1B value
+	OCR1A = 1599999; //default value 10.000 sps
 }
 
 int main(void)
 {
 	sei();
-	init_intr();
 	init_adc(0x00);
 	uart_Init(MYUDRRF);
 	I2C_Init();
@@ -73,23 +69,36 @@ int main(void)
 // 		ADCSRA|=(1<<ADSC); //Sample starts
 // 		while(!(ADCSRA &(1<<ADIF)));
 // 		Sample = ADCH;
-		if ((flag=1)){
-			flag = 0;
-			itoa(Sample,str,10);
-			sendStrXY(str,1,1);
-			sendStr("  ");
-			putchUSART1(Sample);
+		if ((flagTimer=1)){
+			flagTimer = 0;
+			ADCSRA|=(1<<ADSC); //Sample start
+		}
+
+		if ((flagADC=1)){
+			flagADC = 0;
+			
+			char tid[10]={'0'};
+			sprintf(tid,"%u s.",i++);
+			sendStrXY(tid,1,1);
+			
+// 			itoa(Sample,str,10);
+// 			sendStrXY(str,1,1);
+// 			sendStr("  ");
+// 			putchUSART1(Sample);
+
 		}
 	}
 }
 
-ISR(INT4_vect){
-	intrflag = 1;
+ISR(TIMER1_COMPA_vect){
+	flagTimer = 1;
 }
-ISR(TIMER1_OVF_vect){
-	
-}
+
 ISR(ADC_vect){
 	Sample = ADCH;
-	flag = 1;
+	flagADC = 1;
+}
+ISR(USART1_RX_vect){
+// 	compareValue = UDR1;
+// 	flagUART = 1;
 }

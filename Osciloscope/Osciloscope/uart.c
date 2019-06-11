@@ -10,7 +10,7 @@ void uart_Init(unsigned int ubrr)
 {
 	UCSR1A=(1<<U2X1);
 	
-	UCSR1B|=(1<<RXEN1)|(1<<TXEN1);
+	UCSR1B|=(1<<RXEN1)|(1<<TXEN1);//|(1<<RXCIE1); // enable Rx og TX, enable recieve compleate interrupt.
 	
 	UCSR1C|=(1<<UCSZ10)|(1<<UCSZ11);
 	
