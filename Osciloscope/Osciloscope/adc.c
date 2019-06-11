@@ -6,7 +6,11 @@
 //Initialize adc
 void init_adc(char ADC_channel){
 		ADCSRA|=(1<<ADPS2)|(1<<ADEN)|(1<<ADATE)|(1<<ADIE); //1 MHz med 16 Prescale, ADC Enable, ADC Intertupt Enable
-		ADCSRB|=(1<<ADTS0)|(1<<ADTS2); //Auto-trigger = Timer1_Compare_Match_B
+		
+		
+		//ADCSRB|=(1<<ADTS0)|(1<<ADTS2); //Auto-trigger = Timer1_Compare_Match_B
+		
+		
 		ADMUX = ADC_channel;
 		ADMUX |= (1<<REFS0)|(1<<ADLAR); //ADC Spændings Refference = AVCC, Left shift resultat
 		DIDR0 = (1<<ADC_channel);
