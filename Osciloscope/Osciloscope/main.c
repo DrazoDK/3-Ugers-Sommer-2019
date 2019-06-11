@@ -12,11 +12,9 @@
 #include "I2C.h"
 #include "ssd1306.h"
 volatile char Sample;
-volatile char flagTimer;
 volatile char flagADC;
 volatile char flagUART;
-volatile unsigned int test = 0x063f;
-unsigned int i=0;
+
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -72,29 +70,13 @@ int main(void)
 	I2C_Init();
 	InitializeDisplay();
 	reset_display();
-	init_timer1(10);
+	init_timer1(10000);
 	sei();
 	char str[5];
 	
 	
-	
     while (1) 
     {
-		char tid[10];
-		sprintf(tid,"%u",i);
-		sendStrXY(tid,3,1);
-
-// 		ADCSRA|=(1<<ADSC); //Sample starts
-// 		while(!(ADCSRA &(1<<ADIF)));
-// 		Sample = ADCH;
-		if ((flagTimer=1)){
-			flagTimer = 0;
-//			ADCSRA|=(1<<ADSC); //Sample start
-//			char tid[10]={'0'};
-// 			sprintf(tid,"%u",i);
-// 			sendStrXY(tid,1,1);
-		}
-
 		if ((flagADC=1)){
 			flagADC = 0;
 			
@@ -109,8 +91,7 @@ int main(void)
 }
 
 ISR(TIMER1_COMPA_vect){
-	flagTimer = 1;
-	i++;
+	ADCSRA |= (1<<ADSC);
 	}
 
 ISR(ADC_vect){
