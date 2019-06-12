@@ -2,19 +2,18 @@
 #include <stdio.h>
 #define F_CPU 16000000UL
 #define BAUD 115200
-#define MYUDRRF F_CPU/8/BAUD-1
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <stdlib.h>
 #include <avr/pgmspace.h>
 #include "uart.h"
 #include "adc.h"
+#include "Labview.h"
 #include "I2C.h"
 #include "ssd1306.h"
 volatile char Sample;
 volatile char flagADC;
 volatile char flagUART;
-
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -66,15 +65,15 @@ void init_timer1(unsigned int sps){
 int main(void)
 {
 	init_adc(0x00);
-	uart_Init(MYUDRRF);
+	uart_Init(16);
+	uart0_Init(16);
 	I2C_Init();
 	InitializeDisplay();
 	reset_display();
-	init_timer1(10000);
 	sei();
+	init_timer1(1000);
 	char str[5];
-	
-	
+		
     while (1) 
     {
 		if ((flagADC=1)){
@@ -83,16 +82,17 @@ int main(void)
  			itoa(Sample,str,10);
  			sendStrXY(str,1,1);
  			sendStr("  ");
-			putchUSART1(Sample);
-			
-
+			//putchUSART1(Sample);
+		}
+		if  ((flagUART=1)){
+			flagUART = 0;
 		}
 	}
 }
 
 ISR(TIMER1_COMPA_vect){
 	ADCSRA |= (1<<ADSC);
-	}
+}
 
 ISR(ADC_vect){
 	Sample = ADCH;
@@ -100,6 +100,49 @@ ISR(ADC_vect){
 
 }
 ISR(USART1_RX_vect){
-// 	compareValue = UDR1;
-// 	flagUART = 1;
+	
+	putchUSART0(UDR1);
+	static int i=0;
+	static char buffer[4];
+	
+	switch(i) {
+		
+		case 0:
+		buffer[i]=UDR1;
+		if (buffer[i]==0x55){
+			i++;
+		}
+		break;
+		
+		case 1:
+		buffer[i]=UDR1;
+		if (buffer[i]==0xAA){
+			i++;
+		}
+		else{
+			i = 0;
+		}
+		break;
+		
+		case 2:
+		buffer[i]=UDR1;
+		char len1 = buffer[i];
+		i++;
+		break;
+		
+		case 3:
+		buffer[i]=UDR1;
+		char len2 = buffer[i];
+		i++;
+		
+// 		putchUSART0(len1);
+// 		putchUSART0(len2);
+// 		
+// 		int length = (len1<<8)&(len2);
+// 		char str2[5];
+// 		itoa(length,str2,10);
+// 		sendStrXY(str2,2,1);
+// 		sendStr("  ");
+		break;
+	}
 }

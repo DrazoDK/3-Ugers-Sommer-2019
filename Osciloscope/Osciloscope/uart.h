@@ -10,8 +10,10 @@
 #include <avr/interrupt.h>
 
 void uart_Init(unsigned int ubrr);
+void uart0_Init(unsigned int ubrr);
 char getchUSART1(void);
 void putchUSART1(char tx);
+void putchUSART0(char tx);
 void getsUSART1(unsigned char *ptr);
 void putsUSART1(char *ptr);
 #endif

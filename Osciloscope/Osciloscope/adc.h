@@ -7,4 +7,5 @@
 #define F_CPU 16000000UL
 
 void init_adc(char ADC_channel);
+
 #endif
