@@ -13,7 +13,10 @@
 #include "ssd1306.h"
 volatile char Sample;
 volatile char flagADC;
-volatile char flagUART;
+volatile int length;
+volatile char type;
+volatile char sample_rate;
+volatile char record_length;
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -73,9 +76,15 @@ int main(void)
 	sei();
 	init_timer1(1000);
 	char str[5];
-		
+	char sprint[100];
+
+	
     while (1) 
     {
+		sprintf(sprint,"%d",length);
+		sendStrXY(sprint,2,0);
+		sprintf(sprint,"%d",type);
+		sendStrXY(sprint,4,0);
 		if ((flagADC=1)){
 			flagADC = 0;
 			
@@ -84,8 +93,21 @@ int main(void)
  			sendStr("  ");
 			//putchUSART1(Sample);
 		}
-		if  ((flagUART=1)){
-			flagUART = 0;
+		switch(type){
+		
+		case 1:
+		sendStrXY("Generator   ",5,0);
+		break;
+		
+		case 2:
+		sendStrXY("Oscilloscope",5,0);
+		
+		
+		break;
+		
+		case 3:
+		sendStrXY("Bodeplot    ",5,0);
+		break;
 		}
 	}
 }
@@ -101,20 +123,20 @@ ISR(ADC_vect){
 }
 ISR(USART1_RX_vect){
 	
-	putchUSART0(UDR1);
 	static int i=0;
 	static char buffer[4];
-	
+	static int cnt = 0;
+	char data_array[length-3];
 	switch(i) {
 		
-		case 0:
+		case 0: //Get first sync byte
 		buffer[i]=UDR1;
 		if (buffer[i]==0x55){
 			i++;
 		}
 		break;
 		
-		case 1:
+		case 1: //Get second sync byte
 		buffer[i]=UDR1;
 		if (buffer[i]==0xAA){
 			i++;
@@ -124,25 +146,33 @@ ISR(USART1_RX_vect){
 		}
 		break;
 		
-		case 2:
+		case 2: //Length byte 1
 		buffer[i]=UDR1;
 		char len1 = buffer[i];
 		i++;
 		break;
 		
-		case 3:
+		case 3: //Length byte 2, return total length as global
 		buffer[i]=UDR1;
-		char len2 = buffer[i];
+		char len2 = buffer[i];			
+		length = (len1 << 8) | len2;
+		length = length - 4;
 		i++;
+		break;
 		
-// 		putchUSART0(len1);
-// 		putchUSART0(len2);
-// 		
-// 		int length = (len1<<8)&(len2);
-// 		char str2[5];
-// 		itoa(length,str2,10);
-// 		sendStrXY(str2,2,1);
-// 		sendStr("  ");
+		case 4: //Get type byte
+		type = UDR1;
+		i++;
+		break;
+		
+		case 5:
+		data_array[cnt]=UDR1;
+		cnt++;
+		if(cnt > length-3){
+			
+			i = 0;
+			cnt = 0;
+		}
 		break;
 	}
 }
