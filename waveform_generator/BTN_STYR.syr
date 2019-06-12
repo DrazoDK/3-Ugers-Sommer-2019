@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: BTN_STYR.prj
 
@@ -107,7 +107,7 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd" in Library work.
+Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" in Library work.
 Architecture behavioral of Entity btn_styr is up to date.
 
 =========================================================================
@@ -120,14 +120,12 @@ Analyzing hierarchy for entity <BTN_STYR> in library <work> (architecture <behav
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <BTN_STYR> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd" line 34: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <State>
-ERROR:Xst:827 - "C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd" line 34: Signal xorRes cannot be synthesized, bad synchronous description. The description style you are using to describe a synchronous element (register, memory, etc.) is not supported in the current software release.
+ERROR:Xst:827 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" line 34: Signal xorRes cannot be synthesized, bad synchronous description. The description style you are using to describe a synchronous element (register, memory, etc.) is not supported in the current software release.
 --> 
 
-Total memory usage is 264984 kilobytes
+Total memory usage is 265368 kilobytes
 
 Number of errors   :    1 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

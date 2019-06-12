@@ -46,7 +46,7 @@ Case State is
 			CheckReg <= CheckReg(6 downto 0) & MOSI;
 		end if;
 		
-		if CLK'event and CLK = '1' and CheckReg = x"5A" then
+		if CLK'event and CLK = '1' and CheckReg =
 			BTN3 <= '1';
 			NextState <= shapeS;
 		end if;

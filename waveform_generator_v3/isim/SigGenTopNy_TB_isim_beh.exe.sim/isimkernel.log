@@ -1,0 +1,30 @@
+Command line:
+   SigGenTopNy_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58169
+
+Wed Jun 12 14:53:42 2019
+
+
+ Elaboration Time: 0.234375 sec
+
+ Current Memory Usage: 1166.51 Meg
+
+ Total Signals          : 368
+ Total Nets             : 33504
+ Total Signal Drivers   : 118
+ Total Blocks           : 34
+ Total Primitive Blocks : 23
+ Total Processes        : 83
+ Total Traceable Variables  : 233
+ Total Scalar Nets and Variables : 34979
+Total Line Count : 693
+Total Line Count : 693
+
+ Total Simulation Time: 0.609375 sec
+
+ Current Memory Usage: 378.769 Meg
+
+Wed Jun 12 15:31:24 2019
+

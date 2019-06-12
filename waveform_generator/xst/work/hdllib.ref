@@ -6,11 +6,11 @@ AR siggencontrol behavioral C:/Users/Bruger/Desktop/sk/digitalteq/waveform_gener
 EN siggentop NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd sub00/vhpl12 1559996692
 AR siggendatapath behavioral C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenDatapath.vhd sub00/vhpl09 1559996689
 AR btndb behavioral C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd sub00/vhpl01 1559996683
-AR btn_styr behavioral C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd sub00/vhpl15 1560166031
+AR btn_styr behavioral "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" sub00/vhpl15 1560240683
 EN siggendatapath NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenDatapath.vhd sub00/vhpl06 1559996688
 EN divclk NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd sub00/vhpl02 1559996684
 EN siggencontrol NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenControl.vhd sub00/vhpl04 1559996686
 AR siggentop behavioral C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd sub00/vhpl13 1559996693
 EN btndb NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd sub00/vhpl00 1559996682
-EN btn_styr NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd sub00/vhpl14 1560166030
+EN btn_styr NULL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" sub00/vhpl14 1560240682
 EN sinuslut NULL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/ipcore_dir/SinusLUT.vhd sub00/vhpl07 1559996680

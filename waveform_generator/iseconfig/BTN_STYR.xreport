@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-06-10T14:48:59</DateModified>
+  <DateModified>2019-06-11T09:30:28</DateModified>
   <ModuleName>BTN_STYR</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/iseconfig/BTN_STYR.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator\</ImplementationReportsDirectory>
   <DateInitialized>2019-06-10T14:14:07</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

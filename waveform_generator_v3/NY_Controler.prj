@@ -1,0 +1,6 @@
+vhdl work "Tilstandsmaskine.vhd"
+vhdl work "ss_puls_gen.vhd"
+vhdl work "Shift_Reg.vhd"
+vhdl work "Reg_8bit.vhd"
+vhdl work "Register_2bit.vhd"
+vhdl work "NY_Controler.vhd"

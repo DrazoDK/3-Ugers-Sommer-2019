@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-06-10T13:59:10</DateModified>
-  <ModuleName>BTN_STYR</ModuleName>
+  <DateModified>2019-06-12T15:45:28</DateModified>
+  <ModuleName>SigGenTop</ModuleName>
   <SummaryTimeStamp>2019-06-10T13:27:12</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/iseconfig/SigGenTop.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/iseconfig/SigGenTop.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator\</ImplementationReportsDirectory>
   <DateInitialized>2019-06-10T13:25:57</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

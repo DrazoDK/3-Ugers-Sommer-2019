@@ -1,4 +1,4 @@
-V3 40
+V3 41
 FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd 2009/06/04.17:39:50 P.68d
 EN work/BTNdb 1559996682 \
       FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd \
@@ -8,13 +8,6 @@ AR work/BTNdb/Behavioral 1559996683 \
       FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTNdb.vhd \
       EN work/BTNdb 1559996682
 FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd 2019/06/10.13:23:57 P.68d
-EN work/BTN_STYR 1560166030 \
-      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd \
-      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 \
-      PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/BTN_STYR/Behavioral 1560166031 \
-      FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/BTN_STYR.vhd \
-      EN work/BTN_STYR 1560166030
 FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd 2009/06/04.17:39:56 P.68d
 EN work/DivClk 1559996684 \
       FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/DivClk.vhd \
@@ -64,3 +57,11 @@ AR work/SigGenTop/Behavioral 1559996693 \
       FL C:/Users/Bruger/Desktop/sk/digitalteq/waveform_generator/SigGenTop.vhd \
       EN work/SigGenTop 1559996692 CP work/DivClk CP work/SigGenControl \
       CP work/SigGenDataPath CP work/SevenSeg5 CP LD
+FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" 2019/06/10.14:45:14 P.68d
+EN work/BTN_STYR 1560240682 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" \
+      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/BTN_STYR/Behavioral 1560240683 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator/BTN_STYR.vhd" \
+      EN work/BTN_STYR 1560240682

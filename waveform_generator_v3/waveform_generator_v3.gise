@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="waveform_generator_v3.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Disp_Drive.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Disp_Drive.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Disp_Drive.xst"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="NY_Controler.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="NY_Controler.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="NY_Controler.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="NY_Controler.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="NY_Controler.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="NY_Controler.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="NY_Controler.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="NY_Controler.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="NY_Controler_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="NY_Controler_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="NY_Controler_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="NY_Controler_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Reg_8bit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Reg_8bit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Reg_8bit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Shift_Reg.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Shift_Reg.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Shift_Reg.xst"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="SigGenTop.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="SigGenTop.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="SigGenTop.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="SigGenTop.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SigGenTop.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="SigGenTop.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="SigGenTop.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="SigGenTop.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SigGenTopNy_TB_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="SigGenTopNy_TB_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="SigGenTopNy_TB_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SigGenTopNy_TB_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="SigGenTop_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="SigGenTop_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SigGenTop_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SigGenTop_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Tilstandsmaskine.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Tilstandsmaskine.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Tilstandsmaskine.xst"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/SigGenTop_synthesis.nlf"/>
+    <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/SigGenTop_synthesis.vhd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ss_Puls_TB_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ss_Puls_TB_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ss_puls_gen.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ss_puls_gen.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ss_puls_gen.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ss_puls_gen_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ss_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1560343396" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1560343396">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560344008" xil_pn:in_ck="-7850403680624735845" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1560344008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="DivClk.vhd"/>
+      <outfile xil_pn:name="NY_Controler.vhd"/>
+      <outfile xil_pn:name="Reg_8bit.vhd"/>
+      <outfile xil_pn:name="SevenSeg5.vhd"/>
+      <outfile xil_pn:name="Shift_Reg.vhd"/>
+      <outfile xil_pn:name="SigGenDatapath.vhd"/>
+      <outfile xil_pn:name="SigGenTop.vhd"/>
+      <outfile xil_pn:name="SigGenTopNy_TB.vhd"/>
+      <outfile xil_pn:name="Tilstandsmaskine.vhd"/>
+      <outfile xil_pn:name="ss-Puls_TB.vhd"/>
+      <outfile xil_pn:name="ss_puls_gen.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1560343397" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2296962650589969474" xil_pn:start_ts="1560343397">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560343397" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5539470123270551868" xil_pn:start_ts="1560343397">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560343397" xil_pn:in_ck="926961726205324622" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="6046628565668021470" xil_pn:start_ts="1560343397">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/SinusLUT.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/SinusLUT.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1560344008" xil_pn:in_ck="1973742639578583585" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1560344008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="DivClk.vhd"/>
+      <outfile xil_pn:name="NY_Controler.vhd"/>
+      <outfile xil_pn:name="Reg_8bit.vhd"/>
+      <outfile xil_pn:name="SevenSeg5.vhd"/>
+      <outfile xil_pn:name="Shift_Reg.vhd"/>
+      <outfile xil_pn:name="SigGenDatapath.vhd"/>
+      <outfile xil_pn:name="SigGenTop.vhd"/>
+      <outfile xil_pn:name="SigGenTopNy_TB.vhd"/>
+      <outfile xil_pn:name="Tilstandsmaskine.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/SinusLUT.vhd"/>
+      <outfile xil_pn:name="ss-Puls_TB.vhd"/>
+      <outfile xil_pn:name="ss_puls_gen.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1560344015" xil_pn:in_ck="1973742639578583585" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5929291027928748326" xil_pn:start_ts="1560344008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="SigGenTopNy_TB_beh.prj"/>
+      <outfile xil_pn:name="SigGenTopNy_TB_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1560344016" xil_pn:in_ck="6846838324245361352" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2447521653474537267" xil_pn:start_ts="1560344015">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="SigGenTopNy_TB_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7330626925877631307" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:in_ck="926961726205324622" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="6046628565668021470" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/SinusLUT.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/SinusLUT.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:in_ck="-6303751182643383939" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-1902365423563002957" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:in_ck="-6303751182643383939" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="2988080280822507185" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560341771" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-8712378191634809688" xil_pn:start_ts="1560341771">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560346315" xil_pn:in_ck="-9025711031755766935" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7660415071551173903" xil_pn:start_ts="1560346300">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name=".lso"/>
+      <outfile xil_pn:name="NY_Controler.ngr"/>
+      <outfile xil_pn:name="SigGenTop.lso"/>
+      <outfile xil_pn:name="SigGenTop.ngc"/>
+      <outfile xil_pn:name="SigGenTop.ngr"/>
+      <outfile xil_pn:name="SigGenTop.prj"/>
+      <outfile xil_pn:name="SigGenTop.stx"/>
+      <outfile xil_pn:name="SigGenTop.syr"/>
+      <outfile xil_pn:name="SigGenTop.xst"/>
+      <outfile xil_pn:name="SigGenTopNy_TB_beh.prj"/>
+      <outfile xil_pn:name="SigGenTopNy_TB_stx_beh.prj"/>
+      <outfile xil_pn:name="SigGenTop_vhdl.prj"/>
+      <outfile xil_pn:name="SigGenTop_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1560327442" xil_pn:in_ck="-5637289499306752196" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4284115689867102344" xil_pn:start_ts="1560327442">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1560344885" xil_pn:in_ck="-7084517232435070058" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-9123407268599009828" xil_pn:start_ts="1560344876">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="netgen"/>
+      <outfile xil_pn:name="netgen/synthesis/SigGenTop_synthesis.nlf"/>
+      <outfile xil_pn:name="netgen/synthesis/SigGenTop_synthesis.vhd"/>
+    </transform>
+  </transforms>
+
+</generated_project>

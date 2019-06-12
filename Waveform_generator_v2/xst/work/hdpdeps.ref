@@ -1,0 +1,15 @@
+V3 7
+FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_STYR.vhd" 2019/06/10.14:45:14 P.68d
+EN work/BTN_STYR 1560241877 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_STYR.vhd" \
+      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 \
+      PB ieee/STD_LOGIC_UNSIGNED 1370735609
+AR work/BTN_STYR/Behavioral 1560241878 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_STYR.vhd" \
+      EN work/BTN_STYR 1560241877
+EN work/BTN_styr_TB 0 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd" \
+      PB ieee/std_logic_1164 1370735607
+AR work/BTN_styr_TB/behavior 0 \
+      FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd" \
+      EN work/BTN_styr_TB 0 CP BTN_STYR

@@ -1,0 +1,42 @@
+ISim log file
+Running: C:\Users\Bruger\Documents\Atmel Studio\7.0\3ugers_06.06.19\3-Ugers-Sommer-2019\waveform_generator_v3\SigGenTopNy_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB_isim_beh.wdb 
+ISim P.68d (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /siggentopny_tb/uut/U2/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+# run 10000ns
+# restart
+# run 10000ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns
+# run 10000ns

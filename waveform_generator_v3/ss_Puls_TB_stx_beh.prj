@@ -1,0 +1,2 @@
+vhdl isim_temp "ss_puls_gen.vhd"
+vhdl isim_temp "ss-Puls_TB.vhd"

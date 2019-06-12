@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">92</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">94</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">104</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">108</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">110</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">112</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">114</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">116</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">118</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">120</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">124</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">130</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">132</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">136</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">138</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">140</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">142</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">144</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">146</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">148</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">150</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">152</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">154</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">156</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">158</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">160</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">162</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">164</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">166</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/Waveform_generator_v2/BTN_styr_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">168</arg>. Wait for statement unsupported.
+</msg>
+
+</messages>
+
