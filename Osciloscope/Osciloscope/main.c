@@ -98,10 +98,13 @@ int main(void)
 		
 		case 2:
 		sendStrXY("Oscilloscope",5,0);
-		//init_timer1(sample_rate);
-		sample_rate3 = (sample_rate << 8) | sample_rate2;
-		sprintf(sprint,"%d     ",sample_rate3);
+		sample_rate = data_buffer[5];
+		sample_rate2 = data_buffer[6];
+		sample_rate3 = (sample_rate<<8)|sample_rate2;
+		sprintf(sprint,"Sample rate: %d      ", sample_rate3);
 		sendStrXY(sprint,6,0);
+		init_timer1(sample_rate3);
+		
 		break;
 		
 		case 3:
