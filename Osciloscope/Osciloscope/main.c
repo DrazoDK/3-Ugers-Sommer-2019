@@ -18,7 +18,9 @@ volatile char type;
 volatile unsigned char sample_rate;
 volatile unsigned char sample_rate2;
 volatile int sample_rate3;
-volatile int record_length;
+volatile unsigned char record_length;
+volatile unsigned char record_length2;
+volatile int record_length3;
 volatile char data_buffer[11];
 
 uint8_t _i2c_address;
@@ -80,7 +82,6 @@ int main(void)
 	init_timer1(1000);
 	char str[5];
 	char sprint[100];
-
 	
     while (1) 
     {
@@ -97,13 +98,45 @@ int main(void)
 		break;
 		
 		case 2:
+		
 		sendStrXY("Oscilloscope",5,0);
 		sample_rate = data_buffer[5];
 		sample_rate2 = data_buffer[6];
 		sample_rate3 = (sample_rate<<8)|sample_rate2;
+		
+		record_length = data_buffer[7];
+		record_length2 = data_buffer[8];
+		record_length3 = (record_length<<8)|record_length2;
+		init_timer1(sample_rate3);
 		sprintf(sprint,"Sample rate: %d      ", sample_rate3);
 		sendStrXY(sprint,6,0);
-		init_timer1(sample_rate3);
+		sprintf(sprint,"RL: %d      ", record_length3);
+		sendStrXY(sprint,7,0);
+		
+		if(record_length3 > 0){
+			int i = 0;
+			int j = 5;
+			char adc_buffer[record_length3];
+			//char adc_buffer2[record_length3];
+			char adc_send[record_length3 + 7];
+			while(i < record_length3){
+				adc_buffer[i] = Sample;
+				i++;
+			}
+			adc_send[0] = 0x55;
+			adc_send[1] = 0xAA;
+			adc_send[2] = 0x01;
+			adc_send[3] = 0x0B;
+			adc_send[4] = 0x02;
+ 			while(j <= record_length3+4){
+			adc_send[j] = adc_buffer[j - 5];
+			j++;
+			}
+			char check = 0;
+			adc_send[record_length3 + 5] = check;
+			adc_send[record_length3 + 6] = check;
+			putsUSART1(adc_send);
+	}	
 		
 		break;
 		
