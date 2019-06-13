@@ -19,6 +19,7 @@ volatile unsigned char sample_rate;
 volatile unsigned char sample_rate2;
 volatile int sample_rate3;
 volatile int record_length;
+volatile char data_buffer[11];
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -83,17 +84,11 @@ int main(void)
 	
     while (1) 
     {
-		sprintf(sprint,"%d",length);
-		sendStrXY(sprint,2,0);
-		sprintf(sprint,"%d",type);
-		sendStrXY(sprint,4,0);
 		if ((flagADC=1)){
 			flagADC = 0;
-			
  			itoa(Sample,str,10);
  			sendStrXY(str,1,1);
  			sendStr("  ");
-			//putchUSART1(Sample);
 		}
 		switch(type){
 		
@@ -126,65 +121,23 @@ ISR(ADC_vect){
 
 }
 ISR(USART1_RX_vect){
-	static int i=0;
-	static char buffer[4];
-	static int cnt = 0;
-	static int max_len;
-	char data_array[length-3];
-	switch(i) {
-		
-		case 0: //Get first sync byte
-		buffer[i]=UDR1;
-		if (buffer[i]==0x55){
-			i++;
-		}
-		break;
-		
-		case 1: //Get second sync byte
-		buffer[i]=UDR1;
-		if (buffer[i]==0xAA){
-			i++;
-		}
-		else{
-			i = 0;
-		}
-		break;
-		
-		case 2: //Length byte 1
-		buffer[i]=UDR1;
-		char len1 = buffer[i];
-		i++;
-		break;
-		
-		case 3: //Length byte 2, return total length as global
-		buffer[i]=UDR1;
-		char len2 = buffer[i];			
-		length = (len1 << 8) | len2;
-		i++;
-		break;
-		
-		case 4: //Get type byte
-		type = UDR1;
-		i++;
-		break;
-		
-		case 5:
-		data_array[cnt]=UDR1;
-		putchUSART0(data_array[cnt]);
-		cnt++;
-		if(cnt >= length-5){
-			if(data_array[cnt] == 0x00 && data_array[cnt-1] == 0x00){
-				if((type = 1)){
-					
-				}
-				if((type = 2)){
-					sample_rate = data_array[0];
-					sample_rate2 = data_array[1];
-				}
-			}
-			i = 0;
-			cnt = 0;
-		}
-		break;
+	static int i;
+	static int max_len = 11;
+	data_buffer[i] = UDR1;
+	i++;
+	if(data_buffer[4] == 1){
+		type = 1;
+		max_len = 9;
+	}
+	if(data_buffer[4] == 2){
+		type = 2;
+		max_len = 11;
+	}
+	if(data_buffer[4] == 3){
+		type = 3;
+		max_len = 7;
+	}
+	if(i == max_len){
+		i = 0;
 	}
 }
