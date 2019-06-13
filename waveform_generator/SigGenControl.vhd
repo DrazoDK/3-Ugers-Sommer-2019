@@ -39,6 +39,8 @@ end SigGenControl;
 architecture Behavioral of SigGenControl is
 
 component BTNdb
+
+
   port( Reset, Clk: in std_logic;
         BTNin: in std_logic;
         BTNout: out std_logic);

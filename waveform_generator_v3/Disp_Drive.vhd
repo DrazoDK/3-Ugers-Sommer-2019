@@ -13,6 +13,8 @@ entity Disp_Drive is
            Data : out  STD_LOGIC_VECTOR (19 downto 0));
 end Disp_Drive;
 
+
+
 architecture Behavioral of Disp_Drive is
 type StateType is (ShowS, ShowA, ShowF, Idle);
 signal State, NextState: StateType;  
@@ -36,7 +38,7 @@ begin
   end if;
 end process;
 
-StateDec: process (state, BTN0db)
+StateDec: process (state, BTN0db, Shape, Ampl, Freq)
 begin 
 NextState <= state; 
 

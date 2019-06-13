@@ -1,101 +1,101 @@
-V3 59
+V3 60
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/3ugers.060619_VHDL_start/BTNdb.vhd" 2009/06/04.17:39:50 P.68d
-EN work/BTNdb 1560350831 \
+EN work/BTNdb 1560412715 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/3ugers.060619_VHDL_start/BTNdb.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/BTNdb/Behavioral 1560350832 \
+AR work/BTNdb/Behavioral 1560412716 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/3ugers.060619_VHDL_start/BTNdb.vhd" \
-      EN work/BTNdb 1560350831
-FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" 2019/06/12.16:47:08 P.68d
-EN work/Disp_Drive 1560350833 \
+      EN work/BTNdb 1560412715
+FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" 2019/06/12.19:42:48 P.68d
+EN work/Disp_Drive 1560412735 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/Disp_Drive/Behavioral 1560350834 \
+AR work/Disp_Drive/Behavioral 1560412736 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" \
-      EN work/Disp_Drive 1560350833 CP BTNdb
+      EN work/Disp_Drive 1560412735 CP BTNdb
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" 2009/06/04.17:39:56 P.68d
-EN work/DivClk 1560346315 \
+EN work/DivClk 1560412729 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/DivClk/DivClk_arch 1560346316 \
+AR work/DivClk/DivClk_arch 1560412730 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" \
-      EN work/DivClk 1560346315
+      EN work/DivClk 1560412729
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ipcore_dir/SinusLUT.vhd" 2019/06/12.10:21:20 P.68d
-EN work/SinusLUT 1560346305 \
+EN work/SinusLUT 1560412717 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ipcore_dir/SinusLUT.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/SinusLUT/SinusLUT_a 1560346306 \
+AR work/SinusLUT/SinusLUT_a 1560412718 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ipcore_dir/SinusLUT.vhd" \
-      EN work/SinusLUT 1560346305
+      EN work/SinusLUT 1560412717
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" 2019/06/12.15:45:10 P.68d
-EN work/NY_Controler 1560347123 \
+EN work/NY_Controler 1560412731 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/NY_Controler/Behavioral 1560347124 \
+AR work/NY_Controler/Behavioral 1560412732 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" \
-      EN work/NY_Controler 1560347123 CP Shift_Reg CP ss_puls_gen \
+      EN work/NY_Controler 1560412731 CP Shift_Reg CP ss_puls_gen \
       CP tilstandsmaskine CP Reg_8bit CP Register_2bit
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd" 2019/06/12.15:44:24 P.68d
-EN work/Register_2bit 1560347121 \
+EN work/Register_2bit 1560412727 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/Register_2bit/Behavioral 1560347122 \
+AR work/Register_2bit/Behavioral 1560412728 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd" \
-      EN work/Register_2bit 1560347121
+      EN work/Register_2bit 1560412727
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" 2019/06/11.21:34:52 P.68d
-EN work/Reg_8bit 1560347119 \
+EN work/Reg_8bit 1560412725 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/Reg_8bit/Behavioral 1560347120 \
+AR work/Reg_8bit/Behavioral 1560412726 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" \
-      EN work/Reg_8bit 1560347119
+      EN work/Reg_8bit 1560412725
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" 2009/06/04.17:40:06 P.68d
-EN work/SevenSeg5 1560346321 \
+EN work/SevenSeg5 1560412737 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/SevenSeg5/SevenSeg_arch 1560346322 \
+AR work/SevenSeg5/SevenSeg_arch 1560412738 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" \
-      EN work/SevenSeg5 1560346321
+      EN work/SevenSeg5 1560412737
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Shift_Reg.vhd" 2019/06/12.13:43:29 P.68d
-EN work/Shift_Reg 1560347113 \
+EN work/Shift_Reg 1560412719 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Shift_Reg.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/Shift_Reg/Behavioral 1560347114 \
+AR work/Shift_Reg/Behavioral 1560412720 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Shift_Reg.vhd" \
-      EN work/Shift_Reg 1560347113
+      EN work/Shift_Reg 1560412719
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" 2009/06/04.17:40:32 P.68d
-EN work/SigGenDatapath 1560346319 \
+EN work/SigGenDatapath 1560412733 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/SigGenDatapath/Behavioral 1560346320 \
+AR work/SigGenDatapath/Behavioral 1560412734 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" \
-      EN work/SigGenDatapath 1560346319 CP FreqCnt CP nSigCnt CP work/SinusLUT \
+      EN work/SigGenDatapath 1560412733 CP FreqCnt CP nSigCnt CP work/SinusLUT \
       CP PWMwrap CP SigSquare CP SigSaw CP Sig CP PWM CP PWMout
-FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" 2019/06/12.15:31:40 P.68d
-EN work/SigGenTop 1560346323 \
+FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" 2019/06/13.09:34:23 P.68d
+EN work/SigGenTop 1560412739 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/SigGenTop/Behavioral 1560346324 \
+AR work/SigGenTop/Behavioral 1560412740 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" \
-      EN work/SigGenTop 1560346323 CP work/DivClk CP work/NY_controler \
-      CP work/SigGenDataPath CP work/SevenSeg5 CP LD
+      EN work/SigGenTop 1560412739 CP work/DivClk CP work/NY_controler \
+      CP work/SigGenDataPath CP work/Disp_drive CP work/SevenSeg5 CP LD
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ss_puls_gen.vhd" 2019/06/11.14:34:22 P.68d
-EN work/ss_puls_gen 1560347115 \
+EN work/ss_puls_gen 1560412721 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ss_puls_gen.vhd" \
       PB ieee/std_logic_1164 1370735607
-AR work/ss_puls_gen/Behavioral 1560347116 \
+AR work/ss_puls_gen/Behavioral 1560412722 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ss_puls_gen.vhd" \
-      EN work/ss_puls_gen 1560347115
+      EN work/ss_puls_gen 1560412721
 FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Tilstandsmaskine.vhd" 2019/06/12.10:44:06 P.68d
-EN work/Tilstandsmaskine 1560347117 \
+EN work/Tilstandsmaskine 1560412723 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Tilstandsmaskine.vhd" \
       PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/Tilstandsmaskine/Behavioral 1560347118 \
+AR work/Tilstandsmaskine/Behavioral 1560412724 \
       FL "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Tilstandsmaskine.vhd" \
-      EN work/Tilstandsmaskine 1560347117
+      EN work/Tilstandsmaskine 1560412723

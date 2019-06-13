@@ -1,33 +1,37 @@
 # Udfyld selv pin assignment nedenfor ved ?
 
 #PACE: Start of PACE I/O Pin Assignments
-NET "An<0>"  LOC = "?"  ; 
-NET "An<1>"  LOC = "?"  ; 
-NET "An<2>"  LOC = "?"  ; 
-NET "An<3>"  LOC = "?"  ; 
-NET "BTN0"  LOC = "?"  ; 
-NET "BTN1"  LOC = "?"  ; 
-NET "BTN2"  LOC = "?"  ; 
-NET "BTN3"  LOC = "?"  ; 
-NET "Cat<0>"  LOC = "?"  ; 
-NET "Cat<1>"  LOC = "?"  ; 
-NET "Cat<2>"  LOC = "?"  ; 
-NET "Cat<3>"  LOC = "?"  ; 
-NET "Cat<4>"  LOC = "?"  ; 
-NET "Cat<5>"  LOC = "?"  ; 
-NET "Cat<6>"  LOC = "?"  ; 
-NET "Cat<7>"  LOC = "?"  ; 
-NET "Clk"  LOC = "?"  ; 
-NET "LD"  LOC = "?"  ;
-NET "PWMOut"  LOC = "?"  ;
-NET "SW<0>"  LOC = "?"  ; 
-NET "SW<1>"  LOC = "?"  ; 
-NET "SW<2>"  LOC = "?"  ; 
-NET "SW<3>"  LOC = "?"  ; 
-NET "SW<4>"  LOC = "?"  ; 
-NET "SW<5>"  LOC = "?"  ; 
-NET "SW<6>"  LOC = "?"  ; 
-NET "SW<7>"  LOC = "?"  ; 
+
+NET "Clk"  LOC = "B8"  ; 
+NET "LD"    LOC = "B2"  ;
+NET "BTN0"  LOC = "G12"  ; 
+NET "BTN3"  LOC = "A7"  ; 
+
+NET "MOSI" LOC = "C6" ;
+NET "SS"   LOC = "B6" ;
+NET "SCK"  LOC = "C5" ;
+NET "Sck" CLOCK_DEDICATED_ROUTE = FALSE;
+
+
+NET "Handshake" LOC = "J3" ; 
+
+NET "PWMOut"    LOC = "B5"  ;
+
+NET "An<0>"  LOC = "K14"  ; 
+NET "An<1>"  LOC = "M13"  ; 
+NET "An<2>"  LOC = "J12"  ; 
+NET "An<3>"  LOC = "F12"  ; 
+
+NET "Cat<0>"  LOC = "L14"  ; 
+NET "Cat<1>"  LOC = "H12"  ; 
+NET "Cat<2>"  LOC = "N14"  ; 
+NET "Cat<3>"  LOC = "N11"  ; 
+NET "Cat<4>"  LOC = "P12"  ; 
+NET "Cat<5>"  LOC = "L13"  ; 
+NET "Cat<6>"  LOC = "M12"  ; 
+NET "Cat<7>"  LOC = "N13"  ; 
+
+
 
 #PACE: Start of PACE Area Constraints
 

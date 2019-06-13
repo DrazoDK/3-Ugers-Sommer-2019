@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: SigGenTop.prj
 
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -107,6 +107,8 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/3ugers.060619_VHDL_start/BTNdb.vhd" in Library work.
+Architecture behavioral of Entity btndb is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ipcore_dir/SinusLUT.vhd" in Library work.
 Architecture sinuslut_a of Entity sinuslut is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Shift_Reg.vhd" in Library work.
@@ -117,17 +119,20 @@ Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/
 Architecture behavioral of Entity tilstandsmaskine is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" in Library work.
 Architecture behavioral of Entity reg_8bit is up to date.
+Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd" in Library work.
+Architecture behavioral of Entity register_2bit is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" in Library work.
 Architecture divclk_arch of Entity divclk is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" in Library work.
 Architecture behavioral of Entity ny_controler is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" in Library work.
 Architecture behavioral of Entity siggendatapath is up to date.
+Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" in Library work.
+Architecture behavioral of Entity disp_drive is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" in Library work.
 Architecture sevenseg_arch of Entity sevenseg5 is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" in Library work.
-Entity <siggentop> compiled.
-Entity <siggentop> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity siggentop is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -141,6 +146,8 @@ Analyzing hierarchy for entity <NY_Controler> in library <work> (architecture <B
 Analyzing hierarchy for entity <SigGenDatapath> in library <work> (architecture <Behavioral>) with generics.
 	PWMinc = "0000001"
 
+Analyzing hierarchy for entity <Disp_Drive> in library <work> (architecture <Behavioral>).
+
 Analyzing hierarchy for entity <SevenSeg5> in library <work> (architecture <SevenSeg_arch>).
 
 Analyzing hierarchy for entity <Shift_Reg> in library <work> (architecture <behavioral>).
@@ -150,6 +157,10 @@ Analyzing hierarchy for entity <ss_puls_gen> in library <work> (architecture <be
 Analyzing hierarchy for entity <Tilstandsmaskine> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <Reg_8bit> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Register_2bit> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <BTNdb> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
@@ -176,10 +187,19 @@ Entity <Tilstandsmaskine> analyzed. Unit <Tilstandsmaskine> generated.
 Analyzing Entity <Reg_8bit> in library <work> (Architecture <behavioral>).
 Entity <Reg_8bit> analyzed. Unit <Reg_8bit> generated.
 
+Analyzing Entity <Register_2bit> in library <work> (Architecture <behavioral>).
+Entity <Register_2bit> analyzed. Unit <Register_2bit> generated.
+
 Analyzing generic Entity <SigGenDatapath> in library <work> (Architecture <Behavioral>).
 	PWMinc = "0000001"
 WARNING:Xst:2211 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" line 61: Instantiating black box module <SinusLUT>.
 Entity <SigGenDatapath> analyzed. Unit <SigGenDatapath> generated.
+
+Analyzing Entity <Disp_Drive> in library <work> (Architecture <Behavioral>).
+Entity <Disp_Drive> analyzed. Unit <Disp_Drive> generated.
+
+Analyzing Entity <BTNdb> in library <work> (Architecture <behavioral>).
+Entity <BTNdb> analyzed. Unit <BTNdb> generated.
 
 Analyzing Entity <SevenSeg5> in library <work> (Architecture <SevenSeg_arch>).
 Entity <SevenSeg5> analyzed. Unit <SevenSeg5> generated.
@@ -283,6 +303,37 @@ Synthesizing Unit <Reg_8bit>.
 Unit <Reg_8bit> synthesized.
 
 
+Synthesizing Unit <Register_2bit>.
+    Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd".
+    Found 2-bit register for signal <Output>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Register_2bit> synthesized.
+
+
+Synthesizing Unit <BTNdb>.
+    Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/3ugers.060619_VHDL_start/BTNdb.vhd".
+    Found finite state machine <FSM_1> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 6                                              |
+    | Clock              | Clk                       (rising_edge)        |
+    | Reset              | Reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | btnup                                          |
+    | Power Up State     | btnup                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 12-bit up counter for signal <count>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+Unit <BTNdb> synthesized.
+
+
 Synthesizing Unit <NY_Controler>.
     Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd".
 Unit <NY_Controler> synthesized.
@@ -313,10 +364,29 @@ Synthesizing Unit <SigGenDatapath>.
 Unit <SigGenDatapath> synthesized.
 
 
+Synthesizing Unit <Disp_Drive>.
+    Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd".
+    Found finite state machine <FSM_2> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clk                       (rising_edge)        |
+    | Reset              | Reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | shows                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <Disp_Drive> synthesized.
+
+
 Synthesizing Unit <SigGenTop>.
     Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd".
-WARNING:Xst:646 - Signal <Shape<7:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <Disp> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000.
 Unit <SigGenTop> synthesized.
 
 
@@ -330,15 +400,17 @@ Macro Statistics
  16-bit adder                                          : 7
  32-bit adder                                          : 4
  8-bit adder                                           : 1
-# Counters                                             : 3
+# Counters                                             : 4
+ 12-bit up counter                                     : 1
  2-bit up counter                                      : 1
  25-bit up counter                                     : 2
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
 # Registers                                            : 14
  1-bit register                                        : 4
+ 2-bit register                                        : 1
  4-bit register                                        : 1
- 8-bit register                                        : 9
+ 8-bit register                                        : 8
 # Comparators                                          : 6
  12-bit comparator less                                : 1
  32-bit comparator equal                               : 2
@@ -360,6 +432,26 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <U3/State/FSM> on signal <State[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ shows | 00
+ showa | 10
+ showf | 11
+ idle  | 01
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <U3/Deb0/State/FSM> on signal <State[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ btnup    | 00
+ wbtnup   | 01
+ btndown  | 10
+ wbtndown | 11
+----------------------
 Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <U1/U2/State/FSM> on signal <State[1:5]> with one-hot encoding.
 ---------------------
@@ -373,31 +465,26 @@ Optimizing FSM <U1/U2/State/FSM> on signal <State[1:5]> with one-hot encoding.
 ---------------------
 Reading core <ipcore_dir/SinusLUT.ngc>.
 Loading core <SinusLUT> for timing and area information for instance <SinusDec>.
-WARNING:Xst:2677 - Node <Output_2> of sequential type is unconnected in block <U6_Shape>.
-WARNING:Xst:2677 - Node <Output_3> of sequential type is unconnected in block <U6_Shape>.
-WARNING:Xst:2677 - Node <Output_4> of sequential type is unconnected in block <U6_Shape>.
-WARNING:Xst:2677 - Node <Output_5> of sequential type is unconnected in block <U6_Shape>.
-WARNING:Xst:2677 - Node <Output_6> of sequential type is unconnected in block <U6_Shape>.
-WARNING:Xst:2677 - Node <Output_7> of sequential type is unconnected in block <U6_Shape>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# FSMs                                                 : 1
+# FSMs                                                 : 3
 # ROMs                                                 : 1
  16x16-bit ROM                                         : 1
 # Adders/Subtractors                                   : 12
  16-bit adder                                          : 7
  32-bit adder                                          : 4
  8-bit adder                                           : 1
-# Counters                                             : 3
+# Counters                                             : 4
+ 12-bit up counter                                     : 1
  2-bit up counter                                      : 1
  25-bit up counter                                     : 2
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
-# Registers                                            : 80
- Flip-Flops                                            : 80
+# Registers                                            : 74
+ Flip-Flops                                            : 74
 # Comparators                                          : 6
  12-bit comparator less                                : 1
  32-bit comparator equal                               : 2
@@ -418,13 +505,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <cat_0> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cat_1> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cat_2> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cat_3> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cat_4> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cat_5> (without init value) has a constant value of 0 in block <SevenSeg5>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <cat_6> in Unit <SevenSeg5> is equivalent to the following FF/Latch, which will be removed : <cat_7> 
 
 Optimizing unit <SigGenTop> ...
 
@@ -439,17 +519,12 @@ Optimizing unit <Reg_8bit> ...
 Optimizing unit <SigGenDatapath> ...
 
 Optimizing unit <NY_Controler> ...
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_2> of sequential type is unconnected in block <SigGenTop>.
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_3> of sequential type is unconnected in block <SigGenTop>.
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_4> of sequential type is unconnected in block <SigGenTop>.
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_5> of sequential type is unconnected in block <SigGenTop>.
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_6> of sequential type is unconnected in block <SigGenTop>.
-WARNING:Xst:2677 - Node <U1/U6_Shape/Output_7> of sequential type is unconnected in block <SigGenTop>.
+
+Optimizing unit <Disp_Drive> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SigGenTop, actual ratio is 15.
-FlipFlop U3/cat_6 has been replicated 1 time(s) to handle iob=true attribute.
+Found area constraint ratio of 100 (+ 5) on block SigGenTop, actual ratio is 19.
 
 Final Macro Processing ...
 
@@ -457,8 +532,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 137
- Flip-Flops                                            : 137
+# Registers                                            : 159
+ Flip-Flops                                            : 159
 
 =========================================================================
 
@@ -484,38 +559,39 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 20
+# IOs                              : 21
 
 Cell Usage :
-# BELS                             : 523
+# BELS                             : 610
 #      GND                         : 2
 #      INV                         : 7
 #      LUT1                        : 5
-#      LUT2                        : 40
+#      LUT2                        : 52
 #      LUT2_L                      : 1
-#      LUT3                        : 108
+#      LUT3                        : 121
+#      LUT3_D                      : 1
 #      LUT3_L                      : 3
-#      LUT4                        : 85
+#      LUT4                        : 111
 #      LUT4_D                      : 1
 #      LUT4_L                      : 1
 #      MULT_AND                    : 9
-#      MUXCY                       : 135
-#      MUXF5                       : 8
+#      MUXCY                       : 146
+#      MUXF5                       : 20
 #      VCC                         : 2
-#      XORCY                       : 116
-# FlipFlops/Latches                : 137
+#      XORCY                       : 128
+# FlipFlops/Latches                : 159
 #      FD                          : 2
-#      FDC                         : 64
-#      FDCE                        : 68
-#      FDP                         : 2
+#      FDC                         : 73
+#      FDCE                        : 80
+#      FDP                         : 3
 #      FDPE                        : 1
 # RAMS                             : 2
 #      RAMB16_S4_S4                : 2
 # Clock Buffers                    : 3
 #      BUFG                        : 1
 #      BUFGP                       : 2
-# IO Buffers                       : 18
-#      IBUF                        : 3
+# IO Buffers                       : 19
+#      IBUF                        : 4
 #      OBUF                        : 15
 =========================================================================
 
@@ -524,12 +600,12 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-4 
 
- Number of Slices:                      138  out of    960    14%  
- Number of Slice Flip Flops:            135  out of   1920     7%  
- Number of 4 input LUTs:                251  out of   1920    13%  
- Number of IOs:                          20
- Number of bonded IOBs:                  20  out of     83    24%  
-    IOB Flip Flops:                       2
+ Number of Slices:                      166  out of    960    17%  
+ Number of Slice Flip Flops:            158  out of   1920     8%  
+ Number of 4 input LUTs:                303  out of   1920    15%  
+ Number of IOs:                          21
+ Number of bonded IOBs:                  21  out of     83    25%  
+    IOB Flip Flops:                       1
  Number of BRAMs:                         2  out of      4    50%  
  Number of GCLKs:                         3  out of     24    12%  
 
@@ -555,8 +631,8 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)                                                                                                           | Load  |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 Clk                                | BUFGP                                                                                                                           | 52    |
-U4/Clk1_D                          | NONE(U3/DispCount_1)                                                                                                            | 8     |
-U0/Clk1_D1                         | BUFG                                                                                                                            | 71    |
+U5/Clk1_D                          | NONE(U4/DispCount_1)                                                                                                            | 14    |
+U0/Clk1_D1                         | BUFG                                                                                                                            | 87    |
 U2/SinusDec/N1                     | NONE(U2/SinusDec/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)| 2     |
 Sck                                | BUFGP                                                                                                                           | 8     |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
@@ -567,7 +643,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-BTN3                               | IBUF                   | 135   |
+BTN3                               | IBUF                   | 157   |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -589,89 +665,92 @@ Timing constraint: Default period analysis for Clock 'Clk'
   Total number of paths / destination ports: 18202 / 54
 -------------------------------------------------------------------------
 Delay:               7.940ns (Levels of Logic = 34)
-  Source:            U4/Cnt1_5 (FF)
-  Destination:       U4/Cnt1_24 (FF)
+  Source:            U5/Cnt1_5 (FF)
+  Destination:       U5/Cnt1_24 (FF)
   Source Clock:      Clk rising
   Destination Clock: Clk rising
 
-  Data Path: U4/Cnt1_5 to U4/Cnt1_24
+  Data Path: U5/Cnt1_5 to U5/Cnt1_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.591   0.622  U4/Cnt1_5 (U4/Cnt1_5)
-     LUT1:I0->O            1   0.704   0.000  U4/Clear1_wg_cy<0>_rt (U4/Clear1_wg_cy<0>_rt)
-     MUXCY:S->O            1   0.464   0.000  U4/Clear1_wg_cy<0> (U4/Clear1_wg_cy<0>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Clear1_wg_cy<1> (U4/Clear1_wg_cy<1>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Clear1_wg_cy<2> (U4/Clear1_wg_cy<2>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Clear1_wg_cy<3> (U4/Clear1_wg_cy<3>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Clear1_wg_cy<4> (U4/Clear1_wg_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Clear1_wg_cy<5> (U4/Clear1_wg_cy<5>)
-     MUXCY:CI->O          27   0.331   1.296  U4/Clear1_wg_cy<6> (U4/Clear1)
-     LUT3:I2->O            1   0.704   0.000  U4/Mcount_Cnt1_lut<0> (U4/Mcount_Cnt1_lut<0>)
-     MUXCY:S->O            1   0.464   0.000  U4/Mcount_Cnt1_cy<0> (U4/Mcount_Cnt1_cy<0>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<1> (U4/Mcount_Cnt1_cy<1>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<2> (U4/Mcount_Cnt1_cy<2>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<3> (U4/Mcount_Cnt1_cy<3>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<4> (U4/Mcount_Cnt1_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<5> (U4/Mcount_Cnt1_cy<5>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<6> (U4/Mcount_Cnt1_cy<6>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<7> (U4/Mcount_Cnt1_cy<7>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<8> (U4/Mcount_Cnt1_cy<8>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<9> (U4/Mcount_Cnt1_cy<9>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<10> (U4/Mcount_Cnt1_cy<10>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<11> (U4/Mcount_Cnt1_cy<11>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<12> (U4/Mcount_Cnt1_cy<12>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<13> (U4/Mcount_Cnt1_cy<13>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<14> (U4/Mcount_Cnt1_cy<14>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<15> (U4/Mcount_Cnt1_cy<15>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<16> (U4/Mcount_Cnt1_cy<16>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<17> (U4/Mcount_Cnt1_cy<17>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<18> (U4/Mcount_Cnt1_cy<18>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<19> (U4/Mcount_Cnt1_cy<19>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<20> (U4/Mcount_Cnt1_cy<20>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<21> (U4/Mcount_Cnt1_cy<21>)
-     MUXCY:CI->O           1   0.059   0.000  U4/Mcount_Cnt1_cy<22> (U4/Mcount_Cnt1_cy<22>)
-     MUXCY:CI->O           0   0.059   0.000  U4/Mcount_Cnt1_cy<23> (U4/Mcount_Cnt1_cy<23>)
-     XORCY:CI->O           1   0.804   0.000  U4/Mcount_Cnt1_xor<24> (U4/Mcount_Cnt124)
-     FDC:D                     0.308          U4/Cnt1_24
+     FDC:C->Q              2   0.591   0.622  U5/Cnt1_5 (U5/Cnt1_5)
+     LUT1:I0->O            1   0.704   0.000  U5/Clear1_wg_cy<0>_rt (U5/Clear1_wg_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  U5/Clear1_wg_cy<0> (U5/Clear1_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<1> (U5/Clear1_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<2> (U5/Clear1_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<3> (U5/Clear1_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<4> (U5/Clear1_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<5> (U5/Clear1_wg_cy<5>)
+     MUXCY:CI->O          27   0.331   1.296  U5/Clear1_wg_cy<6> (U5/Clear1)
+     LUT3:I2->O            1   0.704   0.000  U5/Mcount_Cnt1_lut<0> (U5/Mcount_Cnt1_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  U5/Mcount_Cnt1_cy<0> (U5/Mcount_Cnt1_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<1> (U5/Mcount_Cnt1_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<2> (U5/Mcount_Cnt1_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<3> (U5/Mcount_Cnt1_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<4> (U5/Mcount_Cnt1_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<5> (U5/Mcount_Cnt1_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<6> (U5/Mcount_Cnt1_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<7> (U5/Mcount_Cnt1_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<8> (U5/Mcount_Cnt1_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<9> (U5/Mcount_Cnt1_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<10> (U5/Mcount_Cnt1_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<11> (U5/Mcount_Cnt1_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<12> (U5/Mcount_Cnt1_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<13> (U5/Mcount_Cnt1_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<14> (U5/Mcount_Cnt1_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<15> (U5/Mcount_Cnt1_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<16> (U5/Mcount_Cnt1_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<17> (U5/Mcount_Cnt1_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<18> (U5/Mcount_Cnt1_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<19> (U5/Mcount_Cnt1_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<20> (U5/Mcount_Cnt1_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<21> (U5/Mcount_Cnt1_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<22> (U5/Mcount_Cnt1_cy<22>)
+     MUXCY:CI->O           0   0.059   0.000  U5/Mcount_Cnt1_cy<23> (U5/Mcount_Cnt1_cy<23>)
+     XORCY:CI->O           1   0.804   0.000  U5/Mcount_Cnt1_xor<24> (U5/Mcount_Cnt124)
+     FDC:D                     0.308          U5/Cnt1_24
     ----------------------------------------
     Total                      7.940ns (6.022ns logic, 1.918ns route)
                                        (75.8% logic, 24.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'U4/Clk1_D'
-  Clock period: 2.692ns (frequency: 371.471MHz)
-  Total number of paths / destination ports: 11 / 6
+Timing constraint: Default period analysis for Clock 'U5/Clk1_D'
+  Clock period: 5.923ns (frequency: 168.833MHz)
+  Total number of paths / destination ports: 184 / 13
 -------------------------------------------------------------------------
-Delay:               2.692ns (Levels of Logic = 1)
-  Source:            U3/DispCount_0 (FF)
-  Destination:       U3/DispCount_0 (FF)
-  Source Clock:      U4/Clk1_D rising
-  Destination Clock: U4/Clk1_D rising
+Delay:               5.923ns (Levels of Logic = 4)
+  Source:            U4/DispCount_0 (FF)
+  Destination:       U4/cat_1 (FF)
+  Source Clock:      U5/Clk1_D rising
+  Destination Clock: U5/Clk1_D rising
 
-  Data Path: U3/DispCount_0 to U3/DispCount_0
+  Data Path: U4/DispCount_0 to U4/cat_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.591   0.669  U3/DispCount_0 (U3/DispCount_0)
-     INV:I->O              1   0.704   0.420  U3/Mcount_DispCount_xor<0>11_INV_0 (U3/Mcount_DispCount)
-     FDC:D                     0.308          U3/DispCount_0
+     FDC:C->Q             14   0.591   1.000  U4/DispCount_0 (U4/DispCount_0)
+     MUXF5:S->O            1   0.739   0.499  U4/Mmux_DataN_41 (U4/Mmux_DataN_41)
+     LUT4:I1->O           10   0.704   1.057  U4/Mmux_DataN_2_f5_01 (U4/DataN<1>)
+     LUT4:I0->O            1   0.704   0.000  U4/CatInt<1>_G (N78)
+     MUXF5:I1->O           1   0.321   0.000  U4/CatInt<1> (U4/CatInt<1>)
+     FDC:D                     0.308          U4/cat_1
     ----------------------------------------
-    Total                      2.692ns (1.603ns logic, 1.089ns route)
-                                       (59.5% logic, 40.5% route)
+    Total                      5.923ns (3.367ns logic, 2.556ns route)
+                                       (56.8% logic, 43.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U0/Clk1_D1'
   Clock period: 6.765ns (frequency: 147.820MHz)
-  Total number of paths / destination ports: 930 / 127
+  Total number of paths / destination ports: 1158 / 143
 -------------------------------------------------------------------------
 Delay:               6.765ns (Levels of Logic = 4)
   Source:            U1/U3_preShape/Output_4 (FF)
-  Destination:       U1/U6_Shape/Output_0 (FF)
+  Destination:       U1/U7_Ampl/Output_0 (FF)
   Source Clock:      U0/Clk1_D1 rising
   Destination Clock: U0/Clk1_D1 rising
 
-  Data Path: U1/U3_preShape/Output_4 to U1/U6_Shape/Output_0
+  Data Path: U1/U3_preShape/Output_4 to U1/U7_Ampl/Output_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -680,7 +759,7 @@ Delay:               6.765ns (Levels of Logic = 4)
      LUT4:I3->O            1   0.704   0.595  U1/U2/AllEn141 (U1/U2/AllEn141)
      LUT2_L:I0->LO         1   0.704   0.104  U1/U2/AllEn142 (U1/U2/AllEn142)
      LUT4:I3->O           19   0.704   1.085  U1/U2/AllEn158 (Handshake_OBUF)
-     FDCE:CE                   0.555          U1/U8_Freq/Output_0
+     FDCE:CE                   0.555          U1/U6_Shape/Output_0
     ----------------------------------------
     Total                      6.765ns (3.962ns logic, 2.803ns route)
                                        (58.6% logic, 41.4% route)
@@ -728,22 +807,23 @@ Offset:              3.681ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'U0/Clk1_D1'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              1.973ns (Levels of Logic = 1)
-  Source:            SS (PAD)
-  Destination:       U1/U1/flag (FF)
+Offset:              2.685ns (Levels of Logic = 2)
+  Source:            BTN0 (PAD)
+  Destination:       U3/Deb0/State_FSM_FFd2 (FF)
   Destination Clock: U0/Clk1_D1 rising
 
-  Data Path: SS to U1/U1/flag
+  Data Path: BTN0 to U3/Deb0/State_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.218   0.447  SS_IBUF (SS_IBUF)
-     FD:D                      0.308          U1/U1/flag
+     IBUF:I->O             1   1.218   0.455  BTN0_IBUF (BTN0_IBUF)
+     LUT4:I2->O            1   0.704   0.000  U3/Deb0/State_FSM_FFd2-In1 (U3/Deb0/State_FSM_FFd2-In)
+     FDC:D                     0.308          U3/Deb0/State_FSM_FFd2
     ----------------------------------------
-    Total                      1.973ns (1.526ns logic, 0.447ns route)
-                                       (77.3% logic, 22.7% route)
+    Total                      2.685ns (2.230ns logic, 0.455ns route)
+                                       (83.1% logic, 16.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U0/Clk1_D1'
@@ -825,19 +905,19 @@ Offset:              8.603ns (Levels of Logic = 4)
                                        (69.5% logic, 30.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'U4/Clk1_D'
-  Total number of paths / destination ports: 6 / 6
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U5/Clk1_D'
+  Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
 Offset:              4.283ns (Levels of Logic = 1)
-  Source:            U3/an_3 (FF)
+  Source:            U4/an_3 (FF)
   Destination:       An<3> (PAD)
-  Source Clock:      U4/Clk1_D rising
+  Source Clock:      U5/Clk1_D rising
 
-  Data Path: U3/an_3 to An<3>
+  Data Path: U4/an_3 to An<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              1   0.591   0.420  U3/an_3 (U3/an_3)
+     FDC:C->Q              1   0.591   0.420  U4/an_3 (U4/an_3)
      OBUF:I->O                 3.272          An_3_OBUF (An<3>)
     ----------------------------------------
     Total                      4.283ns (3.863ns logic, 0.420ns route)
@@ -846,14 +926,14 @@ Offset:              4.283ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.72 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.83 secs
  
 --> 
 
-Total memory usage is 284668 kilobytes
+Total memory usage is 286076 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   22 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

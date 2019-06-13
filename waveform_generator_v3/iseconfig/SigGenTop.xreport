@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-06-12T10:58:11</DateModified>
+  <DateModified>2019-06-13T10:02:12</DateModified>
   <ModuleName>SigGenTop</ModuleName>
-  <SummaryTimeStamp>2019-06-12T10:48:15</SummaryTimeStamp>
+  <SummaryTimeStamp>2019-06-13T09:59:22</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/iseconfig/SigGenTop.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3\</ImplementationReportsDirectory>
   <DateInitialized>2019-06-12T10:01:12</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
