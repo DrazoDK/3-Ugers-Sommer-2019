@@ -15,8 +15,10 @@ volatile char Sample;
 volatile char flagADC;
 volatile int length;
 volatile char type;
-volatile char sample_rate;
-volatile char record_length;
+volatile unsigned char sample_rate;
+volatile unsigned char sample_rate2;
+volatile int sample_rate3;
+volatile int record_length;
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -101,8 +103,10 @@ int main(void)
 		
 		case 2:
 		sendStrXY("Oscilloscope",5,0);
-		
-		
+		//init_timer1(sample_rate);
+		sample_rate3 = (sample_rate << 8) | sample_rate2;
+		sprintf(sprint,"%d     ",sample_rate3);
+		sendStrXY(sprint,6,0);
 		break;
 		
 		case 3:
@@ -122,10 +126,10 @@ ISR(ADC_vect){
 
 }
 ISR(USART1_RX_vect){
-	
 	static int i=0;
 	static char buffer[4];
 	static int cnt = 0;
+	static int max_len;
 	char data_array[length-3];
 	switch(i) {
 		
@@ -156,7 +160,6 @@ ISR(USART1_RX_vect){
 		buffer[i]=UDR1;
 		char len2 = buffer[i];			
 		length = (len1 << 8) | len2;
-		length = length - 4;
 		i++;
 		break;
 		
@@ -167,9 +170,18 @@ ISR(USART1_RX_vect){
 		
 		case 5:
 		data_array[cnt]=UDR1;
+		putchUSART0(data_array[cnt]);
 		cnt++;
-		if(cnt > length-3){
-			
+		if(cnt >= length-5){
+			if(data_array[cnt] == 0x00 && data_array[cnt-1] == 0x00){
+				if((type = 1)){
+					
+				}
+				if((type = 2)){
+					sample_rate = data_array[0];
+					sample_rate2 = data_array[1];
+				}
+			}
 			i = 0;
 			cnt = 0;
 		}

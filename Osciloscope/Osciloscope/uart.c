@@ -68,3 +68,10 @@ void putsUSART1(char *ptr){
 		ptr++;
 	}
 }
+
+void putsUSART0(char *ptr){
+	while(*ptr){
+		putchUSART0(*ptr);
+		ptr++;
+	}
+}
