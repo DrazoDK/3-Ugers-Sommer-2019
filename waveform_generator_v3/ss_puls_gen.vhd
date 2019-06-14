@@ -10,26 +10,25 @@ entity ss_puls_gen is
 end ss_puls_gen;
 
 architecture Behavioral of ss_puls_gen is
-signal flag, syncout :STD_LOGIC; 
+signal  syncout, flag :STD_LOGIC;  --flag, 
 begin
 
-Process (clk, ss)
+process (clk, ss)
 begin 
-	if (clk'event and clk='1') then	 
-		flag <= ss; 
+	if (clk'event and clk='1') then
+		flag <= ss;
 	end if; 
+				
+end process; 
 
-end process;
-
-process(clk, flag)
-begin
-	if (clk'event and clk = '1')  then 
-		syncout <= flag; 
+process (clk, flag)
+begin 
+	if clk'event and clk = '1' then 
+			syncout <= flag;
 	end if; 
+end process; 	
 		
-end process;
-
 puls <= not(syncout or not flag); 
 
-end Behavioral;
 
+end Behavioral;

@@ -1,0 +1,13 @@
+[Inputs]
+Clk
+Sck
+Reset
+Mosi
+SS
+[Outputs]
+Run
+Hndshk
+=Shape[1:0]=
+=Ampl[7:0]=
+=Freq[7:0]=
+[BiDir]

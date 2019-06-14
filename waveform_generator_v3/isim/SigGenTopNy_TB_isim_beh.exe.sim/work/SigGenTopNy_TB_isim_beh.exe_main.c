@@ -38,6 +38,7 @@ int main(int argc, char **argv)
     work_a_3909560373_3212880686_init();
     work_a_3481994754_3212880686_init();
     work_a_1621522570_3212880686_init();
+    work_a_3659665374_3212880686_init();
     work_a_1449061607_3212880686_init();
     std_textio_init();
     ieee_p_3564397177_init();
@@ -47,6 +48,8 @@ int main(int argc, char **argv)
     xilinxcorelib_a_2005576406_3212880686_init();
     work_a_2186922994_1482076668_init();
     work_a_0720361590_3212880686_init();
+    work_a_1421884221_3212880686_init();
+    work_a_1713328595_3212880686_init();
     work_a_3958530957_3366848769_init();
     work_a_3455286857_3212880686_init();
     work_a_3007700224_2372691052_init();

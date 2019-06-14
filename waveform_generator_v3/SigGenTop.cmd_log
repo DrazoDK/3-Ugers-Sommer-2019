@@ -67,3 +67,55 @@ map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenT
 par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
 bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+vhdtdtfi -lib work Tilstandsmaskine.vhd -lib work ss_puls_gen.vhd -lib work Shift_Reg.vhd -lib work Reg_8bit.vhd -lib work Register_2bit.vhd -lib work ../3ugers.060619_VHDL_start/BTNdb.vhd -lib work SigGenDatapath.vhd -lib work SevenSeg5.vhd -lib work NY_Controler.vhd -lib work DivClk.vhd -lib work Disp_Drive.vhd -lib work SigGenTop.vhd -prj waveform_generator_v3 -o SigGenTop.spl -module SigGenTop -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 
+xst -intstyle ise -ifn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.xst" -ofn "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc SigGenTop.ucf -p xc3s100e-cp132-4 "SigGenTop.ngc" SigGenTop.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o SigGenTop_map.ncd SigGenTop.ngd SigGenTop.pcf 
+par -w -intstyle ise -ol high -t 1 SigGenTop_map.ncd SigGenTop.ncd SigGenTop.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SigGenTop.twx SigGenTop.ncd -o SigGenTop.twr SigGenTop.pcf -ucf SigGenTop.ucf 
+bitgen -intstyle ise -f SigGenTop.ut SigGenTop.ncd 

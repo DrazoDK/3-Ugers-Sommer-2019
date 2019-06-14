@@ -12,31 +12,4 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 at 0 ps, Instance /siggentopny_tb/uut/U2/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-# run 10000ns
-# restart
-# run 10000ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
-# run 10000ns
+# run 3000ns

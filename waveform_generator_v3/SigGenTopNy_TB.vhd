@@ -41,6 +41,7 @@ ARCHITECTURE behavior OF SigGenTopNy_TB IS
  
     COMPONENT SigGenTop
     PORT(
+			btn0 : IN  std_logic;
          BTN3 : IN  std_logic;
          Clk : IN  std_logic;
          Sck : IN  std_logic;
@@ -56,7 +57,7 @@ ARCHITECTURE behavior OF SigGenTopNy_TB IS
     
 
    --Inputs
-   signal BTN3 : std_logic := '0';
+   signal BTN3, btn0 : std_logic := '0';
    signal Clk : std_logic := '0';
    signal Sck : std_logic := '0';
    signal Mosi : std_logic := '0';
@@ -79,6 +80,7 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: SigGenTop PORT MAP (
           BTN3 => BTN3,
+			 btn0 => btn0,
           Clk => Clk,
           Sck => Sck,
           Mosi => Mosi,
@@ -103,7 +105,10 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
- 	
+		btn0<='1';
+	    wait for CLK_period*1;
+		btn0 <='0';
+		
 		btn3 <= '1'; 
       wait for CLK_period*10;
 		Btn3 <= '0'; 

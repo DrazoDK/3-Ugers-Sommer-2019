@@ -17,10 +17,10 @@ NET "Handshake" LOC = "J3" ;
 
 NET "PWMOut"    LOC = "B5"  ;
 
-NET "An<0>"  LOC = "K14"  ; 
-NET "An<1>"  LOC = "M13"  ; 
-NET "An<2>"  LOC = "J12"  ; 
-NET "An<3>"  LOC = "F12"  ; 
+NET "An<0>"  LOC = "F12"  ; 
+NET "An<1>"  LOC = "J12"  ;  
+NET "An<2>"  LOC = "M13"  ; 
+NET "An<3>"  LOC = "K14"  ; 
 
 NET "Cat<0>"  LOC = "L14"  ; 
 NET "Cat<1>"  LOC = "H12"  ; 

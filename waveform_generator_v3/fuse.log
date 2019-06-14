@@ -8,16 +8,19 @@ Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ss_puls_gen.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Shift_Reg.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Register_2bit.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/../3ugers.060619_VHDL_start/BTNdb.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 186028 KB
-Fuse CPU Usage: 1328 ms
+Fuse Memory Usage: 185220 KB
+Fuse CPU Usage: 1108 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -28,6 +31,7 @@ Compiling architecture behavioral of entity Shift_Reg [shift_reg_default]
 Compiling architecture behavioral of entity ss_puls_gen [ss_puls_gen_default]
 Compiling architecture behavioral of entity Tilstandsmaskine [tilstandsmaskine_default]
 Compiling architecture behavioral of entity Reg_8bit [reg_8bit_default]
+Compiling architecture behavioral of entity Register_2bit [register_2bit_default]
 Compiling architecture behavioral of entity NY_Controler [ny_controler_default]
 Compiling package textio
 Compiling package std_logic_textio
@@ -37,12 +41,14 @@ Compiling architecture mem_module_behavioral of entity BLK_MEM_GEN_V7_3_mem_modu
 Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3("blk_mem_gen_v...]
 Compiling architecture sinuslut_a of entity SinusLUT [sinuslut_default]
 Compiling architecture behavioral of entity SigGenDatapath [\SigGenDatapath(('0','0','0','0'...]
+Compiling architecture behavioral of entity BTNdb [btndb_default]
+Compiling architecture behavioral of entity Disp_Drive [disp_drive_default]
 Compiling architecture sevenseg_arch of entity SevenSeg5 [sevenseg5_default]
 Compiling architecture behavioral of entity SigGenTop [siggentop_default]
 Compiling architecture behavior of entity siggentopny_tb
 Time Resolution for simulation is 1ps.
-Waiting for 14 sub-compilation(s) to finish...
-Compiled 36 VHDL Units
+Waiting for 16 sub-compilation(s) to finish...
+Compiled 42 VHDL Units
 Built simulation executable C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB_isim_beh.exe
-Fuse Memory Usage: 211152 KB
-Fuse CPU Usage: 2062 ms
+Fuse Memory Usage: 210344 KB
+Fuse CPU Usage: 1827 ms
