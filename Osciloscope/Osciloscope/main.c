@@ -14,15 +14,18 @@
 volatile char Sample;
 volatile char flagADC;
 volatile int length;
-volatile char type;
+volatile char type = 0;
 volatile unsigned char sample_rate;
 volatile unsigned char sample_rate2;
 volatile int sample_rate3;
-volatile unsigned char record_length;
-volatile unsigned char record_length2;
+volatile unsigned int record_length;
+volatile unsigned int record_length2;
 volatile int record_length3;
 volatile char data_buffer[11];
-
+volatile char sample_flag = 1;
+volatile char adc_buffer1[1007];
+volatile char adc_buffer2[1007];
+volatile char adc_send_done = 0;
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
 
@@ -114,28 +117,23 @@ int main(void)
 		sendStrXY(sprint,7,0);
 		
 		if(record_length3 > 0){
-			int i = 0;
 			int j = 5;
-			char adc_buffer[record_length3];
 			//char adc_buffer2[record_length3];
 			char adc_send[record_length3 + 7];
-			while(i < record_length3){
-				adc_buffer[i] = Sample;
-				i++;
-			}
+			int totlen = record_length3+7;
+			char len2 = totlen;
+			char len1 = (totlen >> 8);
 			adc_send[0] = 0x55;
 			adc_send[1] = 0xAA;
-			adc_send[2] = 0x01;
-			adc_send[3] = 0x0B;
+			adc_send[2] = len1;
+			adc_send[3] = len2;
 			adc_send[4] = 0x02;
- 			while(j <= record_length3+4){
-			adc_send[j] = adc_buffer[j - 5];
-			j++;
-			}
+
 			char check = 0;
 			adc_send[record_length3 + 5] = check;
 			adc_send[record_length3 + 6] = check;
-			putsUSART1(adc_send);
+			putsUSART1(adc_send, record_length3+7);
+			putsUSART0(adc_send, record_length3+7);
 	}	
 		
 		break;
@@ -152,7 +150,28 @@ ISR(TIMER1_COMPA_vect){
 }
 
 ISR(ADC_vect){
+	static int i = 0;
 	Sample = ADCH;
+	if(sample_flag == 1){
+		adc_buffer1[i] = Sample;
+		if(i >= record_length3){
+			i = 0;
+			if(adc_send_done == 1){
+				sample_flag = 2;
+			}
+		}
+	}
+	if(sample_flag == 2){
+		adc_buffer2[i] = Sample;
+		if(i >= record_length3){
+			i = 0;
+			if(adc_send_done == 1){
+				sample_flag = 2;
+			}
+		}
+	}
+	
+	i++;
 	flagADC = 1;
 
 }

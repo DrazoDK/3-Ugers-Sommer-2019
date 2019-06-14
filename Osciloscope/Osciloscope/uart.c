@@ -62,16 +62,20 @@ void getsUSART1(unsigned char *ptr){
 	*ptr = '\0';
 }
 
-void putsUSART1(char *ptr){
-	while(*ptr){
+void putsUSART1(char *ptr, char length){
+	int i = 0;
+	while((i <= length)){
 		putchUSART1(*ptr);
 		ptr++;
+		i++;
 	}
 }
 
-void putsUSART0(char *ptr){
-	while(*ptr){
+void putsUSART0(char *ptr, char length){
+	int i = 0;
+	while((i <= length)){
 		putchUSART0(*ptr);
 		ptr++;
+		i++;
 	}
 }
