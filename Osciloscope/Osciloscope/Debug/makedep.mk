@@ -8,6 +8,8 @@ I2C.c
 
 main.c
 
+SPI.c
+
 ssd1306.c
 
 uart.c

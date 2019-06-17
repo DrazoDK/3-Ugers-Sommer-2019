@@ -15,6 +15,6 @@ char getchUSART1(void);
 void putchUSART1(char tx);
 void putchUSART0(char tx);
 void getsUSART1(unsigned char *ptr);
-void putsUSART1(char *ptr, char length);
-void putsUSART0(char *ptr, char length);
+void putsUSART1(char *ptr, int length);
+void putsUSART0(char *ptr, int length);
 #endif
