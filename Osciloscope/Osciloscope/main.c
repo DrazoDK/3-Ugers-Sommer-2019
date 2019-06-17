@@ -16,12 +16,19 @@
 volatile char Sample;
 volatile char flagADC;
 volatile int length;
-volatile char type;
+volatile char type = 0;
 volatile unsigned char sample_rate;
 volatile unsigned char sample_rate2;
 volatile int sample_rate3;
-volatile int record_length;
+volatile unsigned int record_length;
+volatile unsigned int record_length2;
+volatile int record_length3;
 volatile char data_buffer[11];
+
+volatile char sample_flag = 1;
+volatile char adc_buffer1[1000];
+volatile char adc_buffer2[1000];
+volatile char adc_send_done = 0;
 
 char BTN = 0;
 char SW = 0;
@@ -87,6 +94,35 @@ void init_timer1(unsigned int sps){
 		OCR1A = (F_CPU/(sps))-1;
 	}
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
+}
+
+void adc_packet_send(){
+	int j = 5;
+	char adc_send[record_length3 + 7];
+	int totlen = record_length3+7;
+	char len2 = totlen;
+	char len1 = (totlen >> 8);
+	adc_send[0] = 0x55;
+	adc_send[1] = 0xAA;
+	adc_send[2] = len1;
+	adc_send[3] = len2;
+	adc_send[4] = 0x02;
+	if(sample_flag == 1){
+		while(j <= record_length3+4){
+			adc_send[j] = adc_buffer1[j-5];
+			j++;
+		}
+	}
+	if(sample_flag == 2){
+		while(j <= record_length3+4){
+			adc_send[j] = adc_buffer2[j-5];
+			j++;
+		}
+	}
+	char check = 0;
+	adc_send[record_length3 + 5] = check;
+	adc_send[record_length3 + 6] = check;
+	putsUSART1(adc_send, record_length3+6);
 }
 
 void MCU_to_FPGA(char shape,char ampl, char freq)
@@ -194,12 +230,24 @@ int main(void)
 		
 		case 2:
 		sendStrXY("Oscilloscope",5,0);
+		
 		sample_rate = data_buffer[5];
 		sample_rate2 = data_buffer[6];
 		sample_rate3 = (sample_rate<<8)|sample_rate2;
+		
+		record_length = data_buffer[7];
+		record_length2 = data_buffer[8];
+		record_length3 = (record_length<<8)|record_length2;
+		
+		init_timer1(sample_rate3);
 		sprintf(sprint,"Sample rate: %d      ", sample_rate3);
 		sendStrXY(sprint,6,0);
-		init_timer1(sample_rate3);
+		sprintf(sprint,"RL: %d      ", record_length3);
+		sendStrXY(sprint,7,0);
+		
+		if(record_length3 > 0){
+			adc_packet_send();
+		}
 		
 		break;
 		
@@ -258,10 +306,27 @@ ISR(TIMER1_COMPA_vect){
 }
 
 ISR(ADC_vect){
+	static int i = 0;
 	Sample = ADCH;
-	flagADC = 1;
+	if(sample_flag == 1){
+		adc_buffer1[i] = Sample;
+		if(i >= record_length3-1){
+			i = -1;
+			sample_flag = 2;
+		}
+	}
+	if(sample_flag == 2){
+		adc_buffer2[i] = Sample;
 
+		if(i >= record_length3-1){
+			i = -1;
+			sample_flag = 1;
+		}
+	}
+	i++;
+	flagADC = 1;
 }
+
 ISR(USART1_RX_vect){
 	static int i;
 	static int max_len = 11;
