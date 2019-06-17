@@ -11,7 +11,7 @@
 #include "Labview.h"
 #include "I2C.h"
 #include "ssd1306.h"
-volatile char Sample;
+volatile int Sample;
 volatile char flagADC;
 volatile int length;
 volatile char type = 0;
@@ -23,8 +23,8 @@ volatile unsigned int record_length2;
 volatile int record_length3;
 volatile char data_buffer[11];
 volatile char sample_flag = 1;
-volatile char adc_buffer1[1007];
-volatile char adc_buffer2[1007];
+volatile char adc_buffer1[1000];
+volatile char adc_buffer2[1000];
 volatile char adc_send_done = 0;
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -73,6 +73,35 @@ void init_timer1(unsigned int sps){
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
 }
 
+void adc_packet_send(){
+	int j = 5;
+	char adc_send[record_length3 + 7];
+	int totlen = record_length3+7;
+	char len2 = totlen;
+	char len1 = (totlen >> 8);
+	adc_send[0] = 0x55;
+	adc_send[1] = 0xAA;
+	adc_send[2] = len1;
+	adc_send[3] = len2;
+	adc_send[4] = 0x02;
+	if(sample_flag == 1){
+		while(j <= record_length3+4){
+			adc_send[j] = adc_buffer1[j-5];
+			j++;
+		}
+	}
+	if(sample_flag == 2){
+		while(j <= record_length3+4){
+			adc_send[j] = adc_buffer2[j-5];
+			j++;
+		}
+	}
+	char check = 0;
+	adc_send[record_length3 + 5] = check;
+	adc_send[record_length3 + 6] = check;
+	putsUSART1(adc_send, record_length3+6);
+}
+
 int main(void)
 {
 	init_adc(0x00);
@@ -101,8 +130,8 @@ int main(void)
 		break;
 		
 		case 2:
-		
 		sendStrXY("Oscilloscope",5,0);
+		
 		sample_rate = data_buffer[5];
 		sample_rate2 = data_buffer[6];
 		sample_rate3 = (sample_rate<<8)|sample_rate2;
@@ -110,6 +139,7 @@ int main(void)
 		record_length = data_buffer[7];
 		record_length2 = data_buffer[8];
 		record_length3 = (record_length<<8)|record_length2;
+		
 		init_timer1(sample_rate3);
 		sprintf(sprint,"Sample rate: %d      ", sample_rate3);
 		sendStrXY(sprint,6,0);
@@ -117,24 +147,8 @@ int main(void)
 		sendStrXY(sprint,7,0);
 		
 		if(record_length3 > 0){
-			int j = 5;
-			//char adc_buffer2[record_length3];
-			char adc_send[record_length3 + 7];
-			int totlen = record_length3+7;
-			char len2 = totlen;
-			char len1 = (totlen >> 8);
-			adc_send[0] = 0x55;
-			adc_send[1] = 0xAA;
-			adc_send[2] = len1;
-			adc_send[3] = len2;
-			adc_send[4] = 0x02;
-
-			char check = 0;
-			adc_send[record_length3 + 5] = check;
-			adc_send[record_length3 + 6] = check;
-			putsUSART1(adc_send, record_length3+7);
-			putsUSART0(adc_send, record_length3+7);
-	}	
+			adc_packet_send();
+		}	
 		
 		break;
 		
@@ -154,27 +168,23 @@ ISR(ADC_vect){
 	Sample = ADCH;
 	if(sample_flag == 1){
 		adc_buffer1[i] = Sample;
-		if(i >= record_length3){
-			i = 0;
-			if(adc_send_done == 1){
-				sample_flag = 2;
-			}
+		if(i >= record_length3-1){
+			i = -1;
+			sample_flag = 2;
 		}
 	}
 	if(sample_flag == 2){
 		adc_buffer2[i] = Sample;
-		if(i >= record_length3){
-			i = 0;
-			if(adc_send_done == 1){
-				sample_flag = 2;
-			}
+
+		if(i >= record_length3-1){
+			i = -1;
+			sample_flag = 1;
 		}
 	}
-	
 	i++;
 	flagADC = 1;
-
 }
+
 ISR(USART1_RX_vect){
 	static int i;
 	static int max_len = 11;
