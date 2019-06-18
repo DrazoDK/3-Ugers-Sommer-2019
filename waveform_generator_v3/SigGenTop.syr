@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: SigGenTop.prj
 
@@ -115,6 +115,8 @@ Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/
 Architecture behavioral of Entity shift_reg is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ss_puls_gen.vhd" in Library work.
 Architecture behavioral of Entity ss_puls_gen is up to date.
+Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/p_s_reg.vhd" in Library work.
+Architecture behavioral of Entity piso_reg is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Tilstandsmaskine.vhd" in Library work.
 Architecture behavioral of Entity tilstandsmaskine is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Reg_8bit.vhd" in Library work.
@@ -154,6 +156,8 @@ Analyzing hierarchy for entity <Shift_Reg> in library <work> (architecture <beha
 
 Analyzing hierarchy for entity <ss_puls_gen> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <piso_reg> in library <work> (architecture <behavioral>).
+
 Analyzing hierarchy for entity <Tilstandsmaskine> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <Reg_8bit> in library <work> (architecture <behavioral>).
@@ -181,6 +185,9 @@ Entity <Shift_Reg> analyzed. Unit <Shift_Reg> generated.
 Analyzing Entity <ss_puls_gen> in library <work> (Architecture <behavioral>).
 Entity <ss_puls_gen> analyzed. Unit <ss_puls_gen> generated.
 
+Analyzing Entity <piso_reg> in library <work> (Architecture <behavioral>).
+Entity <piso_reg> analyzed. Unit <piso_reg> generated.
+
 Analyzing Entity <Tilstandsmaskine> in library <work> (Architecture <behavioral>).
 Entity <Tilstandsmaskine> analyzed. Unit <Tilstandsmaskine> generated.
 
@@ -192,7 +199,7 @@ Entity <Register_2bit> analyzed. Unit <Register_2bit> generated.
 
 Analyzing generic Entity <SigGenDatapath> in library <work> (Architecture <Behavioral>).
 	PWMinc = "0000001"
-WARNING:Xst:2211 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" line 61: Instantiating black box module <SinusLUT>.
+WARNING:Xst:2211 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" line 64: Instantiating black box module <SinusLUT>.
 Entity <SigGenDatapath> analyzed. Unit <SigGenDatapath> generated.
 
 Analyzing Entity <Disp_Drive> in library <work> (Architecture <Behavioral>).
@@ -259,6 +266,24 @@ Synthesizing Unit <ss_puls_gen>.
     Summary:
 	inferred   2 D-type flip-flop(s).
 Unit <ss_puls_gen> synthesized.
+
+
+Synthesizing Unit <piso_reg>.
+    Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/p_s_reg.vhd".
+    Found 1-bit register for signal <MOSI>.
+    Found 8-bit register for signal <ChkSum>.
+    Found 1-bit xor3 for signal <ChkSum$xor0000> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0002> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0005> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0007> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0008> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0009> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0010> created at line 28.
+    Found 1-bit xor3 for signal <ChkSum$xor0011> created at line 28.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+	inferred   8 Xor(s).
+Unit <piso_reg> synthesized.
 
 
 Synthesizing Unit <Tilstandsmaskine>.
@@ -341,23 +366,26 @@ Unit <NY_Controler> synthesized.
 
 Synthesizing Unit <SigGenDatapath>.
     Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd".
-    Found 16-bit adder for signal <MulC$addsub0000> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0001> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0002> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0003> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0004> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0005> created at line 97.
-    Found 16-bit adder for signal <MulC$addsub0006> created at line 97.
-    Found 7-bit comparator lessequal for signal <PWM$cmp_le0000> created at line 107.
-    Found 8-bit adder for signal <PWMcntvar$addsub0000> created at line 68.
-    Found 8-bit comparator greater for signal <PWMcntvar$cmp_gt0000> created at line 69.
-    Found 8-bit register for signal <PWMcntvar$mux0001> created at line 66.
+    Found 16-bit adder for signal <MulC$addsub0000> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0001> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0002> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0003> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0004> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0005> created at line 119.
+    Found 16-bit adder for signal <MulC$addsub0006> created at line 119.
+    Found 7-bit comparator lessequal for signal <PWM$cmp_le0000> created at line 129.
+    Found 8-bit adder for signal <PWMcntvar$addsub0000> created at line 71.
+    Found 8-bit comparator greater for signal <PWMcntvar$cmp_gt0000> created at line 72.
+    Found 8-bit register for signal <PWMcntvar$mux0001> created at line 69.
+    Found 1-bit register for signal <PWMwrap>.
+    Found 2-bit up counter for signal <PWMwrapCount>.
     Found 8-bit 4-to-1 multiplexer for signal <Sig>.
     Found 12-bit up accumulator for signal <SigCnt>.
-    Found 12-bit comparator less for signal <SigSquare$cmp_lt0000> created at line 78.
+    Found 12-bit comparator less for signal <SigSquare$cmp_lt0000> created at line 100.
     Summary:
+	inferred   1 Counter(s).
 	inferred   1 Accumulator(s).
-	inferred   8 D-type flip-flop(s).
+	inferred   9 D-type flip-flop(s).
 	inferred   8 Adder/Subtractor(s).
 	inferred   3 Comparator(s).
 	inferred   8 Multiplexer(s).
@@ -400,14 +428,14 @@ Macro Statistics
  16-bit adder                                          : 7
  32-bit adder                                          : 4
  8-bit adder                                           : 1
-# Counters                                             : 4
+# Counters                                             : 5
  12-bit up counter                                     : 1
- 2-bit up counter                                      : 1
+ 2-bit up counter                                      : 2
  25-bit up counter                                     : 2
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
-# Registers                                            : 14
- 1-bit register                                        : 4
+# Registers                                            : 24
+ 1-bit register                                        : 14
  2-bit register                                        : 1
  4-bit register                                        : 1
  8-bit register                                        : 8
@@ -423,8 +451,8 @@ Macro Statistics
  8-bit 4-to-1 multiplexer                              : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
-# Xors                                                 : 8
- 1-bit xor3                                            : 8
+# Xors                                                 : 16
+ 1-bit xor3                                            : 16
 
 =========================================================================
 
@@ -453,7 +481,7 @@ Optimizing FSM <U3/Deb0/State/FSM> on signal <State[1:2]> with user encoding.
  wbtndown | 11
 ----------------------
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <U1/U2/State/FSM> on signal <State[1:5]> with one-hot encoding.
+Optimizing FSM <U1/U3_tilstand/State/FSM> on signal <State[1:5]> with one-hot encoding.
 ---------------------
  State   | Encoding
 ---------------------
@@ -477,14 +505,14 @@ Macro Statistics
  16-bit adder                                          : 7
  32-bit adder                                          : 4
  8-bit adder                                           : 1
-# Counters                                             : 4
+# Counters                                             : 5
  12-bit up counter                                     : 1
- 2-bit up counter                                      : 1
+ 2-bit up counter                                      : 2
  25-bit up counter                                     : 2
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
-# Registers                                            : 74
- Flip-Flops                                            : 74
+# Registers                                            : 84
+ Flip-Flops                                            : 84
 # Comparators                                          : 6
  12-bit comparator less                                : 1
  32-bit comparator equal                               : 2
@@ -497,8 +525,8 @@ Macro Statistics
  8-bit 4-to-1 multiplexer                              : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
-# Xors                                                 : 8
- 1-bit xor3                                            : 8
+# Xors                                                 : 16
+ 1-bit xor3                                            : 16
 
 =========================================================================
 
@@ -512,6 +540,8 @@ Optimizing unit <SevenSeg5> ...
 
 Optimizing unit <Shift_Reg> ...
 
+Optimizing unit <piso_reg> ...
+
 Optimizing unit <Tilstandsmaskine> ...
 
 Optimizing unit <Reg_8bit> ...
@@ -524,7 +554,7 @@ Optimizing unit <Disp_Drive> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SigGenTop, actual ratio is 19.
+Found area constraint ratio of 100 (+ 5) on block SigGenTop, actual ratio is 20.
 
 Final Macro Processing ...
 
@@ -532,8 +562,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 159
- Flip-Flops                                            : 159
+# Registers                                            : 171
+ Flip-Flops                                            : 171
 
 =========================================================================
 
@@ -562,27 +592,27 @@ Design Statistics
 # IOs                              : 21
 
 Cell Usage :
-# BELS                             : 610
+# BELS                             : 629
 #      GND                         : 2
-#      INV                         : 7
+#      INV                         : 9
 #      LUT1                        : 5
-#      LUT2                        : 52
-#      LUT2_L                      : 1
-#      LUT3                        : 121
-#      LUT3_D                      : 1
+#      LUT2                        : 54
+#      LUT3                        : 123
 #      LUT3_L                      : 3
-#      LUT4                        : 111
+#      LUT4                        : 127
 #      LUT4_D                      : 1
-#      LUT4_L                      : 1
 #      MULT_AND                    : 9
 #      MUXCY                       : 146
 #      MUXF5                       : 20
 #      VCC                         : 2
 #      XORCY                       : 128
-# FlipFlops/Latches                : 159
+# FlipFlops/Latches                : 171
 #      FD                          : 2
-#      FDC                         : 73
+#      FDC                         : 75
 #      FDCE                        : 80
+#      FDCP_1                      : 8
+#      FDE                         : 1
+#      FDE_1                       : 1
 #      FDP                         : 3
 #      FDPE                        : 1
 # RAMS                             : 2
@@ -600,9 +630,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-4 
 
- Number of Slices:                      166  out of    960    17%  
- Number of Slice Flip Flops:            158  out of   1920     8%  
- Number of 4 input LUTs:                303  out of   1920    15%  
+ Number of Slices:                      176  out of    960    18%  
+ Number of Slice Flip Flops:            170  out of   1920     8%  
+ Number of 4 input LUTs:                322  out of   1920    16%  
  Number of IOs:                          21
  Number of bonded IOBs:                  21  out of     83    25%  
     IOB Flip Flops:                       1
@@ -630,28 +660,44 @@ Clock Information:
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                                           | Load  |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
-Clk                                | BUFGP                                                                                                                           | 52    |
+Clk                                | BUFGP                                                                                                                           | 77    |
 U5/Clk1_D                          | NONE(U4/DispCount_1)                                                                                                            | 14    |
-U0/Clk1_D1                         | BUFG                                                                                                                            | 87    |
 U2/SinusDec/N1                     | NONE(U2/SinusDec/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram)| 2     |
-Sck                                | BUFGP                                                                                                                           | 8     |
+U0/Clk1_D1                         | BUFG                                                                                                                            | 65    |
+Sck                                | BUFGP                                                                                                                           | 17    |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+------------------------+-------+
-Control Signal                     | Buffer(FF name)        | Load  |
------------------------------------+------------------------+-------+
-BTN3                               | IBUF                   | 157   |
------------------------------------+------------------------+-------+
+-----------------------------------------------------------+--------------------------+-------+
+Control Signal                                             | Buffer(FF name)          | Load  |
+-----------------------------------------------------------+--------------------------+-------+
+BTN3                                                       | IBUF                     | 159   |
+U1/U2_PISO/ChkSum_0_and0000(U1/U2_PISO/ChkSum_0_and00001:O)| NONE(U1/U2_PISO/ChkSum_0)| 1     |
+U1/U2_PISO/ChkSum_0_and0001(U1/U2_PISO/ChkSum_0_and00011:O)| NONE(U1/U2_PISO/ChkSum_0)| 1     |
+U1/U2_PISO/ChkSum_1_and0000(U1/U2_PISO/ChkSum_1_and00001:O)| NONE(U1/U2_PISO/ChkSum_1)| 1     |
+U1/U2_PISO/ChkSum_1_and0001(U1/U2_PISO/ChkSum_1_and00011:O)| NONE(U1/U2_PISO/ChkSum_1)| 1     |
+U1/U2_PISO/ChkSum_2_and0000(U1/U2_PISO/ChkSum_2_and00001:O)| NONE(U1/U2_PISO/ChkSum_2)| 1     |
+U1/U2_PISO/ChkSum_2_and0001(U1/U2_PISO/ChkSum_2_and00011:O)| NONE(U1/U2_PISO/ChkSum_2)| 1     |
+U1/U2_PISO/ChkSum_3_and0000(U1/U2_PISO/ChkSum_3_and00001:O)| NONE(U1/U2_PISO/ChkSum_3)| 1     |
+U1/U2_PISO/ChkSum_3_and0001(U1/U2_PISO/ChkSum_3_and00011:O)| NONE(U1/U2_PISO/ChkSum_3)| 1     |
+U1/U2_PISO/ChkSum_4_and0000(U1/U2_PISO/ChkSum_4_and00001:O)| NONE(U1/U2_PISO/ChkSum_4)| 1     |
+U1/U2_PISO/ChkSum_4_and0001(U1/U2_PISO/ChkSum_4_and00011:O)| NONE(U1/U2_PISO/ChkSum_4)| 1     |
+U1/U2_PISO/ChkSum_5_and0000(U1/U2_PISO/ChkSum_5_and00001:O)| NONE(U1/U2_PISO/ChkSum_5)| 1     |
+U1/U2_PISO/ChkSum_5_and0001(U1/U2_PISO/ChkSum_5_and00011:O)| NONE(U1/U2_PISO/ChkSum_5)| 1     |
+U1/U2_PISO/ChkSum_6_and0000(U1/U2_PISO/ChkSum_6_and00001:O)| NONE(U1/U2_PISO/ChkSum_6)| 1     |
+U1/U2_PISO/ChkSum_6_and0001(U1/U2_PISO/ChkSum_6_and00011:O)| NONE(U1/U2_PISO/ChkSum_6)| 1     |
+U1/U2_PISO/ChkSum_7_and0000(U1/U2_PISO/ChkSum_7_and00001:O)| NONE(U1/U2_PISO/ChkSum_7)| 1     |
+U1/U2_PISO/ChkSum_7_and0001(U1/U2_PISO/ChkSum_7_and00011:O)| NONE(U1/U2_PISO/ChkSum_7)| 1     |
+-----------------------------------------------------------+--------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 7.940ns (Maximum Frequency: 125.950MHz)
-   Minimum input arrival time before clock: 3.681ns
+   Minimum period: 9.758ns (Maximum Frequency: 102.480MHz)
+   Minimum input arrival time before clock: 4.200ns
    Maximum output required time after clock: 39.006ns
    Maximum combinational path delay: No path found
 
@@ -661,10 +707,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk'
-  Clock period: 7.940ns (frequency: 125.950MHz)
-  Total number of paths / destination ports: 18202 / 54
+  Clock period: 8.080ns (frequency: 123.768MHz)
+  Total number of paths / destination ports: 18414 / 113
 -------------------------------------------------------------------------
-Delay:               7.940ns (Levels of Logic = 34)
+Delay:               8.080ns (Levels of Logic = 34)
   Source:            U5/Cnt1_5 (FF)
   Destination:       U5/Cnt1_24 (FF)
   Source Clock:      Clk rising
@@ -682,8 +728,8 @@ Delay:               7.940ns (Levels of Logic = 34)
      MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<3> (U5/Clear1_wg_cy<3>)
      MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<4> (U5/Clear1_wg_cy<4>)
      MUXCY:CI->O           1   0.059   0.000  U5/Clear1_wg_cy<5> (U5/Clear1_wg_cy<5>)
-     MUXCY:CI->O          27   0.331   1.296  U5/Clear1_wg_cy<6> (U5/Clear1)
-     LUT3:I2->O            1   0.704   0.000  U5/Mcount_Cnt1_lut<0> (U5/Mcount_Cnt1_lut<0>)
+     MUXCY:CI->O          27   0.331   1.436  U5/Clear1_wg_cy<6> (U5/Clear1)
+     LUT3:I0->O            1   0.704   0.000  U5/Mcount_Cnt1_lut<0> (U5/Mcount_Cnt1_lut<0>)
      MUXCY:S->O            1   0.464   0.000  U5/Mcount_Cnt1_cy<0> (U5/Mcount_Cnt1_cy<0>)
      MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<1> (U5/Mcount_Cnt1_cy<1>)
      MUXCY:CI->O           1   0.059   0.000  U5/Mcount_Cnt1_cy<2> (U5/Mcount_Cnt1_cy<2>)
@@ -711,8 +757,8 @@ Delay:               7.940ns (Levels of Logic = 34)
      XORCY:CI->O           1   0.804   0.000  U5/Mcount_Cnt1_xor<24> (U5/Mcount_Cnt124)
      FDC:D                     0.308          U5/Cnt1_24
     ----------------------------------------
-    Total                      7.940ns (6.022ns logic, 1.918ns route)
-                                       (75.8% logic, 24.2% route)
+    Total                      8.080ns (6.022ns logic, 2.058ns route)
+                                       (74.5% logic, 25.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U5/Clk1_D'
@@ -741,49 +787,71 @@ Delay:               5.923ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U0/Clk1_D1'
-  Clock period: 6.765ns (frequency: 147.820MHz)
-  Total number of paths / destination ports: 1158 / 143
+  Clock period: 6.404ns (frequency: 156.156MHz)
+  Total number of paths / destination ports: 821 / 87
 -------------------------------------------------------------------------
-Delay:               6.765ns (Levels of Logic = 4)
-  Source:            U1/U3_preShape/Output_4 (FF)
+Delay:               6.404ns (Levels of Logic = 3)
+  Source:            U1/U4_preAmpl/Output_2 (FF)
   Destination:       U1/U7_Ampl/Output_0 (FF)
   Source Clock:      U0/Clk1_D1 rising
   Destination Clock: U0/Clk1_D1 rising
 
-  Data Path: U1/U3_preShape/Output_4 to U1/U7_Ampl/Output_0
+  Data Path: U1/U4_preAmpl/Output_2 to U1/U7_Ampl/Output_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             1   0.591   0.595  U1/U3_preShape/Output_4 (U1/U3_preShape/Output_4)
-     LUT3:I0->O            1   0.704   0.424  U1/U2/Mxor_AllEn_xor0010_xo<0>1 (U1/U2/AllEn_xor0010)
-     LUT4:I3->O            1   0.704   0.595  U1/U2/AllEn141 (U1/U2/AllEn141)
-     LUT2_L:I0->LO         1   0.704   0.104  U1/U2/AllEn142 (U1/U2/AllEn142)
-     LUT4:I3->O           19   0.704   1.085  U1/U2/AllEn158 (Handshake_OBUF)
+     FDCE:C->Q             4   0.591   0.762  U1/U4_preAmpl/Output_2 (U1/U4_preAmpl/Output_2)
+     LUT3:I0->O            1   0.704   0.499  U1/U3_tilstand/Mxor_AllEn_xor0005_xo<0>1 (U1/U3_tilstand/AllEn_xor0005)
+     LUT4:I1->O            2   0.704   0.622  U1/U3_tilstand/AllEn26 (U1/U3_tilstand/AllEn26)
+     LUT4:I0->O           34   0.704   1.263  U1/U3_tilstand/AllEn158 (U1/AllEnSig)
      FDCE:CE                   0.555          U1/U6_Shape/Output_0
     ----------------------------------------
-    Total                      6.765ns (3.962ns logic, 2.803ns route)
-                                       (58.6% logic, 41.4% route)
+    Total                      6.404ns (3.258ns logic, 3.146ns route)
+                                       (50.9% logic, 49.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Sck'
-  Clock period: 1.568ns (frequency: 637.755MHz)
-  Total number of paths / destination ports: 7 / 7
+  Clock period: 9.758ns (frequency: 102.480MHz)
+  Total number of paths / destination ports: 23 / 16
 -------------------------------------------------------------------------
-Delay:               1.568ns (Levels of Logic = 0)
-  Source:            U1/U0/SW_sig_0 (FF)
-  Destination:       U1/U0/SW_sig_1 (FF)
+Delay:               4.879ns (Levels of Logic = 3)
+  Source:            U1/U0_Shift/SW_sig_3 (FF)
+  Destination:       U1/U2_PISO/MOSI (FF)
   Source Clock:      Sck rising
-  Destination Clock: Sck rising
+  Destination Clock: Sck falling
 
-  Data Path: U1/U0/SW_sig_0 to U1/U0/SW_sig_1
+  Data Path: U1/U0_Shift/SW_sig_3 to U1/U2_PISO/MOSI
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.591   0.669  U1/U0/SW_sig_0 (U1/U0/SW_sig_0)
-     FDCE:D                    0.308          U1/U0/SW_sig_1
+     FDCE:C->Q             6   0.591   0.673  U1/U0_Shift/SW_sig_3 (U1/U0_Shift/SW_sig_3)
+     LUT4:I3->O            1   0.704   0.424  U1/U3_tilstand/AllEn113 (U1/U3_tilstand/AllEn113)
+     LUT4_D:I3->LO         1   0.704   0.104  U1/U3_tilstand/AllEn130 (N83)
+     LUT4:I3->O            1   0.704   0.420  U1/U2_PISO/Loadin_inv1 (U1/U2_PISO/Loadin_inv)
+     FDE_1:CE                  0.555          U1/U2_PISO/MOSI
     ----------------------------------------
-    Total                      1.568ns (0.899ns logic, 0.669ns route)
-                                       (57.3% logic, 42.7% route)
+    Total                      4.879ns (3.258ns logic, 1.621ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.200ns (Levels of Logic = 2)
+  Source:            BTN3 (PAD)
+  Destination:       U2/PWMwrap (FF)
+  Destination Clock: Clk rising
+
+  Data Path: BTN3 to U2/PWMwrap
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           160   1.218   1.303  BTN3_IBUF (BTN3_IBUF)
+     INV:I->O              1   0.704   0.420  U2/Reset_inv1_INV_0 (U2/Reset_inv)
+     FDE:CE                    0.555          U2/PWMwrap
+    ----------------------------------------
+    Total                      4.200ns (2.477ns logic, 1.723ns route)
+                                       (59.0% logic, 41.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Sck'
@@ -791,16 +859,16 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'Sck'
 -------------------------------------------------------------------------
 Offset:              3.681ns (Levels of Logic = 2)
   Source:            SS (PAD)
-  Destination:       U1/U0/SW_sig_0 (FF)
+  Destination:       U1/U0_Shift/SW_sig_0 (FF)
   Destination Clock: Sck rising
 
-  Data Path: SS to U1/U0/SW_sig_0
+  Data Path: SS to U1/U0_Shift/SW_sig_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.218   0.447  SS_IBUF (SS_IBUF)
-     INV:I->O              8   0.704   0.757  U1/U0/SS_inv1_INV_0 (U1/U0/SS_inv)
-     FDCE:CE                   0.555          U1/U0/SW_sig_0
+     INV:I->O              8   0.704   0.757  U1/U0_Shift/SS_inv1_INV_0 (U1/U0_Shift/SS_inv)
+     FDCE:CE                   0.555          U1/U0_Shift/SW_sig_0
     ----------------------------------------
     Total                      3.681ns (2.477ns logic, 1.204ns route)
                                        (67.3% logic, 32.7% route)
@@ -826,13 +894,13 @@ Offset:              2.685ns (Levels of Logic = 2)
                                        (83.1% logic, 16.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'U0/Clk1_D1'
-  Total number of paths / destination ports: 1183772333 / 3
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 607470772 / 2
 -------------------------------------------------------------------------
 Offset:              39.006ns (Levels of Logic = 39)
   Source:            U2/SinusDec/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram (RAM)
   Destination:       PWMOut (PAD)
-  Source Clock:      U0/Clk1_D1 rising
+  Source Clock:      Clk rising
 
   Data Path: U2/SinusDec/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp4x4.ram to PWMOut
                                 Gate     Net
@@ -883,26 +951,80 @@ Offset:              39.006ns (Levels of Logic = 39)
                                        (73.2% logic, 26.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Sck'
-  Total number of paths / destination ports: 8 / 1
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U0/Clk1_D1'
+  Total number of paths / destination ports: 576301534 / 2
 -------------------------------------------------------------------------
-Offset:              8.603ns (Levels of Logic = 4)
-  Source:            U1/U0/SW_sig_3 (FF)
-  Destination:       Handshake (PAD)
-  Source Clock:      Sck rising
+Offset:              37.793ns (Levels of Logic = 39)
+  Source:            U1/U6_Shape/Output_0 (FF)
+  Destination:       PWMOut (PAD)
+  Source Clock:      U0/Clk1_D1 rising
 
-  Data Path: U1/U0/SW_sig_3 to Handshake
+  Data Path: U1/U6_Shape/Output_0 to PWMOut
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.591   0.844  U1/U0/SW_sig_3 (U1/U0/SW_sig_3)
-     LUT4:I0->O            1   0.704   0.595  U1/U2/AllEn141 (U1/U2/AllEn141)
-     LUT2_L:I0->LO         1   0.704   0.104  U1/U2/AllEn142 (U1/U2/AllEn142)
-     LUT4:I3->O           19   0.704   1.085  U1/U2/AllEn158 (Handshake_OBUF)
+     FDCE:C->Q            17   0.591   1.130  U1/U6_Shape/Output_0 (U1/U6_Shape/Output_0)
+     LUT4:I1->O            1   0.704   0.000  U2/Mmux_Sig61 (U2/Mmux_Sig6)
+     MUXF5:I1->O           9   0.321   0.820  U2/Mmux_Sig6_f5 (U2/MulC_mux0000<2>_mand)
+     MULT_AND:I1->LO       0   0.741   0.000  U2/MulC_mux0000<2>_mand (U2/MulC_mux0000<2>_mand1)
+     MUXCY:DI->O           1   0.888   0.000  U2/Madd_MulC_addsub0000_cy<2> (U2/Madd_MulC_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  U2/Madd_MulC_addsub0000_cy<3> (U2/Madd_MulC_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  U2/Madd_MulC_addsub0000_cy<4> (U2/Madd_MulC_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  U2/Madd_MulC_addsub0000_cy<5> (U2/Madd_MulC_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  U2/Madd_MulC_addsub0000_cy<6> (U2/Madd_MulC_addsub0000_cy<6>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0000_xor<7> (U2/MulC_addsub0000<7>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0001<7>1 (U2/MulC_mux0001<7>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0001_lut<7> (U2/Madd_MulC_addsub0001_lut<7>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0001_cy<7> (U2/Madd_MulC_addsub0001_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  U2/Madd_MulC_addsub0001_cy<8> (U2/Madd_MulC_addsub0001_cy<8>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0001_xor<9> (U2/MulC_addsub0001<9>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0002<9>1 (U2/MulC_mux0002<9>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0002_lut<9> (U2/Madd_MulC_addsub0002_lut<9>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0002_cy<9> (U2/Madd_MulC_addsub0002_cy<9>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0002_xor<10> (U2/MulC_addsub0002<10>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0003<10>1 (U2/MulC_mux0003<10>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0003_lut<10> (U2/Madd_MulC_addsub0003_lut<10>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0003_cy<10> (U2/Madd_MulC_addsub0003_cy<10>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0003_xor<11> (U2/MulC_addsub0003<11>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0004<11>1 (U2/MulC_mux0004<11>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0004_lut<11> (U2/Madd_MulC_addsub0004_lut<11>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0004_cy<11> (U2/Madd_MulC_addsub0004_cy<11>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0004_xor<12> (U2/MulC_addsub0004<12>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0005<12>1 (U2/MulC_mux0005<12>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0005_lut<12> (U2/Madd_MulC_addsub0005_lut<12>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0005_cy<12> (U2/Madd_MulC_addsub0005_cy<12>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0005_xor<13> (U2/MulC_addsub0005<13>)
+     LUT4:I1->O            3   0.704   0.706  U2/MulC_mux0006<13>1 (U2/MulC_mux0006<13>)
+     LUT2:I0->O            1   0.704   0.000  U2/Madd_MulC_addsub0006_lut<13> (U2/Madd_MulC_addsub0006_lut<13>)
+     MUXCY:S->O            1   0.464   0.000  U2/Madd_MulC_addsub0006_cy<13> (U2/Madd_MulC_addsub0006_cy<13>)
+     XORCY:CI->O           1   0.804   0.499  U2/Madd_MulC_addsub0006_xor<14> (U2/MulC_addsub0006<14>)
+     LUT4:I1->O            1   0.704   0.595  U2/MulC_mux0007<14>1 (U2/SigAmpl<5>)
+     LUT2:I0->O            1   0.704   0.000  U2/Mcompar_PWM_cmp_le0000_lut<5> (U2/Mcompar_PWM_cmp_le0000_lut<5>)
+     MUXCY:S->O            1   0.864   0.424  U2/Mcompar_PWM_cmp_le0000_cy<5> (U2/Mcompar_PWM_cmp_le0000_cy<5>)
+     LUT4:I3->O            2   0.704   0.447  U2/Mcompar_PWM_cmp_le0000_cy<6> (LD_OBUF)
+     OBUF:I->O                 3.272          PWMOut_OBUF (PWMOut)
+    ----------------------------------------
+    Total                     37.793ns (26.648ns logic, 11.145ns route)
+                                       (70.5% logic, 29.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Sck'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            U1/U2_PISO/MOSI (FF)
+  Destination:       Handshake (PAD)
+  Source Clock:      Sck falling
+
+  Data Path: U1/U2_PISO/MOSI to Handshake
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            1   0.591   0.420  U1/U2_PISO/MOSI (U1/U2_PISO/MOSI)
      OBUF:I->O                 3.272          Handshake_OBUF (Handshake)
     ----------------------------------------
-    Total                      8.603ns (5.975ns logic, 2.628ns route)
-                                       (69.5% logic, 30.5% route)
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U5/Clk1_D'
@@ -927,11 +1049,11 @@ Offset:              4.283ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.36 secs
+Total CPU time to Xst completion: 8.85 secs
  
 --> 
 
-Total memory usage is 286460 kilobytes
+Total memory usage is 286524 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

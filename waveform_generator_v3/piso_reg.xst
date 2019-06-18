@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/xst"
+elaborate
+-ifn piso_reg.prj
+-ifmt mixed

@@ -19,6 +19,7 @@ end NY_Controler;
 architecture Behavioral of NY_Controler is
 signal SS_pulsSig :STD_logic;
 signal SEnSig, AEnSig, FEnSig, AllEnSig :STD_logic;
+signal SckSig: STD_LOGIC;
 
 signal SWSig 	 	:STD_logic_vector(7 downto 0);
 signal PreShape 	:STD_logic_vector(7 downto 0);
@@ -79,18 +80,31 @@ component Register_2bit is
            Output  : out  STD_LOGIC_VECTOR(1 DOWNTO 0));
 end component;
 
+component piso_reg is
+    Port ( Clk    : in  STD_LOGIC;
+           Loadin : in  STD_LOGIC;
+           
+			  Shape  : in  STD_LOGIC_VECTOR(7 downto 0);
+			  Ampl   : in  STD_LOGIC_VECTOR(7 downto 0);
+			  Freq   : in  STD_LOGIC_VECTOR(7 downto 0);
+			  
+           MOSI : out  STD_LOGIC:= '0');
+end component; 
 
 begin
 
-U0: Shift_Reg port map   ( Reset => Reset, Sck => Sck, ss => ss, MOSI => MOSI, SW => SWSig);
-U1: ss_puls_gen port map (Clk => Clk, SS => SS, puls => SS_pulsSig); 
-
-Hndshk <= AllEnSig;
+SckSig <= Sck;
+		-------------------------------------
+		-----Shift Reg og puls generator-----
+		-------------------------------------
+U0_Shift: Shift_Reg port map   ( Reset => Reset, Sck => SckSig, ss => ss, MOSI => MOSI, SW => SWSig);
+U1_Puls : ss_puls_gen port map (Clk => Clk, SS => SS, puls => SS_pulsSig); 
+U2_PISO: piso_Reg port map (Clk => SckSig, Loadin => AllenSig,  Shape => preShape, Ampl => PreAmpl, Freq => PreFreq, MOSI => Hndshk);
 
 		--------------------------
 		-----Tilstandsmaskine-----
 		--------------------------
-U2: tilstandsmaskine port map ( Clk => Clk, Reset => Reset, SS_puls => SS_pulsSig, SW => SWSig, 				 
+U3_tilstand: tilstandsmaskine port map ( Clk => Clk, Reset => Reset, SS_puls => SS_pulsSig, SW => SWSig, 				 
  --disse er til at regne CheckSum 
 Shape => PreShape, Ampl => PreAmpl, Freq => PreFreq,			 
  --Output af tilstandsmaskinen  

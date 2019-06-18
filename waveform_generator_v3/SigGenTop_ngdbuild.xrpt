@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Fri Jun 14 09:17:52 2019">
+  <application stringID="NgdBuild" timeStamp="Mon Jun 17 16:20:33 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.6\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.6\ISE_DS\ISE\\bin\nt;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\TDM-GCC-64\bin;C:\Program Files\Agilent\IO Libraries Suite\bin;C:\Program Files\IVI Foundation\VISA\Win64\agvisa;C:\Program Files\IVI Foundation\VISA\Win64\bin;C:\Program Files (x86)\Agilent\IO Libraries Suite\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\agvisa;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files\MATLAB\R2018b\bin;%CDSROOT%\tools\pcb\bin;%CDSROOT%\tools\bin;%CDSROOT%\tools\libutil\bin;%CDSROOT%\tools\fet\bin;%CDSROOT%\tools\specctra\bin;%CDSROOT%\tools\pspice;%CDSROOT%\tools\capture;%CDSROOT%\openaccess\bin\win32\opt;C:\Cadence\GS\bin;C:\Users\Bruger\AppData\Local\Microsoft\WindowsApps;C:\Program Files\CMake\bin;C:\Users\Bruger\AppData\Local\Programs\Microsoft VS Code\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.6\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.6\ISE_DS\ISE\\bin\nt;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\TDM-GCC-64\bin;C:\Program Files\Agilent\IO Libraries Suite\bin;C:\Program Files\IVI Foundation\VISA\Win64\agvisa;C:\Program Files\IVI Foundation\VISA\Win64\bin;C:\Program Files (x86)\Agilent\IO Libraries Suite\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\agvisa;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\bin;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files\MATLAB\R2018b\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;%CDSROOT%\tools\pcb\bin;%CDSROOT%\tools\bin;%CDSROOT%\tools\libutil\bin;%CDSROOT%\tools\fet\bin;%CDSROOT%\tools\specctra\bin;%CDSROOT%\tools\pspice;%CDSROOT%\tools\capture;%CDSROOT%\openaccess\bin\win32\opt;C:\Cadence\GS\bin;C:\Users\Bruger\AppData\Local\Microsoft\WindowsApps;C:\Program Files\CMake\bin;C:\Users\Bruger\AppData\Local\Programs\Microsoft VS Code\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -58,22 +58,22 @@
         <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_BUFGP" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FD" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="73"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="75"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="80"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCP_1" value="8"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="1"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE_1" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDP" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDPE" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="4"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="5"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="52"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="121"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="1"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="54"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="123"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="3"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="111"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="127"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MULT_AND" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="146"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="20"/>
@@ -85,23 +85,23 @@
       <section stringID="NGDBUILD_POST_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FD" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="73"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="75"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="80"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCP_1" value="8"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="1"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE_1" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDP" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDPE" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="4"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFG" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="5"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="52"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="121"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="1"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="54"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="123"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="3"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="111"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="127"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MULT_AND" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="146"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="20"/>

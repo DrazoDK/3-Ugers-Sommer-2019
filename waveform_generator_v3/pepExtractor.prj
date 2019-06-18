@@ -1,6 +1,2 @@
-work	"NY_Controler.vhd"
-work	"Reg_8bit.vhd"
-work	"Register_2bit.vhd"
-work	"Shift_Reg.vhd"
-work	"Tilstandsmaskine.vhd"
-work	"ss_puls_gen.vhd"
+work	"SigGenDatapath.vhd"
+work	"ipcore_dir/SinusLUT.vhd"

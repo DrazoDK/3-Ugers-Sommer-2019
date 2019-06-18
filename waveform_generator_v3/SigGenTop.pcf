@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.68d on Fri Jun 14 09:17:58 2019
+// Written by: Map P.68d on Mon Jun 17 16:20:38 2019
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -16,7 +16,7 @@ COMP "An<0>" LOCATE = SITE "F12" LEVEL 1;
 COMP "An<1>" LOCATE = SITE "J12" LEVEL 1;
 COMP "An<2>" LOCATE = SITE "M13" LEVEL 1;
 COMP "An<3>" LOCATE = SITE "K14" LEVEL 1;
-COMP "Handshake" LOCATE = SITE "J3" LEVEL 1;
+COMP "Handshake" LOCATE = SITE "B9" LEVEL 1;
 COMP "Cat<0>" LOCATE = SITE "L14" LEVEL 1;
 COMP "Cat<1>" LOCATE = SITE "H12" LEVEL 1;
 COMP "Cat<2>" LOCATE = SITE "N14" LEVEL 1;

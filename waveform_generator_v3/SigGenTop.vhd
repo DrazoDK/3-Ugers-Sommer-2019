@@ -29,16 +29,19 @@ signal Ampl, Freq: std_logic_vector(7 downto 0);
 signal Shape: std_logic_vector(1 downto 0);
 begin
 
+
 U0: entity WORK.DivClk 
     port map(Reset => BTN3, Clk => Clk, TimeP => 4, Clk1 => Mclk);
 
 U1: entity WORK.NY_controler
     port map(Reset => BTN3, Clk => Mclk, Sck => Sck, MOSI => MOSI, SS => SS,              --Sck => BTN0, BTN1 => BTN1, BTN2 => BTN2, SW => SW, 
-	 Hndshk => Handshake, Shape => Shape, Ampl => Ampl, Freq => Freq, Run => SigEN); 									--Disp => Disp, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN);
+	   Hndshk => Handshake, Shape => Shape, Ampl => Ampl, Freq => Freq, Run => SigEN);									--Disp => Disp, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN);
 	 																													
-
+-----------clk => Mclk
 U2: entity WORK.SigGenDataPath generic map (PWMinc => "0000001") 
-    port map(Reset => BTN3, Clk => Mclk, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN, PWMOut => PWMOut);
+    port map(Reset => BTN3, Clk => Clk, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN, PWMOut => PWMOut);
+-------------------------
+
 
 U3: entity WORK.Disp_drive
 	 port map(Reset => BTN3, Clk => Mclk, BTN0 => BTN0, Shape => Shape, Ampl => Ampl, Freq => Freq, Data => Disp);

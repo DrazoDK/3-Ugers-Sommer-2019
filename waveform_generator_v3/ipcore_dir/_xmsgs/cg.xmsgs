@@ -8,17 +8,5 @@
 <msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
-<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;SinusLUT&apos;...</arg>
-</msg>
-
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Overwriting existing file C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/ipcore_dir/tmp/_cg/SinusLUT/doc/blk_mem_gen_v7_3_vinfo.html with file from view xilinx_documentation</arg>
-</msg>
-
-<msg type="info" file="sim" num="949" delta="old" >Finished generation of ASY schematic symbol.
-</msg>
-
-<msg type="info" file="sim" num="948" delta="new" >Finished FLIST file generation.
-</msg>
-
 </messages>
 

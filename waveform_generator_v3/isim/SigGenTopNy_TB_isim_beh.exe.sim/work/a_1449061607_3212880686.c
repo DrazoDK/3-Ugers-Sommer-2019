@@ -36,20 +36,20 @@ static void work_a_1449061607_3212880686_p_0(char *t0)
     char *t7;
     char *t8;
 
-LAB0:    xsi_set_current_line(88, ng0);
+LAB0:    xsi_set_current_line(96, ng0);
 
-LAB3:    t1 = (t0 + 1880U);
+LAB3:    t1 = (t0 + 684U);
     t2 = *((char **)t1);
     t3 = *((unsigned char *)t2);
-    t1 = (t0 + 3148);
+    t1 = (t0 + 3240);
     t4 = (t1 + 32U);
     t5 = *((char **)t4);
     t6 = (t5 + 40U);
     t7 = *((char **)t6);
     *((unsigned char *)t7) = t3;
-    xsi_driver_first_trans_fast_port(t1);
+    xsi_driver_first_trans_fast(t1);
 
-LAB2:    t8 = (t0 + 3104);
+LAB2:    t8 = (t0 + 3196);
     *((int *)t8) = 1;
 
 LAB1:    return;

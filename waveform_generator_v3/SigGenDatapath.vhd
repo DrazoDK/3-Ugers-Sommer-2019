@@ -23,7 +23,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SigGenDatapath is
-  generic( PWMinc : std_logic_vector(6 downto 0) := "0010000" );
+  generic( PWMinc : std_logic_vector(6 downto 0) := "0000001" );
   Port ( Reset  : in std_logic;	
          Clk    : in std_logic;
          SigEN  : in std_logic;
@@ -40,6 +40,7 @@ signal Sig, SigSquare, SigSaw, SigSinus : std_logic_vector(7 downto 0);
 signal SigAmpl: std_logic_vector(6 downto 0); 
 signal PWMcnt: std_logic_vector(6 downto 0) := "0000000";
 signal PWM, PWMwrap : std_logic;
+signal PWMwrapCount : std_logic_vector(1 downto 0):= "00";
 
 begin
 
@@ -48,13 +49,15 @@ FreqDec: FreqCnt <= "00" & Freq(7 downto 6) & Freq(5 downto 4) & '0' & Freq(3 do
 FreqAdd: nSigCnt <= SigCnt + FreqCnt;
 
 
+
 SigReg: process (Reset, Clk)
 begin
-  if Reset = '1' then SigCnt <= X"000";
+  if Reset = '1' then 
+  SigCnt <= X"000";
   elsif Clk'event and Clk = '1' then
-    if PWMwrap = '1' then
+    if PWMwrap = '1' then 
       SigCnt <= nSigCnt;
-    end if;
+	 end if;
   end if;
 end process;
 
@@ -63,7 +66,7 @@ SinusDec : entity WORK.SinusLUT PORT MAP (clka => Clk, addra => SigCnt, douta =>
 PWMcount: process(Reset, Clk)
 variable PWMcntvar: std_logic_vector(7 downto 0);
 begin
-  if Reset = '1' then PWMcntvar := "00000000";
+  if  Reset = '1' then PWMcntvar := "00000000";
   elsif Clk'event and Clk = '1' then
     PWMcntvar := PWMcntvar + PWMinc;
 		if PWMcntvar > "10000000" then
@@ -73,7 +76,26 @@ begin
   PWMcnt <= PWMcntvar(6 downto 0);
 end process;     
 
-PWMdec: PWMwrap <= '1' when PWMcnt = "0000000" else '0';
+PWMdec: process (Reset, clk, PWMwrapCount)
+begin
+		if reset = '1' then 
+			PWMwrapCount <= "00"; 
+		elsif Clk'event and Clk = '1' then 
+			PWMwrapCount <= PWMwrapCount + 1 ; 
+			if PWMwrapCount = "11" then 
+				PWMwrap <= '1' ; 
+			else 
+				PWMwrap <= '0' ; 
+			end if; 
+		end if ;
+		
+end process; 
+
+
+--PWMdec: PWMwrap <= '1' when PWMcnt = "0000000" else '0';
+
+
+
 
 SquareDec: SigSquare <= "00000000" when SigCnt < X"800" else "11111111";
 

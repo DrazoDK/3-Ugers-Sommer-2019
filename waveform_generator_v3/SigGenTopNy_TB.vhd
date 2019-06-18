@@ -177,7 +177,7 @@ BEGIN
 		
 		
 		
-									------ x"5A" 
+									------Signal
 		
 		wait for CLK_period*5;
 		Sck <= '0'; 
@@ -252,7 +252,9 @@ BEGIN
 		wait for 200 ns; 
 		SS <= '0'; 
 		
-				--0101 1010
+			
+
+							--Ampl 0101 1010
 		MOSI<= '0';
 		wait for CLK_period*5;
 		Sck <= '1';
@@ -319,7 +321,7 @@ BEGIN
 		SS <= '0'; 
 									
 							
-									--0101 1010
+									--Freq 0101 1010
 		MOSI<= '0';
 		wait for CLK_period*5;
 		Sck <= '1';
@@ -385,7 +387,7 @@ BEGIN
 		SS <= '0'; 
 					
 					
-		--0101 0000
+						--ChkSum0101 0000
 		MOSI<= '0';
 		wait for CLK_period*5;
 		Sck <= '1';
@@ -446,6 +448,80 @@ BEGIN
 		wait for CLK_period*5; 
 		SS <= '1';  
 		wait for 100 ns;
+
+		wait for CLK_period*5;		
+		Sck <= '1';		 
+
+
+		wait for CLK_period*5;
+		Sck <= '0'; 
+		SS<= '1';
+		wait for 200 ns; 
+		SS <= '0'; 
+					
+					
+						--ChkSum0101 0000
+		MOSI<= '0';
+		wait for CLK_period*5;
+		Sck <= '1';
+	
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '0';	
+		
+		
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		
+		--
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '0';
+
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '0';	
+		
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '0';
+
+		wait for CLK_period*5;
+		Sck <= '1';
+		
+		wait for CLK_period*5;
+		Sck <= '0';
+		MOSI<= '0';	
+
+		wait for CLK_period*5;		
+		Sck <= '1';				
+		
+		wait for CLK_period*5; 
+		SS <= '1';  
+		wait for 100 ns;
+
 
       wait;
    end process;
