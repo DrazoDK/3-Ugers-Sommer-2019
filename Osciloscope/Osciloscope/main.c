@@ -56,19 +56,21 @@ void init_timer1(unsigned int sps){
 	TCCR1A = 0;
 	TCCR1B = 0;
 	TCNT1 = 0;
-	TCCR1B |=(1<<WGM12); //CTC mode
-	if ((sps<31)){
-		TCCR1B |=(1<<CS11)|(1<<CS10);
-		OCR1A = (F_CPU/(sps*64))-64;
-	}
-	else if ((sps<245)){
-		TCCR1B |=(1<<CS11);
-		OCR1A = (F_CPU/(sps*8))-8;
-	}
-	else{
-		TCCR1B |=(1<<CS10);
-		OCR1A = (F_CPU/(sps))-1;
-	}
+	TCCR1B |=(1<<WGM12)|(1<<CS11)|(1<<CS10); //CTC mode
+	
+	OCR1A = (unsigned int)25*(10000/((float)sps))-1;
+// 	if ((sps<31)){
+// 		TCCR1B |=(1<<CS11)|(1<<CS10);
+// 		OCR1A = (F_CPU/(sps*64))-64;
+// 	}
+// 	else if ((sps<245)){
+// 		TCCR1B |=(1<<CS11);
+// 		OCR1A = (F_CPU/(sps*8))-8;
+// 	}
+// 	else{
+// 		TCCR1B |=(1<<CS10);
+// 		OCR1A = (F_CPU/(sps))-1;
+// 	}
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
 }
 
