@@ -13,7 +13,7 @@ NET "SCK"  LOC = "C5" ;
 NET "Sck" CLOCK_DEDICATED_ROUTE = FALSE;
 
 
-NET "Handshake" LOC = "B9" ; 
+NET "Handshake" LOC = "B9" ;  
 #NET "Handshake" LOC = "M5" ; 
 
 NET "PWMOut"    LOC = "B5"  ;

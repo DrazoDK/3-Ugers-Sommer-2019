@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Reading design: SigGenTop.prj
 
@@ -128,7 +128,8 @@ Architecture divclk_arch of Entity divclk is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/NY_Controler.vhd" in Library work.
 Architecture behavioral of Entity ny_controler is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" in Library work.
-Architecture behavioral of Entity siggendatapath is up to date.
+Entity <siggendatapath> compiled.
+Entity <siggendatapath> (Architecture <behavioral>) compiled.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" in Library work.
 Architecture behavioral of Entity disp_drive is up to date.
 Compiling vhdl file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SevenSeg5.vhd" in Library work.
@@ -199,7 +200,7 @@ Entity <Register_2bit> analyzed. Unit <Register_2bit> generated.
 
 Analyzing generic Entity <SigGenDatapath> in library <work> (Architecture <Behavioral>).
 	PWMinc = "0000001"
-WARNING:Xst:2211 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" line 64: Instantiating black box module <SinusLUT>.
+WARNING:Xst:2211 - "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd" line 65: Instantiating black box module <SinusLUT>.
 Entity <SigGenDatapath> analyzed. Unit <SigGenDatapath> generated.
 
 Analyzing Entity <Disp_Drive> in library <work> (Architecture <Behavioral>).
@@ -366,26 +367,25 @@ Unit <NY_Controler> synthesized.
 
 Synthesizing Unit <SigGenDatapath>.
     Related source file is "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd".
-    Found 16-bit adder for signal <MulC$addsub0000> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0001> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0002> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0003> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0004> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0005> created at line 119.
-    Found 16-bit adder for signal <MulC$addsub0006> created at line 119.
-    Found 7-bit comparator lessequal for signal <PWM$cmp_le0000> created at line 129.
-    Found 8-bit adder for signal <PWMcntvar$addsub0000> created at line 71.
-    Found 8-bit comparator greater for signal <PWMcntvar$cmp_gt0000> created at line 72.
-    Found 8-bit register for signal <PWMcntvar$mux0001> created at line 69.
-    Found 1-bit register for signal <PWMwrap>.
-    Found 2-bit up counter for signal <PWMwrapCount>.
+    Found 16-bit adder for signal <MulC$addsub0000> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0001> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0002> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0003> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0004> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0005> created at line 118.
+    Found 16-bit adder for signal <MulC$addsub0006> created at line 118.
+    Found 7-bit comparator lessequal for signal <PWM$cmp_le0000> created at line 128.
+    Found 8-bit adder for signal <PWMcntvar$addsub0000> created at line 72.
+    Found 8-bit comparator greater for signal <PWMcntvar$cmp_gt0000> created at line 73.
+    Found 8-bit register for signal <PWMcntvar$mux0001> created at line 70.
+    Found 3-bit up counter for signal <PWMwrapCount>.
     Found 8-bit 4-to-1 multiplexer for signal <Sig>.
     Found 12-bit up accumulator for signal <SigCnt>.
-    Found 12-bit comparator less for signal <SigSquare$cmp_lt0000> created at line 100.
+    Found 12-bit comparator less for signal <SigSquare$cmp_lt0000> created at line 99.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 Accumulator(s).
-	inferred   9 D-type flip-flop(s).
+	inferred   8 D-type flip-flop(s).
 	inferred   8 Adder/Subtractor(s).
 	inferred   3 Comparator(s).
 	inferred   8 Multiplexer(s).
@@ -430,12 +430,13 @@ Macro Statistics
  8-bit adder                                           : 1
 # Counters                                             : 5
  12-bit up counter                                     : 1
- 2-bit up counter                                      : 2
+ 2-bit up counter                                      : 1
  25-bit up counter                                     : 2
+ 3-bit up counter                                      : 1
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
-# Registers                                            : 24
- 1-bit register                                        : 14
+# Registers                                            : 23
+ 1-bit register                                        : 13
  2-bit register                                        : 1
  4-bit register                                        : 1
  8-bit register                                        : 8
@@ -507,12 +508,13 @@ Macro Statistics
  8-bit adder                                           : 1
 # Counters                                             : 5
  12-bit up counter                                     : 1
- 2-bit up counter                                      : 2
+ 2-bit up counter                                      : 1
  25-bit up counter                                     : 2
+ 3-bit up counter                                      : 1
 # Accumulators                                         : 1
  12-bit up accumulator                                 : 1
-# Registers                                            : 84
- Flip-Flops                                            : 84
+# Registers                                            : 83
+ Flip-Flops                                            : 83
 # Comparators                                          : 6
  12-bit comparator less                                : 1
  32-bit comparator equal                               : 2
@@ -592,14 +594,14 @@ Design Statistics
 # IOs                              : 21
 
 Cell Usage :
-# BELS                             : 629
+# BELS                             : 631
 #      GND                         : 2
-#      INV                         : 9
+#      INV                         : 8
 #      LUT1                        : 5
-#      LUT2                        : 54
-#      LUT3                        : 123
+#      LUT2                        : 53
+#      LUT3                        : 125
 #      LUT3_L                      : 3
-#      LUT4                        : 127
+#      LUT4                        : 129
 #      LUT4_D                      : 1
 #      MULT_AND                    : 9
 #      MUXCY                       : 146
@@ -608,10 +610,9 @@ Cell Usage :
 #      XORCY                       : 128
 # FlipFlops/Latches                : 171
 #      FD                          : 2
-#      FDC                         : 75
-#      FDCE                        : 80
+#      FDC                         : 73
+#      FDCE                        : 83
 #      FDCP_1                      : 8
-#      FDE                         : 1
 #      FDE_1                       : 1
 #      FDP                         : 3
 #      FDPE                        : 1
@@ -630,9 +631,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-4 
 
- Number of Slices:                      176  out of    960    18%  
+ Number of Slices:                      178  out of    960    18%  
  Number of Slice Flip Flops:            170  out of   1920     8%  
- Number of 4 input LUTs:                322  out of   1920    16%  
+ Number of 4 input LUTs:                324  out of   1920    16%  
  Number of IOs:                          21
  Number of bonded IOBs:                  21  out of     83    25%  
     IOB Flip Flops:                       1
@@ -673,7 +674,7 @@ Asynchronous Control Signals Information:
 -----------------------------------------------------------+--------------------------+-------+
 Control Signal                                             | Buffer(FF name)          | Load  |
 -----------------------------------------------------------+--------------------------+-------+
-BTN3                                                       | IBUF                     | 159   |
+BTN3                                                       | IBUF                     | 160   |
 U1/U2_PISO/ChkSum_0_and0000(U1/U2_PISO/ChkSum_0_and00001:O)| NONE(U1/U2_PISO/ChkSum_0)| 1     |
 U1/U2_PISO/ChkSum_0_and0001(U1/U2_PISO/ChkSum_0_and00011:O)| NONE(U1/U2_PISO/ChkSum_0)| 1     |
 U1/U2_PISO/ChkSum_1_and0000(U1/U2_PISO/ChkSum_1_and00001:O)| NONE(U1/U2_PISO/ChkSum_1)| 1     |
@@ -697,7 +698,7 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 9.758ns (Maximum Frequency: 102.480MHz)
-   Minimum input arrival time before clock: 4.200ns
+   Minimum input arrival time before clock: 3.681ns
    Maximum output required time after clock: 39.006ns
    Maximum combinational path delay: No path found
 
@@ -708,7 +709,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk'
   Clock period: 8.080ns (frequency: 123.768MHz)
-  Total number of paths / destination ports: 18414 / 113
+  Total number of paths / destination ports: 18460 / 116
 -------------------------------------------------------------------------
 Delay:               8.080ns (Levels of Logic = 34)
   Source:            U5/Cnt1_5 (FF)
@@ -778,7 +779,7 @@ Delay:               5.923ns (Levels of Logic = 4)
      FDC:C->Q             14   0.591   1.000  U4/DispCount_0 (U4/DispCount_0)
      MUXF5:S->O            1   0.739   0.499  U4/Mmux_DataN_41 (U4/Mmux_DataN_41)
      LUT4:I1->O           10   0.704   1.057  U4/Mmux_DataN_2_f5_01 (U4/DataN<1>)
-     LUT4:I0->O            1   0.704   0.000  U4/CatInt<1>_G (N78)
+     LUT4:I0->O            1   0.704   0.000  U4/CatInt<1>_G (N80)
      MUXF5:I1->O           1   0.321   0.000  U4/CatInt<1> (U4/CatInt<1>)
      FDC:D                     0.308          U4/cat_1
     ----------------------------------------
@@ -826,32 +827,12 @@ Delay:               4.879ns (Levels of Logic = 3)
     ----------------------------------------  ------------
      FDCE:C->Q             6   0.591   0.673  U1/U0_Shift/SW_sig_3 (U1/U0_Shift/SW_sig_3)
      LUT4:I3->O            1   0.704   0.424  U1/U3_tilstand/AllEn113 (U1/U3_tilstand/AllEn113)
-     LUT4_D:I3->LO         1   0.704   0.104  U1/U3_tilstand/AllEn130 (N83)
+     LUT4_D:I3->LO         1   0.704   0.104  U1/U3_tilstand/AllEn130 (N85)
      LUT4:I3->O            1   0.704   0.420  U1/U2_PISO/Loadin_inv1 (U1/U2_PISO/Loadin_inv)
      FDE_1:CE                  0.555          U1/U2_PISO/MOSI
     ----------------------------------------
     Total                      4.879ns (3.258ns logic, 1.621ns route)
                                        (66.8% logic, 33.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              4.200ns (Levels of Logic = 2)
-  Source:            BTN3 (PAD)
-  Destination:       U2/PWMwrap (FF)
-  Destination Clock: Clk rising
-
-  Data Path: BTN3 to U2/PWMwrap
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O           160   1.218   1.303  BTN3_IBUF (BTN3_IBUF)
-     INV:I->O              1   0.704   0.420  U2/Reset_inv1_INV_0 (U2/Reset_inv)
-     FDE:CE                    0.555          U2/PWMwrap
-    ----------------------------------------
-    Total                      4.200ns (2.477ns logic, 1.723ns route)
-                                       (59.0% logic, 41.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Sck'
@@ -1049,11 +1030,11 @@ Offset:              4.283ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.85 secs
+Total CPU time to Xst completion: 9.03 secs
  
 --> 
 
-Total memory usage is 286524 kilobytes
+Total memory usage is 286972 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

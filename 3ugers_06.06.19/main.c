@@ -20,10 +20,11 @@ int main(void)
 	SPI_MasterInit();						//initialize SPI
 	uart0_Init(MYUBRRF);					//initialize uart (for test)
 
+
 	
     while (1) 
     {
-			MCU_to_FPGA(3, 50, 1);
+			MCU_to_FPGA(2, 200, 1);
 	}	
 	
 	

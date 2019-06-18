@@ -40,7 +40,8 @@ signal Sig, SigSquare, SigSaw, SigSinus : std_logic_vector(7 downto 0);
 signal SigAmpl: std_logic_vector(6 downto 0); 
 signal PWMcnt: std_logic_vector(6 downto 0) := "0000000";
 signal PWM, PWMwrap : std_logic;
-signal PWMwrapCount : std_logic_vector(1 downto 0):= "00";
+signal WrapCnt: std_logic_vector(2 downto 0);
+
 
 begin
 
@@ -76,25 +77,23 @@ begin
   PWMcnt <= PWMcntvar(6 downto 0);
 end process;     
 
-PWMdec: process (Reset, clk, PWMwrapCount)
+
+PWMdec: process (Reset, clk)
+Variable PWMwrapCount : std_logic_vector(2 downto 0):= "000";
 begin
 		if reset = '1' then 
-			PWMwrapCount <= "00"; 
-		elsif Clk'event and Clk = '1' then 
-			PWMwrapCount <= PWMwrapCount + 1 ; 
-			if PWMwrapCount = "11" then 
-				PWMwrap <= '1' ; 
-			else 
-				PWMwrap <= '0' ; 
+			PWMwrapCount := "000"; 
+		elsif Clk'event and Clk = '1' and PWMcnt = "0000000" then 
+			PWMwrapCount := PWMwrapCount + 1 ; 
+			if PWMwrapCount > "111" then 
+				PWMwrapCount := "000";
 			end if; 
 		end if ;
-		
+		WrapCnt <= PWMwrapCount; 
 end process; 
 
 
---PWMdec: PWMwrap <= '1' when PWMcnt = "0000000" else '0';
-
-
+PWMwrapCounter: PWMwrap <= '1' when WrapCnt = "000" else '0';
 
 
 SquareDec: SigSquare <= "00000000" when SigCnt < X"800" else "11111111";

@@ -38,9 +38,14 @@ U1: entity WORK.NY_controler
 	   Hndshk => Handshake, Shape => Shape, Ampl => Ampl, Freq => Freq, Run => SigEN);									--Disp => Disp, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN);
 	 																													
 -----------clk => Mclk
-U2: entity WORK.SigGenDataPath generic map (PWMinc => "0000001") 
-    port map(Reset => BTN3, Clk => Clk, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN, PWMOut => PWMOut);
+  U2: entity WORK.SigGenDataPath generic map (PWMinc => "0000001") 
+      port map(Reset => BTN3, Clk => Clk, Shape => Shape, Ampl => Ampl, Freq => Freq, SigEN=> SigEN, PWMOut => PWMOut);
 -------------------------
+
+--  U2: entity WORK.NY_SigGenDataPath generic map (PWMinc => "0000001") 
+--        port map(Reset => BTN3, Clk => Clk, Shape => Shape, Ampl => Ampl, Freq => Freq, PWMOut => PWMOut);
+
+
 
 
 U3: entity WORK.Disp_drive

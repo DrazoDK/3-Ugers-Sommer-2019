@@ -3,7 +3,13 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/interrupt.h>  
+#include <avr/interrupt.h>
+
+//     til test   
+#include <stdio.h>
+#include "USART.h"
+
+
 
 void SPI_MasterInit(){
 
@@ -18,6 +24,8 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
 {
 	char ChkSum;
 	char MISO, MISO1;
+	
+	int i = 0; 
 	
 	do{				//'do while' in case ChkSum is the same
 		
@@ -68,9 +76,9 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
 		
 		
 		//til test
-		//		char str[100] ={'\0'};
-		// 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x],  counter = %d = %x",SYNC, shape, ampl, freq, ChkSum, MISO, counter, counter);
-		// 		putsUSART0(str);
+				char str[100] ={'\0'};
+		 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x],  counter = %d = %x",SYNC, shape, ampl, freq, ChkSum, MISO, i, i);
+		 		putsUSART0(str);
 		
 	}while (MISO != ChkSum);
 }

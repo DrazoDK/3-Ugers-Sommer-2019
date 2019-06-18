@@ -1,0 +1,29 @@
+Command line:
+   SigGenTop_tb_v2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  54246
+
+Tue Jun 18 14:37:02 2019
+
+
+ Elaboration Time: 0.234375 sec
+
+ Current Memory Usage: 1167.41 Meg
+
+ Total Signals          : 398
+ Total Nets             : 33530
+ Total Signal Drivers   : 131
+ Total Blocks           : 37
+ Total Primitive Blocks : 25
+ Total Processes        : 90
+ Total Traceable Variables  : 234
+ Total Scalar Nets and Variables : 35017
+Total Line Count : 799
+
+ Total Simulation Time: 0.375 sec
+
+ Current Memory Usage: 1009.86 Meg
+
+Tue Jun 18 14:39:36 2019
+

@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">SinusLUT</arg>&gt;.
+<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenDatapath.vhd</arg>&quot; line <arg fmt="%d" index="2">65</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">SinusLUT</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">SigEn</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">1</arg>.

@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB_isim_beh.exe -prj C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB_beh.prj work.SigGenTopNy_TB 
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop_tb_v2_isim_beh.exe -prj C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop_tb_v2_beh.prj work.SigGenTop_tb_v2 
 ISim P.68d (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -17,11 +17,11 @@ Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/DivClk.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/Disp_Drive.vhd" into library work
 Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop.vhd" into library work
-Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB.vhd" into library work
+Parsing VHDL file "C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop_tb_v2.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 184900 KB
-Fuse CPU Usage: 1155 ms
+Fuse Memory Usage: 185260 KB
+Fuse CPU Usage: 1171 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -47,10 +47,10 @@ Compiling architecture behavioral of entity BTNdb [btndb_default]
 Compiling architecture behavioral of entity Disp_Drive [disp_drive_default]
 Compiling architecture sevenseg_arch of entity SevenSeg5 [sevenseg5_default]
 Compiling architecture behavioral of entity SigGenTop [siggentop_default]
-Compiling architecture behavior of entity siggentopny_tb
+Compiling architecture behavior of entity siggentop_tb_v2
 Time Resolution for simulation is 1ps.
-Waiting for 17 sub-compilation(s) to finish...
+Waiting for 15 sub-compilation(s) to finish...
 Compiled 44 VHDL Units
-Built simulation executable C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTopNy_TB_isim_beh.exe
-Fuse Memory Usage: 211048 KB
-Fuse CPU Usage: 2015 ms
+Built simulation executable C:/Users/Bruger/Documents/Atmel Studio/7.0/3ugers_06.06.19/3-Ugers-Sommer-2019/waveform_generator_v3/SigGenTop_tb_v2_isim_beh.exe
+Fuse Memory Usage: 211408 KB
+Fuse CPU Usage: 1952 ms

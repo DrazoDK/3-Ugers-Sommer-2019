@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_Unsigned.ALL;
 
 entity NY_sigGenDatapath is
     
-	 generic ( PWMinc : in  STD_LOGIC_VECTOR (6 downto 0) := "0010000" );
+	 generic ( PWMinc : in  STD_LOGIC_VECTOR (6 downto 0) := "0000001" );
 	 Port ( 
            Reset : in  STD_LOGIC;
            Clk : in  STD_LOGIC;
@@ -27,6 +27,12 @@ signal SigAmpl : STD_LOGIC_VECTOR (6 downto 0);
 --signal MulC: STD_LOGIC_VECTOR (15 downto 0);
 signal PWMcnt: STD_LOGIC_VECTOR (6 downto 0):= "0000000";
 signal PWM, PWMwrap : STD_LOGIC;
+
+
+signal PWMwrapCount: STD_LOGIC_VECTOR (1 downto 0);
+
+
+
 
 begin
 
@@ -76,7 +82,25 @@ begin
 	end if; 
 end process; 
 
-PWMdec:PWMwrap <= '1' when PWMcnt = "0000000" else '0';
+
+
+PWMdec: process (Reset, clk, PWMwrapCount, PWMcnt)
+begin
+		if reset = '1' then 
+			PWMwrapCount <= "00"; 
+		elsif Clk'event and Clk = '1' and PWMcnt = "0000000" then 
+			PWMwrapCount <= PWMwrapCount + 1 ; 
+			if PWMwrapCount = "11" then 
+				PWMwrap <= '1' ; 
+			else 
+				PWMwrap <= '0' ; 
+			end if; 
+		end if ;
+		
+end process; 
+
+
+--PWMdec: PWMwrap <= '1' when PWMcnt = "0000000" else '0';
 
 PWMcomp: PWMout <= '1' when PWMcnt <= SigAmpl else '0'; 
 
