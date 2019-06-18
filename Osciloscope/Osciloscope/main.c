@@ -13,6 +13,7 @@
 #include "SPI.h"
 #include "I2C.h"
 #include "ssd1306.h"
+
 volatile char Sample;
 volatile char flagADC;
 volatile int length;
@@ -48,51 +49,28 @@ unsigned char Amplitude_Bodeplot;
 unsigned char Amplitude_ref;
 unsigned int x;
 
-
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
-
-//used for test
-const uint8_t test_bmp[] PROGMEM =
-{0x00,0x41,0x22,0x14,0x08,0x00,0x00,0x00};
-
-//used for test -
-const uint8_t logo16_glcd_bmp[] PROGMEM =
-{ 0b00000000, 0b11000000,
-	0b00000001, 0b11000000,
-	0b00000001, 0b11000000,
-	0b00000011, 0b11100000,
-	0b11110011, 0b11100000,
-	0b11111110, 0b11111000,
-	0b01111110, 0b11111111,
-	0b00110011, 0b10011111,
-	0b00011111, 0b11111100,
-	0b00001101, 0b01110000,
-	0b00011011, 0b10100000,
-	0b00111111, 0b11100000,
-	0b00111111, 0b11110000,
-	0b01111100, 0b11110000,
-	0b01110000, 0b01110000,
-0b00000000, 0b00110000 };
-/** example setting some text on the display*/
 
 void init_timer1(unsigned int sps){
 	TCCR1A = 0;
 	TCCR1B = 0;
 	TCNT1 = 0;
-	TCCR1B |=(1<<WGM12); //CTC mode
-	if ((sps<31)){
-		TCCR1B |=(1<<CS11)|(1<<CS10);
-		OCR1A = (F_CPU/(sps*64))-64;
-	}
-	else if ((sps<245)){
-		TCCR1B |=(1<<CS11);
-		OCR1A = (F_CPU/(sps*8))-8;
-	}
-	else{
-		TCCR1B |=(1<<CS10);
-		OCR1A = (F_CPU/(sps))-1;
-	}
+	TCCR1B |=(1<<WGM12)|(1<<CS11)|(1<<CS10); //CTC mode
+	
+	OCR1A = (unsigned int)25*(10000/((float)sps))-1;
+// 	if ((sps<31)){
+// 		TCCR1B |=(1<<CS11)|(1<<CS10);
+// 		OCR1A = (F_CPU/(sps*64))-64;
+// 	}
+// 	else if ((sps<245)){
+// 		TCCR1B |=(1<<CS11);
+// 		OCR1A = (F_CPU/(sps*8))-8;
+// 	}
+// 	else{
+// 		TCCR1B |=(1<<CS10);
+// 		OCR1A = (F_CPU/(sps))-1;
+// 	}
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
 }
 
@@ -107,6 +85,9 @@ void adc_packet_send(){
 	adc_send[2] = len1;
 	adc_send[3] = len2;
 	adc_send[4] = 0x02;
+	char check = 0;
+	adc_send[record_length3 + 5] = check;
+	adc_send[record_length3 + 6] = check;
 	if(sample_flag == 1){
 		while(j <= record_length3+4){
 			adc_send[j] = adc_buffer1[j-5];
@@ -119,23 +100,7 @@ void adc_packet_send(){
 			j++;
 		}
 	}
-	char check = 0;
-	adc_send[record_length3 + 5] = check;
-	adc_send[record_length3 + 6] = check;
 	putsUSART1(adc_send, record_length3+6);
-}
-
-void MCU_to_FPGA(char shape,char ampl, char freq)
-{
-	char ChkSum = SYNC ^ shape ^ ampl ^ freq;
-	// 			sprintf(str, "sync %x shape %x, ampl %x ,freq %x chksum %x",SYNC, shape, ampl, freq, ChkSum);
-	// 			putsUSART0(str);
-	//
-	putcSPI_master(SYNC);
-	putcSPI_master(shape);
-	putcSPI_master(ampl);
-	putcSPI_master(freq);
-	putcSPI_master(ChkSum);
 }
 
 int main(void)
@@ -150,9 +115,7 @@ int main(void)
 	sei();
 	init_timer1(10);
 	char str[5];
-	char sprint[100];
 
-	
     while (1) 
     {
 		if ((flagADC=1)){
@@ -160,7 +123,6 @@ int main(void)
  			itoa(Sample,str,10);
  			sendStrXY(str,1,1);
  			sendStr("  ");
-			type = 3;
 		}
 		switch(type){
 		
@@ -170,15 +132,26 @@ int main(void)
 		BTN = data_buffer[5];
 		SW = data_buffer[6];
 		
-		if (BTN==1){
+		if (BTN==0){
 			if (ActiveIndicator == 0){
-				ActiveIndicator = 1;
+				Shape = SW;
 			}
-			else if (ActiveIndicator == 1){
-				ActiveIndicator = 2;
+			if (ActiveIndicator == 1){
+				Amplitude = SW;
 			}
-			else if (ActiveIndicator ==2){
+			if (ActiveIndicator == 2){
+				Frequency = SW;
+			}
+			
+			MCU_to_FPGA(Shape,Amplitude,Frequency);
+		}
+		
+		if (BTN==1){
+			if (ActiveIndicator == 2){
 				ActiveIndicator = 0;
+			}
+			else {
+				ActiveIndicator++;
 			}
 		}
 		
@@ -199,19 +172,6 @@ int main(void)
 			Frequency = 0;
 		}
 		
-		if (BTN==0){
-			if (ActiveIndicator == 0){
-				Shape = SW;
-			}
-			if (ActiveIndicator == 1){
-				Amplitude = SW;
-			}
-			if (ActiveIndicator == 2){
-				Frequency = SW;
-			}
-			
-			MCU_to_FPGA(Shape,Amplitude,Frequency);
-		}	
 		data_return[0] = 0x55; //sync
 		data_return[1] = 0xAA; //sync
 		data_return[2] = 0x00; //length
@@ -224,8 +184,8 @@ int main(void)
 		data_return[9] = 0x00; //checksum
 		data_return[10] = 0x00; //checksum
 		
-		putsUSART1(data_return,11);
-		type = 0; // Reset type
+		putsUSART1(data_return,10);
+		type = 0; // Reset type, så knapper kun registreres 1 gang
 		break;
 		
 		case 2:
@@ -240,10 +200,6 @@ int main(void)
 		record_length3 = (record_length<<8)|record_length2;
 		
 		init_timer1(sample_rate3);
-		sprintf(sprint,"Sample rate: %d      ", sample_rate3);
-		sendStrXY(sprint,6,0);
-		sprintf(sprint,"RL: %d      ", record_length3);
-		sendStrXY(sprint,7,0);
 		
 		if(record_length3 > 0){
 			adc_packet_send();
@@ -254,48 +210,50 @@ int main(void)
 		case 3:
 		
 		sendStrXY("Bodeplot    ",5,0);
-		
+
+		init_timer1(10000);
+		Shape = 3; //sinus
+		Amplitude = 0xff; //3,3V
+
 		for(j=0; j<255; j++){
-			init_timer1(10000);
-			Shape = 3; //sinus
-			Amplitude = 0xff; //3,3V
 			Frequency = (j+1); //+1 da frekvensen ikke må være 0
-			//MCU_to_FPGA(Shape,Amplitude,Frequency);
-			
+
+			MCU_to_FPGA(Shape,Amplitude,Frequency);
+
 			Amplitude_min = 0xff; // sikre at sample er mindre første gang
 			Amplitude_max = 0x00; // sikre at sample er større første gang
-			
+
 			for(x=0; x<=1000; x++){
-			
+
 				if (Sample < Amplitude_min){
 					Amplitude_min = Sample;
-				} 
+				}
 				if (Sample > Amplitude_max){
 					Amplitude_max = Sample;
 				}
 			}
-			
+
 			Amplitude_Bodeplot = (Amplitude_max - Amplitude_min)/2;
-			
+
 			Bodeplot_Array[j] = Amplitude_Bodeplot;
 		}
 		Amplitude_ref = Bodeplot_Array[0];
-		
+
 		Bodeplot_Send[0] = 0x55;
 		Bodeplot_Send[1] = 0xAA;
 		Bodeplot_Send[2] = 0x01;
 		Bodeplot_Send[3] = 0x06;
 		Bodeplot_Send[4] = 0x03;
-		
+
 		for(j=0; j<255; j++){
 			Bodeplot_Send[j+5] = Bodeplot_Array[j] / Amplitude_ref;
 		}
-		
+
 		Bodeplot_Send[260] = 0x00;
 		Bodeplot_Send[261] = 0x00;
-		
+
 		putsUSART1(Bodeplot_Send, 261);
-		
+	
 		break;
 		}
 	}
@@ -309,21 +267,21 @@ ISR(ADC_vect){
 	static int i = 0;
 	Sample = ADCH;
 	if(sample_flag == 1){
-		adc_buffer1[i] = Sample;
+		adc_buffer1[i] = ADCH;
+		i++;
 		if(i >= record_length3-1){
-			i = -1;
+			i = 0;
 			sample_flag = 2;
 		}
 	}
 	if(sample_flag == 2){
-		adc_buffer2[i] = Sample;
-
+		adc_buffer2[i] = ADCH;
+		i++;
 		if(i >= record_length3-1){
-			i = -1;
+			i = 0;
 			sample_flag = 1;
 		}
 	}
-	i++;
 	flagADC = 1;
 }
 
@@ -347,5 +305,4 @@ ISR(USART1_RX_vect){
 	if(i == max_len){
 		i = 0;
 	}
-	
 }
