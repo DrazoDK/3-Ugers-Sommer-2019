@@ -89,13 +89,13 @@ void adc_packet_send(){
 	adc_send[record_length3 + 5] = check;
 	adc_send[record_length3 + 6] = check;
 	if(sample_flag == 1){
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
 			adc_send[j] = adc_buffer1[j-5];
 			j++;
 		}
 	}
 	if(sample_flag == 2){
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
 			adc_send[j] = adc_buffer2[j-5];
 			j++;
 		}
@@ -143,7 +143,7 @@ int main(void)
 				Frequency = SW;
 			}
 			
-			6 MCU_to_FPGA(Shape,Amplitude,Frequency);
+			MCU_to_FPGA(Shape,Amplitude,Frequency);
 		}
 		
 		if (BTN==1){
@@ -275,7 +275,7 @@ ISR(ADC_vect){
 	if(sample_flag == 1){
 		adc_buffer1[i] = ADCH;
 		i++;
-		if(i >= record_length3-1){
+		if(i > record_length3-1){
 			i = 0;
 			sample_flag = 2;
 		}
@@ -283,7 +283,7 @@ ISR(ADC_vect){
 	if(sample_flag == 2){
 		adc_buffer2[i] = ADCH;
 		i++;
-		if(i >= record_length3-1){
+		if(i > record_length3-1){
 			i = 0;
 			sample_flag = 1;
 		}

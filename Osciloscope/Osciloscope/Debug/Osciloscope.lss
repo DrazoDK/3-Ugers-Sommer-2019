@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000638  00000000  00000000  00007170  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000a99  00000000  00000000  000077a8  2**0
+ 10 .debug_str    00000ae8  00000000  00000000  000077a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000190a  00000000  00000000  00008241  2**0
+ 11 .debug_loc    0000190a  00000000  00000000  00008290  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000001c0  00000000  00000000  00009b4b  2**0
+ 12 .debug_ranges 000001c0  00000000  00000000  00009b9a  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -576,31 +576,17 @@ Disassembly of section .text:
      424:	ed cd       	rjmp	.-1062   	; 0x0 <__vectors>
 
 00000426 <init_adc>:
-#include <avr/interrupt.h>
-#define F_CPU 16000000UL
-
-//Initialize adc
-void init_adc(char ADC_channel){
-		ADCSRA|=(1<<ADPS2)|(1<<ADEN)|(1<<ADIE); //1 MHz med 16 Prescale, ADC Enable, ADC Intertupt Enable
      426:	ea e7       	ldi	r30, 0x7A	; 122
      428:	f0 e0       	ldi	r31, 0x00	; 0
      42a:	90 81       	ld	r25, Z
      42c:	9c 68       	ori	r25, 0x8C	; 140
      42e:	90 83       	st	Z, r25
-		
-		
-		//ADCSRB|=(1<<ADTS0)|(1<<ADTS2); //Auto-trigger = Timer1_Compare_Match_B
-		
-		
-		ADMUX = ADC_channel;
      430:	ec e7       	ldi	r30, 0x7C	; 124
      432:	f0 e0       	ldi	r31, 0x00	; 0
      434:	80 83       	st	Z, r24
-		ADMUX |= (1<<REFS0)|(1<<ADLAR); //ADC Spændings Refference = AVCC, Left shift resultat
      436:	90 81       	ld	r25, Z
      438:	90 66       	ori	r25, 0x60	; 96
      43a:	90 83       	st	Z, r25
-		DIDR0 = (1<<ADC_channel);
      43c:	21 e0       	ldi	r18, 0x01	; 1
      43e:	30 e0       	ldi	r19, 0x00	; 0
      440:	a9 01       	movw	r20, r18
@@ -612,22 +598,14 @@ void init_adc(char ADC_channel){
      44c:	ee e7       	ldi	r30, 0x7E	; 126
      44e:	f0 e0       	ldi	r31, 0x00	; 0
      450:	40 83       	st	Z, r20
-		DIDR0 =~DIDR0;
      452:	80 81       	ld	r24, Z
      454:	80 95       	com	r24
      456:	80 83       	st	Z, r24
-		DIDR2 =0xff;
      458:	8f ef       	ldi	r24, 0xFF	; 255
      45a:	80 93 7d 00 	sts	0x007D, r24	; 0x80007d <__TEXT_REGION_LENGTH__+0x70007d>
      45e:	08 95       	ret
 
 00000460 <I2C_Init>:
-char I2C_Read_Nack()		/* I2C read nack function */
-{
-	TWCR=(1<<TWEN)|(1<<TWINT);	/* Enable TWI and clear interrupt flag */
-	while(!(TWCR&(1<<TWINT)));	/* Wait until TWI finish its current job */
-	return TWDR;		/* Return received data */
-}
      460:	08 9a       	sbi	0x01, 0	; 1
      462:	10 9a       	sbi	0x02, 0	; 2
      464:	2f ef       	ldi	r18, 0xFF	; 255
@@ -708,13 +686,8 @@ char I2C_Read_Nack()		/* I2C read nack function */
      506:	08 95       	ret
 
 00000508 <I2C_Stop>:
-
-void I2C_Stop()			/* I2C stop function */
-{
-	TWCR=(1<<TWSTO)|(1<<TWINT)|(1<<TWEN);/* Enable TWI, generate stop */
      508:	84 e9       	ldi	r24, 0x94	; 148
      50a:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7000bc>
-	while(TWCR&(1<<TWSTO));	/* Wait until stop condition execution */
      50e:	ec eb       	ldi	r30, 0xBC	; 188
      510:	f0 e0       	ldi	r31, 0x00	; 0
      512:	80 81       	ld	r24, Z
@@ -861,11 +834,11 @@ void adc_packet_send(){
      5e6:	80 91 02 02 	lds	r24, 0x0202	; 0x800202 <sample_flag>
      5ea:	81 30       	cpi	r24, 0x01	; 1
      5ec:	e1 f4       	brne	.+56     	; 0x626 <adc_packet_send+0xb4>
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
      5ee:	80 91 73 07 	lds	r24, 0x0773	; 0x800773 <record_length3>
      5f2:	90 91 74 07 	lds	r25, 0x0774	; 0x800774 <record_length3+0x1>
-     5f6:	04 96       	adiw	r24, 0x04	; 4
-     5f8:	05 97       	sbiw	r24, 0x05	; 5
+     5f6:	05 96       	adiw	r24, 0x05	; 5
+     5f8:	06 97       	sbiw	r24, 0x06	; 6
      5fa:	c4 f0       	brlt	.+48     	; 0x62c <adc_packet_send+0xba>
      5fc:	f7 01       	movw	r30, r14
      5fe:	35 96       	adiw	r30, 0x05	; 5
@@ -885,14 +858,14 @@ void adc_packet_send(){
 	adc_send[record_length3 + 5] = check;
 	adc_send[record_length3 + 6] = check;
 	if(sample_flag == 1){
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
      612:	40 91 73 07 	lds	r20, 0x0773	; 0x800773 <record_length3>
      616:	50 91 74 07 	lds	r21, 0x0774	; 0x800774 <record_length3+0x1>
-     61a:	4c 5f       	subi	r20, 0xFC	; 252
+     61a:	4b 5f       	subi	r20, 0xFB	; 251
      61c:	5f 4f       	sbci	r21, 0xFF	; 255
-     61e:	42 17       	cp	r20, r18
-     620:	53 07       	cpc	r21, r19
-     622:	84 f7       	brge	.-32     	; 0x604 <adc_packet_send+0x92>
+     61e:	24 17       	cp	r18, r20
+     620:	35 07       	cpc	r19, r21
+     622:	84 f3       	brlt	.-32     	; 0x604 <adc_packet_send+0x92>
      624:	05 c0       	rjmp	.+10     	; 0x630 <adc_packet_send+0xbe>
 // 	}
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
@@ -908,7 +881,7 @@ void adc_packet_send(){
 	adc_send[record_length3 + 5] = check;
 	adc_send[record_length3 + 6] = check;
 	if(sample_flag == 1){
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
      62c:	25 e0       	ldi	r18, 0x05	; 5
      62e:	30 e0       	ldi	r19, 0x00	; 0
 			adc_send[j] = adc_buffer1[j-5];
@@ -919,13 +892,13 @@ void adc_packet_send(){
      630:	80 91 02 02 	lds	r24, 0x0202	; 0x800202 <sample_flag>
      634:	82 30       	cpi	r24, 0x02	; 2
      636:	d9 f4       	brne	.+54     	; 0x66e <adc_packet_send+0xfc>
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
      638:	80 91 73 07 	lds	r24, 0x0773	; 0x800773 <record_length3>
      63c:	90 91 74 07 	lds	r25, 0x0774	; 0x800774 <record_length3+0x1>
-     640:	04 96       	adiw	r24, 0x04	; 4
-     642:	82 17       	cp	r24, r18
-     644:	93 07       	cpc	r25, r19
-     646:	9c f0       	brlt	.+38     	; 0x66e <adc_packet_send+0xfc>
+     640:	05 96       	adiw	r24, 0x05	; 5
+     642:	28 17       	cp	r18, r24
+     644:	39 07       	cpc	r19, r25
+     646:	9c f4       	brge	.+38     	; 0x66e <adc_packet_send+0xfc>
      648:	f7 01       	movw	r30, r14
      64a:	e2 0f       	add	r30, r18
      64c:	f3 1f       	adc	r31, r19
@@ -943,14 +916,14 @@ void adc_packet_send(){
 		}
 	}
 	if(sample_flag == 2){
-		while(j <= record_length3+4){
+		while(j < record_length3+5){
      65c:	40 91 73 07 	lds	r20, 0x0773	; 0x800773 <record_length3>
      660:	50 91 74 07 	lds	r21, 0x0774	; 0x800774 <record_length3+0x1>
-     664:	4c 5f       	subi	r20, 0xFC	; 252
+     664:	4b 5f       	subi	r20, 0xFB	; 251
      666:	5f 4f       	sbci	r21, 0xFF	; 255
-     668:	42 17       	cp	r20, r18
-     66a:	53 07       	cpc	r21, r19
-     66c:	84 f7       	brge	.-32     	; 0x64e <adc_packet_send+0xdc>
+     668:	24 17       	cp	r18, r20
+     66a:	35 07       	cpc	r19, r21
+     66c:	84 f3       	brlt	.-32     	; 0x64e <adc_packet_send+0xdc>
 			adc_send[j] = adc_buffer2[j-5];
 			j++;
 		}
@@ -1607,14 +1580,14 @@ ISR(ADC_vect){
      a22:	01 96       	adiw	r24, 0x01	; 1
      a24:	90 93 79 02 	sts	0x0279, r25	; 0x800279 <i.2562+0x1>
      a28:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <i.2562>
-		if(i >= record_length3-1){
+		if(i > record_length3-1){
      a2c:	20 91 73 07 	lds	r18, 0x0773	; 0x800773 <record_length3>
      a30:	30 91 74 07 	lds	r19, 0x0774	; 0x800774 <record_length3+0x1>
      a34:	21 50       	subi	r18, 0x01	; 1
      a36:	31 09       	sbc	r19, r1
-     a38:	82 17       	cp	r24, r18
-     a3a:	93 07       	cpc	r25, r19
-     a3c:	3c f0       	brlt	.+14     	; 0xa4c <__vector_29+0x68>
+     a38:	28 17       	cp	r18, r24
+     a3a:	39 07       	cpc	r19, r25
+     a3c:	3c f4       	brge	.+14     	; 0xa4c <__vector_29+0x68>
 			i = 0;
      a3e:	10 92 79 02 	sts	0x0279, r1	; 0x800279 <i.2562+0x1>
      a42:	10 92 78 02 	sts	0x0278, r1	; 0x800278 <i.2562>
@@ -1639,14 +1612,14 @@ ISR(ADC_vect){
      a68:	01 96       	adiw	r24, 0x01	; 1
      a6a:	90 93 79 02 	sts	0x0279, r25	; 0x800279 <i.2562+0x1>
      a6e:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <i.2562>
-		if(i >= record_length3-1){
+		if(i > record_length3-1){
      a72:	20 91 73 07 	lds	r18, 0x0773	; 0x800773 <record_length3>
      a76:	30 91 74 07 	lds	r19, 0x0774	; 0x800774 <record_length3+0x1>
      a7a:	21 50       	subi	r18, 0x01	; 1
      a7c:	31 09       	sbc	r19, r1
-     a7e:	82 17       	cp	r24, r18
-     a80:	93 07       	cpc	r25, r19
-     a82:	3c f0       	brlt	.+14     	; 0xa92 <__vector_29+0xae>
+     a7e:	28 17       	cp	r18, r24
+     a80:	39 07       	cpc	r19, r25
+     a82:	3c f4       	brge	.+14     	; 0xa92 <__vector_29+0xae>
 			i = 0;
      a84:	10 92 79 02 	sts	0x0279, r1	; 0x800279 <i.2562+0x1>
      a88:	10 92 78 02 	sts	0x0278, r1	; 0x800278 <i.2562>
@@ -1764,32 +1737,18 @@ ISR(USART1_RX_vect){
      b60:	18 95       	reti
 
 00000b62 <SPI_MasterInit>:
-#include <stdio.h>
-#include "uart.h"
-
-void SPI_MasterInit(){
-
-	DDRB |=(1<<DDB2)|(1<< DDB1)|(1<<DDB0);			//MOSI, SCK, !SS outputs!
      b62:	84 b1       	in	r24, 0x04	; 4
      b64:	87 60       	ori	r24, 0x07	; 7
      b66:	84 b9       	out	0x04, r24	; 4
-	SPCR |=(1<<SPE)|(1<<MSTR);						//spi_enable, master
      b68:	8c b5       	in	r24, 0x2c	; 44
      b6a:	80 65       	ori	r24, 0x50	; 80
      b6c:	8c bd       	out	0x2c, r24	; 44
-	SPCR |=(1<<SPI2X)|(1<<SPR1);					//clk frequency fosc/32
      b6e:	8c b5       	in	r24, 0x2c	; 44
      b70:	83 60       	ori	r24, 0x03	; 3
      b72:	8c bd       	out	0x2c, r24	; 44
      b74:	08 95       	ret
 
 00000b76 <MCU_to_FPGA>:
-
-}
-
-
-void MCU_to_FPGA(char shape,char ampl, char freq)
-{
      b76:	6f 92       	push	r6
      b78:	7f 92       	push	r7
      b7a:	8f 92       	push	r8
@@ -1816,12 +1775,6 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      ba4:	a8 2e       	mov	r10, r24
      ba6:	96 2e       	mov	r9, r22
      ba8:	74 2e       	mov	r7, r20
-	char MISO, MISO1;
-	
-	do{				//'do while' in case ChkSum is the same
-		
-
-		ChkSum = SYNC ^ shape ^ ampl ^ freq;
      baa:	0f 2e       	mov	r0, r31
      bac:	fa e5       	ldi	r31, 0x5A	; 90
      bae:	8f 2e       	mov	r8, r31
@@ -1830,19 +1783,7 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      bb4:	b8 24       	eor	r11, r8
      bb6:	b6 26       	eor	r11, r22
      bb8:	b8 26       	eor	r11, r24
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
-		SPDR  =   SYNC;											//Data Register is ready
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
-		;
-		MISO = SPDR;											//return data register
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      bba:	01 e0       	ldi	r16, 0x01	; 1
-		MISO =  (MISO << 1) | (MISO1 >> 7);						// the MISO signal is shifted one bit too far this compensates for that
-		
-		
-		
-		//til test
-				char str[100] ={'\0'};
      bbc:	0f 2e       	mov	r0, r31
      bbe:	f4 e6       	ldi	r31, 0x64	; 100
      bc0:	6f 2e       	mov	r6, r31
@@ -1850,104 +1791,54 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      bc4:	ce 01       	movw	r24, r28
      bc6:	01 96       	adiw	r24, 0x01	; 1
      bc8:	7c 01       	movw	r14, r24
-		 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x]",SYNC, shape, ampl, freq, ChkSum, MISO);
      bca:	0f 2e       	mov	r0, r31
      bcc:	fb e2       	ldi	r31, 0x2B	; 43
      bce:	cf 2e       	mov	r12, r31
      bd0:	f2 e0       	ldi	r31, 0x02	; 2
      bd2:	df 2e       	mov	r13, r31
      bd4:	f0 2d       	mov	r31, r0
-
-		ChkSum = SYNC ^ shape ^ ampl ^ freq;
-		
-		
-		//SYNC
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
      bd6:	28 98       	cbi	0x05, 0	; 5
-		SPDR  =   SYNC;											//Data Register is ready
      bd8:	8e bc       	out	0x2e, r8	; 46
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
      bda:	0d b4       	in	r0, 0x2d	; 45
      bdc:	07 fe       	sbrs	r0, 7
      bde:	fd cf       	rjmp	.-6      	; 0xbda <MCU_to_FPGA+0x64>
-		;
-		MISO = SPDR;											//return data register
      be0:	1e b5       	in	r17, 0x2e	; 46
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      be2:	05 b9       	out	0x05, r16	; 5
-
-		//Shape
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
      be4:	28 98       	cbi	0x05, 0	; 5
-		SPDR  =   shape;										//Data Register is ready
      be6:	ae bc       	out	0x2e, r10	; 46
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
      be8:	0d b4       	in	r0, 0x2d	; 45
      bea:	07 fe       	sbrs	r0, 7
      bec:	fd cf       	rjmp	.-6      	; 0xbe8 <MCU_to_FPGA+0x72>
-		;
-		MISO1 = SPDR;											//Get second half of data
      bee:	8e b5       	in	r24, 0x2e	; 46
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      bf0:	05 b9       	out	0x05, r16	; 5
-
-		//Ampl
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
      bf2:	28 98       	cbi	0x05, 0	; 5
-		SPDR  =   ampl;											//Data Register is ready
      bf4:	9e bc       	out	0x2e, r9	; 46
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
      bf6:	0d b4       	in	r0, 0x2d	; 45
      bf8:	07 fe       	sbrs	r0, 7
      bfa:	fd cf       	rjmp	.-6      	; 0xbf6 <MCU_to_FPGA+0x80>
-		;
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      bfc:	05 b9       	out	0x05, r16	; 5
-
-		//Freq
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
      bfe:	28 98       	cbi	0x05, 0	; 5
-		SPDR  =   freq;											//Data Register is ready
      c00:	7e bc       	out	0x2e, r7	; 46
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
      c02:	0d b4       	in	r0, 0x2d	; 45
      c04:	07 fe       	sbrs	r0, 7
      c06:	fd cf       	rjmp	.-6      	; 0xc02 <MCU_to_FPGA+0x8c>
-		;
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      c08:	05 b9       	out	0x05, r16	; 5
-
-		//ChkSum
-		PORTB &=~ (1<<PB0);										// set ss/cs to low (enable)
      c0a:	28 98       	cbi	0x05, 0	; 5
-		SPDR  =   ChkSum;										//Data Register is ready
      c0c:	be bc       	out	0x2e, r11	; 46
-		while(!(SPSR & (1<<SPIF)))								//wait while receiving
      c0e:	0d b4       	in	r0, 0x2d	; 45
      c10:	07 fe       	sbrs	r0, 7
      c12:	fd cf       	rjmp	.-6      	; 0xc0e <MCU_to_FPGA+0x98>
-		;
-		PORTB  =  (1<<PB0);										//set ss/cs to High (disable)
      c14:	05 b9       	out	0x05, r16	; 5
-
-
-		MISO =  (MISO << 1) | (MISO1 >> 7);						// the MISO signal is shifted one bit too far this compensates for that
      c16:	11 0f       	add	r17, r17
      c18:	88 1f       	adc	r24, r24
      c1a:	88 27       	eor	r24, r24
      c1c:	88 1f       	adc	r24, r24
      c1e:	18 2b       	or	r17, r24
-		
-		
-		
-		//til test
-				char str[100] ={'\0'};
      c20:	f7 01       	movw	r30, r14
      c22:	86 2d       	mov	r24, r6
      c24:	11 92       	st	Z+, r1
      c26:	8a 95       	dec	r24
      c28:	e9 f7       	brne	.-6      	; 0xc24 <MCU_to_FPGA+0xae>
-		 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x]",SYNC, shape, ampl, freq, ChkSum, MISO);
      c2a:	1f 92       	push	r1
      c2c:	1f 93       	push	r17
      c2e:	1f 92       	push	r1
@@ -1965,13 +1856,10 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      c46:	ff 92       	push	r15
      c48:	ef 92       	push	r14
      c4a:	82 d3       	rcall	.+1796   	; 0x1350 <sprintf>
-		 		putsUSART0(str,100);
      c4c:	64 e6       	ldi	r22, 0x64	; 100
      c4e:	70 e0       	ldi	r23, 0x00	; 0
      c50:	c7 01       	movw	r24, r14
      c52:	4a d1       	rcall	.+660    	; 0xee8 <putsUSART0>
-		
-	}while (MISO != ChkSum);
      c54:	0f b6       	in	r0, 0x3f	; 63
      c56:	f8 94       	cli
      c58:	de bf       	out	0x3e, r29	; 62
@@ -2003,12 +1891,6 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      c8c:	08 95       	ret
 
 00000c8e <ssd1306_command>:
-
-	for(int i=0;i<8;i++)
-	I2C_Write(pgm_read_byte(myFont[data-0x20]+i));
-
-	I2C_Stop();    // stop transmitting
-}
      c8e:	cf 93       	push	r28
      c90:	c8 2f       	mov	r28, r24
      c92:	80 91 03 02 	lds	r24, 0x0203	; 0x800203 <_i2c_address>
@@ -2145,28 +2027,16 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
      d80:	08 95       	ret
 
 00000d82 <sendStr>:
-
-
-//==========================================================//
-/** Prints a string regardless the cursor position.*/
-void sendStr(char *string)
-{
      d82:	0f 93       	push	r16
      d84:	1f 93       	push	r17
      d86:	cf 93       	push	r28
      d88:	df 93       	push	r29
      d8a:	8c 01       	movw	r16, r24
-	unsigned char i=0;
-	while(*string)
      d8c:	dc 01       	movw	r26, r24
      d8e:	8c 91       	ld	r24, X
      d90:	81 11       	cpse	r24, r1
      d92:	1a c0       	rjmp	.+52     	; 0xdc8 <sendStr+0x46>
      d94:	1c c0       	rjmp	.+56     	; 0xdce <sendStr+0x4c>
-	{
-		for(i=0;i<8;i++)
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));   //look up ascii chars (no danish) defined in data.h
      d96:	d8 01       	movw	r26, r16
      d98:	ec 91       	ld	r30, X
      d9a:	f0 e0       	ldi	r31, 0x00	; 0
@@ -2183,46 +2053,18 @@ void sendStr(char *string)
      db0:	84 91       	lpm	r24, Z
      db2:	b2 df       	rcall	.-156    	; 0xd18 <SendChar>
      db4:	21 96       	adiw	r28, 0x01	; 1
-void sendStr(char *string)
-{
-	unsigned char i=0;
-	while(*string)
-	{
-		for(i=0;i<8;i++)
      db6:	c8 30       	cpi	r28, 0x08	; 8
      db8:	d1 05       	cpc	r29, r1
      dba:	69 f7       	brne	.-38     	; 0xd96 <sendStr+0x14>
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));   //look up ascii chars (no danish) defined in data.h
-		}
-		string++;
      dbc:	0f 5f       	subi	r16, 0xFF	; 255
      dbe:	1f 4f       	sbci	r17, 0xFF	; 255
-//==========================================================//
-/** Prints a string regardless the cursor position.*/
-void sendStr(char *string)
-{
-	unsigned char i=0;
-	while(*string)
      dc0:	f8 01       	movw	r30, r16
      dc2:	80 81       	ld	r24, Z
      dc4:	88 23       	and	r24, r24
      dc6:	19 f0       	breq	.+6      	; 0xdce <sendStr+0x4c>
-
-
-//==========================================================//
-/** Prints a string regardless the cursor position.*/
-void sendStr(char *string)
-{
      dc8:	c0 e0       	ldi	r28, 0x00	; 0
      dca:	d0 e0       	ldi	r29, 0x00	; 0
      dcc:	e4 cf       	rjmp	.-56     	; 0xd96 <sendStr+0x14>
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));   //look up ascii chars (no danish) defined in data.h
-		}
-		string++;
-	}
-}
      dce:	df 91       	pop	r29
      dd0:	cf 91       	pop	r28
      dd2:	1f 91       	pop	r17
@@ -2230,12 +2072,6 @@ void sendStr(char *string)
      dd6:	08 95       	ret
 
 00000dd8 <sendStrXY>:
-
-//==========================================================//
-/** Prints a string in coordinates X Y, being multiples of 8.
-* This means we have 16 COLS (0-15) and 8 ROWS (0-7).*/
-void sendStrXY( char *string, int X, int Y)
-{
      dd8:	ff 92       	push	r15
      dda:	0f 93       	push	r16
      ddc:	1f 93       	push	r17
@@ -2243,31 +2079,18 @@ void sendStrXY( char *string, int X, int Y)
      de0:	df 93       	push	r29
      de2:	ec 01       	movw	r28, r24
      de4:	86 2f       	mov	r24, r22
-	setXY(X,Y);
      de6:	f6 2e       	mov	r15, r22
      de8:	64 2f       	mov	r22, r20
      dea:	a2 df       	rcall	.-188    	; 0xd30 <setXY>
-	unsigned char i=0;
-	while(*string)
      dec:	98 81       	ld	r25, Y
      dee:	99 23       	and	r25, r25
      df0:	31 f1       	breq	.+76     	; 0xe3e <sendStrXY+0x66>
-	{    if (*string=='\n'){
-		setXY(X+1,0);
      df2:	f3 94       	inc	r15
-void sendStrXY( char *string, int X, int Y)
-{
-	setXY(X,Y);
-	unsigned char i=0;
-	while(*string)
-	{    if (*string=='\n'){
      df4:	9a 30       	cpi	r25, 0x0A	; 10
      df6:	39 f4       	brne	.+14     	; 0xe06 <sendStrXY+0x2e>
-		setXY(X+1,0);
      df8:	60 e0       	ldi	r22, 0x00	; 0
      dfa:	8f 2d       	mov	r24, r15
      dfc:	99 df       	rcall	.-206    	; 0xd30 <setXY>
-		string++;
      dfe:	8e 01       	movw	r16, r28
      e00:	0f 5f       	subi	r16, 0xFF	; 255
      e02:	1f 4f       	sbci	r17, 0xFF	; 255
@@ -2275,10 +2098,6 @@ void sendStrXY( char *string, int X, int Y)
      e06:	8e 01       	movw	r16, r28
      e08:	c0 e0       	ldi	r28, 0x00	; 0
      e0a:	d0 e0       	ldi	r29, 0x00	; 0
-		}
-		for(i=0;i<8;i++)
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));
      e0c:	d8 01       	movw	r26, r16
      e0e:	ec 91       	ld	r30, X
      e10:	f0 e0       	ldi	r31, 0x00	; 0
@@ -2295,37 +2114,15 @@ void sendStrXY( char *string, int X, int Y)
      e26:	84 91       	lpm	r24, Z
      e28:	77 df       	rcall	.-274    	; 0xd18 <SendChar>
      e2a:	21 96       	adiw	r28, 0x01	; 1
-	while(*string)
-	{    if (*string=='\n'){
-		setXY(X+1,0);
-		string++;
-		}
-		for(i=0;i<8;i++)
      e2c:	c8 30       	cpi	r28, 0x08	; 8
      e2e:	d1 05       	cpc	r29, r1
      e30:	69 f7       	brne	.-38     	; 0xe0c <sendStrXY+0x34>
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));
-		}
-		string++;
      e32:	e8 01       	movw	r28, r16
      e34:	21 96       	adiw	r28, 0x01	; 1
-* This means we have 16 COLS (0-15) and 8 ROWS (0-7).*/
-void sendStrXY( char *string, int X, int Y)
-{
-	setXY(X,Y);
-	unsigned char i=0;
-	while(*string)
      e36:	f8 01       	movw	r30, r16
      e38:	91 81       	ldd	r25, Z+1	; 0x01
      e3a:	91 11       	cpse	r25, r1
      e3c:	db cf       	rjmp	.-74     	; 0xdf4 <sendStrXY+0x1c>
-		{
-			SendChar(pgm_read_byte(myFont[*string-0x20]+i));
-		}
-		string++;
-	}
-}
      e3e:	df 91       	pop	r29
      e40:	cf 91       	pop	r28
      e42:	1f 91       	pop	r17
@@ -2334,12 +2131,6 @@ void sendStrXY( char *string, int X, int Y)
      e48:	08 95       	ret
 
 00000e4a <uart_Init>:
-			ptr--;
-		}
-		else ptr++;
-	}
-	*ptr = '\0';
-}
      e4a:	22 e0       	ldi	r18, 0x02	; 2
      e4c:	20 93 c8 00 	sts	0x00C8, r18	; 0x8000c8 <__TEXT_REGION_LENGTH__+0x7000c8>
      e50:	e9 ec       	ldi	r30, 0xC9	; 201
@@ -2392,8 +2183,6 @@ void sendStrXY( char *string, int X, int Y)
      eb0:	08 95       	ret
 
 00000eb2 <putsUSART1>:
-
-void putsUSART1(char *ptr, int length){
      eb2:	ef 92       	push	r14
      eb4:	ff 92       	push	r15
      eb6:	0f 93       	push	r16
@@ -2402,34 +2191,18 @@ void putsUSART1(char *ptr, int length){
      ebc:	df 93       	push	r29
      ebe:	8c 01       	movw	r16, r24
      ec0:	7b 01       	movw	r14, r22
-	int i = 0;
-	while((i <= length)){
      ec2:	77 23       	and	r23, r23
      ec4:	54 f0       	brlt	.+20     	; 0xeda <putsUSART1+0x28>
      ec6:	c0 e0       	ldi	r28, 0x00	; 0
      ec8:	d0 e0       	ldi	r29, 0x00	; 0
-		putchUSART1(*ptr);
      eca:	f8 01       	movw	r30, r16
      ecc:	81 91       	ld	r24, Z+
      ece:	8f 01       	movw	r16, r30
      ed0:	e0 df       	rcall	.-64     	; 0xe92 <putchUSART1>
-		ptr++;
-		i++;
      ed2:	21 96       	adiw	r28, 0x01	; 1
-	*ptr = '\0';
-}
-
-void putsUSART1(char *ptr, int length){
-	int i = 0;
-	while((i <= length)){
      ed4:	ec 16       	cp	r14, r28
      ed6:	fd 06       	cpc	r15, r29
      ed8:	c4 f7       	brge	.-16     	; 0xeca <putsUSART1+0x18>
-		putchUSART1(*ptr);
-		ptr++;
-		i++;
-	}
-}
      eda:	df 91       	pop	r29
      edc:	cf 91       	pop	r28
      ede:	1f 91       	pop	r17
@@ -2439,8 +2212,6 @@ void putsUSART1(char *ptr, int length){
      ee6:	08 95       	ret
 
 00000ee8 <putsUSART0>:
-
-void putsUSART0(char *ptr, int length){
      ee8:	ef 92       	push	r14
      eea:	ff 92       	push	r15
      eec:	0f 93       	push	r16
@@ -2449,33 +2220,18 @@ void putsUSART0(char *ptr, int length){
      ef2:	df 93       	push	r29
      ef4:	8c 01       	movw	r16, r24
      ef6:	7b 01       	movw	r14, r22
-	int i = 0;
-	while((i <= length)){
      ef8:	77 23       	and	r23, r23
      efa:	54 f0       	brlt	.+20     	; 0xf10 <putsUSART0+0x28>
      efc:	c0 e0       	ldi	r28, 0x00	; 0
      efe:	d0 e0       	ldi	r29, 0x00	; 0
-		putchUSART0(*ptr);
      f00:	f8 01       	movw	r30, r16
      f02:	81 91       	ld	r24, Z+
      f04:	8f 01       	movw	r16, r30
      f06:	cd df       	rcall	.-102    	; 0xea2 <putchUSART0>
-		ptr++;
-		i++;
      f08:	21 96       	adiw	r28, 0x01	; 1
-	}
-}
-
-void putsUSART0(char *ptr, int length){
-	int i = 0;
-	while((i <= length)){
      f0a:	ec 16       	cp	r14, r28
      f0c:	fd 06       	cpc	r15, r29
      f0e:	c4 f7       	brge	.-16     	; 0xf00 <putsUSART0+0x18>
-		putchUSART0(*ptr);
-		ptr++;
-		i++;
-	}
      f10:	df 91       	pop	r29
      f12:	cf 91       	pop	r28
      f14:	1f 91       	pop	r17
