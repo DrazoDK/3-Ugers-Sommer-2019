@@ -4,11 +4,13 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+// #include <stdio.h>
+// #include "uart.h"
 
 void SPI_MasterInit(){
 
 	DDRB |=(1<<DDB2)|(1<< DDB1)|(1<<DDB0);			//MOSI, SCK, !SS outputs!
-	SPCR |=(1<<SPE)|(1<<MSTR);						//spi_enable,interrupt_enable, master
+	SPCR |=(1<<SPE)|(1<<MSTR);						//spi_enable, master
 	SPCR |=(1<<SPI2X)|(1<<SPR1);					//clk frequency fosc/32
 
 }
@@ -68,9 +70,9 @@ void MCU_to_FPGA(char shape,char ampl, char freq)
 		
 		
 		//til test
-		//		char str[100] ={'\0'};
-		// 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x],  counter = %d = %x",SYNC, shape, ampl, freq, ChkSum, MISO, counter, counter);
-		// 		putsUSART0(str);
-		
+// 				char str[100] ={'\0'};
+// 		 		sprintf(str, "sync [%x],  shape [%x],  ampl [%x],  freq [%x],  chksum [%x],   MISO [%x]",SYNC, shape, ampl, freq, ChkSum, MISO);
+// 		 		putsUSART0(str,100);
+// 		
 	}while (MISO != ChkSum);
 }

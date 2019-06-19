@@ -143,15 +143,18 @@ int main(void)
 				Frequency = SW;
 			}
 			
-			MCU_to_FPGA(Shape,Amplitude,Frequency);
+			6 MCU_to_FPGA(Shape,Amplitude,Frequency);
 		}
 		
 		if (BTN==1){
 			if (ActiveIndicator == 2){
 				ActiveIndicator = 0;
 			}
-			else {
-				ActiveIndicator++;
+			else if (ActiveIndicator == 0){
+				ActiveIndicator = 1;
+			}
+			else if (ActiveIndicator == 1){
+				ActiveIndicator = 2;
 			}
 		}
 		
@@ -186,6 +189,9 @@ int main(void)
 		
 		putsUSART1(data_return,10);
 		type = 0; // Reset type, så knapper kun registreres 1 gang
+		break;
+		
+		case 0:
 		break;
 		
 		case 2:
