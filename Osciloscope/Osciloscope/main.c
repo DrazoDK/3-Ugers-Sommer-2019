@@ -13,9 +13,9 @@
 #include "SPI.h"
 #include "I2C.h"
 #include "ssd1306.h"
-
 volatile char Sample;
 volatile char flagADC;
+volatile char flagUART = 1;
 volatile int length;
 volatile char type = 0;
 volatile unsigned char sample_rate;
@@ -25,12 +25,10 @@ volatile unsigned int record_length;
 volatile unsigned int record_length2;
 volatile int record_length3;
 volatile char data_buffer[11];
-
 volatile char sample_flag = 1;
 volatile char adc_buffer1[1000];
 volatile char adc_buffer2[1000];
 volatile char adc_send_done = 0;
-
 char BTN = 0;
 char SW = 0;
 char ActiveIndicator = 0;
@@ -39,7 +37,6 @@ char Amplitude = 0;
 char Frequency = 0;
 char data_return[11];
 char start_stop = 0;
-
 unsigned char j;
 char Bodeplot_Array[255];
 char Bodeplot_Send[262];
@@ -58,7 +55,7 @@ void init_timer1(unsigned int sps){
 	TCNT1 = 0;
 	TCCR1B |=(1<<WGM12)|(1<<CS11)|(1<<CS10); //CTC mode
 	
-	OCR1A = (unsigned int)25*(10000/((float)sps))-1;
+	OCR1A = (250000/sps)-1; //=(16.000.000*(1/sps)-64)/64
 // 	if ((sps<31)){
 // 		TCCR1B |=(1<<CS11)|(1<<CS10);
 // 		OCR1A = (F_CPU/(sps*64))-64;
@@ -74,7 +71,7 @@ void init_timer1(unsigned int sps){
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
 }
 
-void adc_packet_send(){
+void adc_packet_send(volatile char *ptr){
 	int j = 5;
 	char adc_send[record_length3 + 7];
 	int totlen = record_length3+7;
@@ -88,18 +85,25 @@ void adc_packet_send(){
 	char check = 0;
 	adc_send[record_length3 + 5] = check;
 	adc_send[record_length3 + 6] = check;
-	if(sample_flag == 1){
-		while(j < record_length3+5){
-			adc_send[j] = adc_buffer1[j-5];
-			j++;
-		}
+	
+	while(j < record_length3+5){
+		adc_send[j] = *ptr;
+		ptr++;
+		j++;
 	}
-	if(sample_flag == 2){
-		while(j < record_length3+5){
-			adc_send[j] = adc_buffer2[j-5];
-			j++;
-		}
-	}
+	
+//	if(sample_flag == 1){
+// 		while(j < record_length3+5){
+// 			adc_send[j] = adc_buffer1[j-5];
+// 			j++;
+// 		}
+// 	}
+// 	if(sample_flag == 2){
+// 		while(j < record_length3+5){
+// 			adc_send[j] = adc_buffer2[j-5];
+// 			j++;
+// 		}
+// 	}
 	putsUSART1(adc_send, record_length3+6);
 }
 
@@ -118,17 +122,10 @@ int main(void)
 
     while (1) 
     {
-		if ((flagADC=1)){
-			flagADC = 0;
- 			itoa(Sample,str,10);
- 			sendStrXY(str,1,1);
- 			sendStr("  ");
-		}
 		switch(type){
 		
 		case 1:
 		
-		sendStrXY("Generator   ",5,0);
 		BTN = data_buffer[5];
 		SW = data_buffer[6];
 		
@@ -196,7 +193,7 @@ int main(void)
 		
 		case 2:
 		sendStrXY("Oscilloscope",5,0);
-		
+		if (flagUART == 0){
 		sample_rate = data_buffer[5];
 		sample_rate2 = data_buffer[6];
 		sample_rate3 = (sample_rate<<8)|sample_rate2;
@@ -206,10 +203,16 @@ int main(void)
 		record_length3 = (record_length<<8)|record_length2;
 		
 		init_timer1(sample_rate3);
-		
-		if(record_length3 > 0){
-			adc_packet_send();
+		flagUART = 1;
 		}
+		//if(record_length3 > 0){
+			if (flagADC == 1){
+			adc_packet_send(adc_buffer1);
+			}
+			else{
+				adc_packet_send(adc_buffer2);
+			}
+		//}
 		
 		break;
 		
@@ -267,6 +270,7 @@ int main(void)
 
 ISR(TIMER1_COMPA_vect){
 	ADCSRA |= (1<<ADSC);
+	
 }
 
 ISR(ADC_vect){
@@ -277,18 +281,19 @@ ISR(ADC_vect){
 		i++;
 		if(i > record_length3-1){
 			i = 0;
-			sample_flag = 2;
+			sample_flag = 0;
+			flagADC = 0;
 		}
 	}
-	if(sample_flag == 2){
+	else{
 		adc_buffer2[i] = ADCH;
 		i++;
 		if(i > record_length3-1){
 			i = 0;
 			sample_flag = 1;
+			flagADC = 1;
 		}
 	}
-	flagADC = 1;
 }
 
 ISR(USART1_RX_vect){
@@ -311,4 +316,5 @@ ISR(USART1_RX_vect){
 	if(i == max_len){
 		i = 0;
 	}
+	flagUART = 0;
 }

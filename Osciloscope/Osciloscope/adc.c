@@ -12,7 +12,7 @@ void init_adc(char ADC_channel){
 		
 		
 		ADMUX = ADC_channel;
-		ADMUX |= (1<<REFS0)|(1<<ADLAR); //ADC Spændings Refference = AVCC, Left shift resultat
+		ADMUX |= (1<<ADLAR); //ADC external Spændings Refference, Left shift resultat
 		DIDR0 = (1<<ADC_channel);
 		DIDR0 =~DIDR0;
 		DIDR2 =0xff;
