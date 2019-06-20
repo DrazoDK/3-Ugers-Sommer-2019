@@ -117,7 +117,7 @@ int main(void)
 	reset_display();
 	SPI_MasterInit();
 	sei();
-	init_timer1(10);
+	init_timer1(100);
 	char str[5];
 
     while (1) 
@@ -125,6 +125,7 @@ int main(void)
 		switch(type){
 		
 		case 1:
+		
 		
 		BTN = data_buffer[5];
 		SW = data_buffer[6];
@@ -192,7 +193,7 @@ int main(void)
 		break;
 		
 		case 2:
-		sendStrXY("Oscilloscope",5,0);
+
 		if (flagUART == 0){
 		sample_rate = data_buffer[5];
 		sample_rate2 = data_buffer[6];
@@ -202,17 +203,21 @@ int main(void)
 		record_length2 = data_buffer[8];
 		record_length3 = (record_length<<8)|record_length2;
 		
-		init_timer1(sample_rate3);
+		//init_timer1(sample_rate3);
+		OCR1A = (250000/sample_rate3)-1;
 		flagUART = 1;
 		}
 		//if(record_length3 > 0){
 			if (flagADC == 1){
-			adc_packet_send(adc_buffer1);
+				if(sample_flag == 1){
+					adc_packet_send(adc_buffer2);
+				}
+				else{
+					adc_packet_send(adc_buffer1);
+				}
+				flagADC = 0;
 			}
-			else{
-				adc_packet_send(adc_buffer2);
-			}
-		//}
+			
 		
 		break;
 		
@@ -279,15 +284,17 @@ ISR(ADC_vect){
 	if(sample_flag == 1){
 		adc_buffer1[i] = ADCH;
 		i++;
+	//	adc_buffer1[250] = 0xff;	
 		if(i > record_length3-1){
 			i = 0;
 			sample_flag = 0;
-			flagADC = 0;
+			flagADC = 1;
 		}
 	}
 	else{
 		adc_buffer2[i] = ADCH;
 		i++;
+		//adc_buffer2[250] = 0x00;	
 		if(i > record_length3-1){
 			i = 0;
 			sample_flag = 1;
