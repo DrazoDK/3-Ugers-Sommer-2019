@@ -118,9 +118,8 @@ int main(void)
 	SPI_MasterInit();
 	sei();
 	init_timer1(100);
-	char str[5];
-
-    while (1) 
+	
+	while (1) 
     {
 		switch(type){
 		
@@ -129,8 +128,33 @@ int main(void)
 		
 		BTN = data_buffer[5];
 		SW = data_buffer[6];
+				
+		if (BTN == 1){
+			ActiveIndicator++;
+			if (ActiveIndicator > 2){
+				ActiveIndicator = 0;
+			}
+		}
 		
-		if (BTN==0){
+		if (BTN == 2){
+			if (start_stop == 0){
+				MCU_to_FPGA(Shape,Amplitude,Frequency); //start generator
+				start_stop = 1;
+			}
+			if (start_stop == 1){
+				MCU_to_FPGA(0,0,0); //stop generator
+				start_stop = 0;	
+			}			
+		}
+
+		if (BTN == 3){
+			Shape = 0;
+			Amplitude = 0;
+			Frequency = 0;
+		}
+		
+		
+		if (BTN == 0){
 			if (ActiveIndicator == 0){
 				Shape = SW;
 			}
@@ -144,36 +168,7 @@ int main(void)
 			MCU_to_FPGA(Shape,Amplitude,Frequency);
 		}
 		
-		if (BTN==1){
-			if (ActiveIndicator == 2){
-				ActiveIndicator = 0;
-			}
-			else if (ActiveIndicator == 0){
-				ActiveIndicator = 1;
-			}
-			else if (ActiveIndicator == 1){
-				ActiveIndicator = 2;
-			}
-		}
-		
-		if (BTN==2){
-			if (start_stop == 0){
-				MCU_to_FPGA(Shape,Amplitude,Frequency); //start generator
-				start_stop = 1;
-			}
-			if (start_stop == 1){
-				MCU_to_FPGA(0,0,0); //stop generator
-				start_stop = 0;	
-			}			
-		}
-
-		if (BTN==3){
-			Shape = 0;
-			Amplitude = 0;
-			Frequency = 0;
-		}
-		
-		data_return[0] = 0x55; //sync
+		putchUSART1(0x55); //sync
 		data_return[1] = 0xAA; //sync
 		data_return[2] = 0x00; //length
 		data_return[3] = 0x0b; //length
@@ -186,10 +181,8 @@ int main(void)
 		data_return[10] = 0x00; //checksum
 		
 		putsUSART1(data_return,10);
-		type = 0; // Reset type, så knapper kun registreres 1 gang
-		break;
 		
-		case 0:
+		type = 0; // Reset type, så knapper kun registreres 1 gang
 		break;
 		
 		case 2:
@@ -225,7 +218,8 @@ int main(void)
 		
 		sendStrXY("Bodeplot    ",5,0);
 
-		init_timer1(10000);
+		OCR1A = (250000/sample_rate3)-1;
+		
 		Shape = 3; //sinus
 		Amplitude = 0xff; //3,3V
 
