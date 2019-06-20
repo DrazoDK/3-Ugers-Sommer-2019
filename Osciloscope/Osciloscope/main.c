@@ -91,19 +91,6 @@ void adc_packet_send(volatile char *ptr){
 		ptr++;
 		j++;
 	}
-	
-	//	if(sample_flag == 1){
-	// 		while(j < record_length3+5){
-	// 			adc_send[j] = adc_buffer1[j-5];
-	// 			j++;
-	// 		}
-	// 	}
-	// 	if(sample_flag == 2){
-	// 		while(j < record_length3+5){
-	// 			adc_send[j] = adc_buffer2[j-5];
-	// 			j++;
-	// 		}
-	// 	}
 	putsUSART1(adc_send, record_length3+6);
 }
 
@@ -118,7 +105,6 @@ int main(void)
 	SPI_MasterInit();
 	sei();
 	init_timer1(100);
-	char str[5];
 
 	while (1)
 	{	
@@ -214,9 +200,11 @@ int main(void)
 			if (flagADC == 1){
 				if(sample_flag == 1){
 					adc_packet_send(adc_buffer2);
-				}
-				else{
+					adc_send_done = 2;
+					}
+				else if(sample_flag == 0){
 					adc_packet_send(adc_buffer1);
+					adc_send_done = 1;
 				}
 				flagADC = 0;
 			}
