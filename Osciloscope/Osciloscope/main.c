@@ -191,6 +191,10 @@ int main(void)
 				record_length = data_buffer[7];
 				record_length2 = data_buffer[8];
 				record_length3 = (record_length<<8)|record_length2;
+				int record_length_min = -1 * ((7 * sample_rate3)/(-11520 + sample_rate3));
+				if(record_length3 < record_length_min){
+					record_length3 = record_length_min + 1;
+				}
 				
 				//init_timer1(sample_rate3);
 				OCR1A = (250000/sample_rate3)-1;

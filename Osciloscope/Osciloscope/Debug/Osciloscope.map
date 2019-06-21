@@ -352,7 +352,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xe16
+.text           0x00000000      0xe36
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -491,78 +491,78 @@ END GROUP
  .text.adc_packet_send
                 0x00000558       0xe2 main.o
                 0x00000558                adc_packet_send
- .text.main     0x0000063a      0x330 main.o
+ .text.main     0x0000063a      0x350 main.o
                 0x0000063a                main
  .text.__vector_17
-                0x0000096a       0x32 main.o
-                0x0000096a                __vector_17
+                0x0000098a       0x32 main.o
+                0x0000098a                __vector_17
  .text.__vector_29
-                0x0000099c       0xca main.o
-                0x0000099c                __vector_29
+                0x000009bc       0xca main.o
+                0x000009bc                __vector_29
  .text.__vector_36
-                0x00000a66       0xb4 main.o
-                0x00000a66                __vector_36
+                0x00000a86       0xb4 main.o
+                0x00000a86                __vector_36
  .text.SPI_MasterInit
-                0x00000b1a       0x14 SPI.o
-                0x00000b1a                SPI_MasterInit
+                0x00000b3a       0x14 SPI.o
+                0x00000b3a                SPI_MasterInit
  .text.MCU_to_FPGA
-                0x00000b2e       0x5c SPI.o
-                0x00000b2e                MCU_to_FPGA
+                0x00000b4e       0x5c SPI.o
+                0x00000b4e                MCU_to_FPGA
  .text.ssd1306_command
-                0x00000b8a       0x18 ssd1306.o
-                0x00000b8a                ssd1306_command
+                0x00000baa       0x18 ssd1306.o
+                0x00000baa                ssd1306_command
  .text.InitializeDisplay
-                0x00000ba2       0x66 ssd1306.o
-                0x00000ba2                InitializeDisplay
+                0x00000bc2       0x66 ssd1306.o
+                0x00000bc2                InitializeDisplay
  .text.displayOn
-                0x00000c08        0x6 ssd1306.o
-                0x00000c08                displayOn
+                0x00000c28        0x6 ssd1306.o
+                0x00000c28                displayOn
  .text.displayOff
-                0x00000c0e        0x6 ssd1306.o
-                0x00000c0e                displayOff
+                0x00000c2e        0x6 ssd1306.o
+                0x00000c2e                displayOff
  .text.SendChar
-                0x00000c14       0x18 ssd1306.o
-                0x00000c14                SendChar
- .text.setXY    0x00000c2c       0x26 ssd1306.o
-                0x00000c2c                setXY
+                0x00000c34       0x18 ssd1306.o
+                0x00000c34                SendChar
+ .text.setXY    0x00000c4c       0x26 ssd1306.o
+                0x00000c4c                setXY
  .text.clear_display
-                0x00000c52       0x24 ssd1306.o
-                0x00000c52                clear_display
+                0x00000c72       0x24 ssd1306.o
+                0x00000c72                clear_display
  .text.reset_display
-                0x00000c76        0x8 ssd1306.o
-                0x00000c76                reset_display
+                0x00000c96        0x8 ssd1306.o
+                0x00000c96                reset_display
  .text.sendStrXY
-                0x00000c7e       0x72 ssd1306.o
-                0x00000c7e                sendStrXY
+                0x00000c9e       0x72 ssd1306.o
+                0x00000c9e                sendStrXY
  .text.uart_Init
-                0x00000cf0       0x24 uart.o
-                0x00000cf0                uart_Init
+                0x00000d10       0x24 uart.o
+                0x00000d10                uart_Init
  .text.uart0_Init
-                0x00000d14       0x24 uart.o
-                0x00000d14                uart0_Init
+                0x00000d34       0x24 uart.o
+                0x00000d34                uart0_Init
  .text.putchUSART1
-                0x00000d38       0x10 uart.o
-                0x00000d38                putchUSART1
+                0x00000d58       0x10 uart.o
+                0x00000d58                putchUSART1
  .text.putsUSART1
-                0x00000d48       0x36 uart.o
-                0x00000d48                putsUSART1
+                0x00000d68       0x36 uart.o
+                0x00000d68                putsUSART1
  .text.libgcc.div
-                0x00000d7e       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodqi4.o)
-                0x00000d7e                __udivmodqi4
+                0x00000d9e       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodqi4.o)
+                0x00000d9e                __udivmodqi4
  .text.libgcc.div
-                0x00000d96       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_divmodsi4.o)
-                0x00000d96                __divmodsi4
+                0x00000db6       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_divmodsi4.o)
+                0x00000db6                __divmodsi4
  .text.libgcc.div
-                0x00000dbe       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_negsi2.o)
-                0x00000dbe                __negsi2
+                0x00000dde       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_negsi2.o)
+                0x00000dde                __negsi2
  .text.libgcc.div
-                0x00000dce       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
-                0x00000dce                __udivmodsi4
-                0x00000e12                . = ALIGN (0x2)
+                0x00000dee       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
+                0x00000dee                __udivmodsi4
+                0x00000e32                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000e12        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000e12                _exit
-                0x00000e12                exit
+ .fini9         0x00000e32        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000e32                _exit
+                0x00000e32                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -581,97 +581,98 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000e12        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000e32        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000e16                _etext = .
+                0x00000e36                _etext = .
 
-.data           0x00800200       0x12 load address 0x00000e16
+.data           0x00800200       0x14 load address 0x00000e36
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.max_len.2567
+ .data.max_len.2568
                 0x00800200        0x2 main.o
- .data.sample_flag
+ .data.adc_send_done
                 0x00800202        0x1 main.o
-                0x00800202                sample_flag
- .data.flagUART
+                0x00800202                adc_send_done
+ .data.sample_flag
                 0x00800203        0x1 main.o
-                0x00800203                flagUART
+                0x00800203                sample_flag
+ .data.flagUART
+                0x00800204        0x1 main.o
+                0x00800204                flagUART
  .data._i2c_address
-                0x00800204        0x1 ssd1306.o
-                0x00800204                _i2c_address
+                0x00800205        0x1 ssd1306.o
+                0x00800205                _i2c_address
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800205        0xd main.o
+                0x00800206        0xd main.o
  *(.gnu.linkonce.r*)
-                0x00800212                . = ALIGN (0x2)
-                0x00800212                _edata = .
-                0x00800212                PROVIDE (__data_end, .)
+                0x00800214                . = ALIGN (0x2)
+ *fill*         0x00800213        0x1 
+                0x00800214                _edata = .
+                0x00800214                PROVIDE (__data_end, .)
 
-.bss            0x00800212      0xe0d
-                0x00800212                PROVIDE (__bss_start, .)
+.bss            0x00800214      0xe0c
+                0x00800214                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.i.2566    0x00800212        0x2 main.o
- .bss.i.2560    0x00800214        0x2 main.o
+ .bss.i.2567    0x00800214        0x2 main.o
+ .bss.i.2561    0x00800216        0x2 main.o
  .bss.start_stop
-                0x00800216        0x1 main.o
-                0x00800216                start_stop
- .bss.Frequency
-                0x00800217        0x1 main.o
-                0x00800217                Frequency
- .bss.Amplitude
                 0x00800218        0x1 main.o
-                0x00800218                Amplitude
- .bss.Shape     0x00800219        0x1 main.o
-                0x00800219                Shape
- .bss.ActiveIndicator
+                0x00800218                start_stop
+ .bss.Frequency
+                0x00800219        0x1 main.o
+                0x00800219                Frequency
+ .bss.Amplitude
                 0x0080021a        0x1 main.o
-                0x0080021a                ActiveIndicator
- .bss.SW        0x0080021b        0x1 main.o
-                0x0080021b                SW
- .bss.BTN       0x0080021c        0x1 main.o
-                0x0080021c                BTN
- .bss.adc_send_done
-                0x0080021d        0x1 main.o
-                0x0080021d                adc_send_done
- .bss.type      0x0080021e        0x1 main.o
-                0x0080021e                type
+                0x0080021a                Amplitude
+ .bss.Shape     0x0080021b        0x1 main.o
+                0x0080021b                Shape
+ .bss.ActiveIndicator
+                0x0080021c        0x1 main.o
+                0x0080021c                ActiveIndicator
+ .bss.SW        0x0080021d        0x1 main.o
+                0x0080021d                SW
+ .bss.BTN       0x0080021e        0x1 main.o
+                0x0080021e                BTN
+ .bss.type      0x0080021f        0x1 main.o
+                0x0080021f                type
  *(COMMON)
- COMMON         0x0080021f      0xe00 main.o
-                0x0080021f                Bodeplot_Send
-                0x00800325                j
-                0x00800326                x
-                0x00800328                adc_buffer1
-                0x00800710                record_length3
-                0x00800712                display_buffer
-                0x00800b12                sample_rate
-                0x00800b13                length
-                0x00800b15                Amplitude_min
-                0x00800b16                Amplitude_max
-                0x00800b17                Amplitude_Bodeplot
-                0x00800b18                flagADC
-                0x00800b19                data_return
-                0x00800b24                sample_rate2
-                0x00800b25                adc_buffer2
-                0x00800f0d                record_length
-                0x00800f0f                record_length2
-                0x00800f11                Bodeplot_Array
-                0x00801010                sample_rate3
-                0x00801012                Amplitude_ref
-                0x00801013                data_buffer
-                0x0080101e                Sample
-                0x0080101f                PROVIDE (__bss_end, .)
-                0x00000e16                __data_load_start = LOADADDR (.data)
-                0x00000e28                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800220      0xe00 main.o
+                0x00800220                Bodeplot_Send
+                0x00800326                j
+                0x00800327                x
+                0x00800329                adc_buffer1
+                0x00800711                record_length3
+                0x00800713                display_buffer
+                0x00800b13                sample_rate
+                0x00800b14                length
+                0x00800b16                Amplitude_min
+                0x00800b17                Amplitude_max
+                0x00800b18                Amplitude_Bodeplot
+                0x00800b19                flagADC
+                0x00800b1a                data_return
+                0x00800b25                sample_rate2
+                0x00800b26                adc_buffer2
+                0x00800f0e                record_length
+                0x00800f10                record_length2
+                0x00800f12                Bodeplot_Array
+                0x00801011                sample_rate3
+                0x00801013                Amplitude_ref
+                0x00801014                data_buffer
+                0x0080101f                Sample
+                0x00801020                PROVIDE (__bss_end, .)
+                0x00000e36                __data_load_start = LOADADDR (.data)
+                0x00000e4a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080101f        0x0
+.noinit         0x00801020        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080101f                _end = .
+                0x00801020                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -759,35 +760,35 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x29e9
+.debug_info     0x00000000     0x29fe
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_info    0x00000bbc       0x9a adc.o
  .debug_info    0x00000c56      0x230 I2C.o
- .debug_info    0x00000e86      0x716 main.o
- .debug_info    0x0000159c       0xf6 SPI.o
- .debug_info    0x00001692     0x10ff ssd1306.o
- .debug_info    0x00002791      0x258 uart.o
+ .debug_info    0x00000e86      0x72b main.o
+ .debug_info    0x000015b1       0xf6 SPI.o
+ .debug_info    0x000016a7     0x10ff ssd1306.o
+ .debug_info    0x000027a6      0x258 uart.o
 
-.debug_abbrev   0x00000000     0x1221
+.debug_abbrev   0x00000000     0x1237
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0xb1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_abbrev  0x00000b1a       0x60 adc.o
  .debug_abbrev  0x00000b7a      0x130 I2C.o
- .debug_abbrev  0x00000caa      0x1c1 main.o
- .debug_abbrev  0x00000e6b       0x96 SPI.o
- .debug_abbrev  0x00000f01      0x209 ssd1306.o
- .debug_abbrev  0x0000110a      0x117 uart.o
+ .debug_abbrev  0x00000caa      0x1d7 main.o
+ .debug_abbrev  0x00000e81       0x96 SPI.o
+ .debug_abbrev  0x00000f17      0x209 ssd1306.o
+ .debug_abbrev  0x00001120      0x117 uart.o
 
-.debug_line     0x00000000     0x1539
+.debug_line     0x00000000     0x154b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1f9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_line    0x000001f9       0xbc adc.o
  .debug_line    0x000002b5      0x329 I2C.o
- .debug_line    0x000005de      0x4fd main.o
- .debug_line    0x00000adb      0x172 SPI.o
- .debug_line    0x00000c4d      0x6d7 ssd1306.o
- .debug_line    0x00001324      0x215 uart.o
+ .debug_line    0x000005de      0x50f main.o
+ .debug_line    0x00000aed      0x172 SPI.o
+ .debug_line    0x00000c5f      0x6d7 ssd1306.o
+ .debug_line    0x00001336      0x215 uart.o
 
 .debug_frame    0x00000000      0x5dc
  *(.debug_frame)
@@ -798,20 +799,20 @@ END GROUP
  .debug_frame   0x000001e0      0x318 ssd1306.o
  .debug_frame   0x000004f8       0xe4 uart.o
 
-.debug_str      0x00000000      0xacc
+.debug_str      0x00000000      0xade
  *(.debug_str)
  .debug_str     0x00000000      0x3e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_str     0x000003e6      0x14f adc.o
                                 0x188 (size before relaxing)
  .debug_str     0x00000535       0xd8 I2C.o
                                 0x245 (size before relaxing)
- .debug_str     0x0000060d      0x29e main.o
-                                0x3fd (size before relaxing)
- .debug_str     0x000008ab       0x2d SPI.o
+ .debug_str     0x0000060d      0x2b0 main.o
+                                0x40f (size before relaxing)
+ .debug_str     0x000008bd       0x2d SPI.o
                                 0x1b0 (size before relaxing)
- .debug_str     0x000008d8      0x1a9 ssd1306.o
+ .debug_str     0x000008ea      0x1a9 ssd1306.o
                                 0x39b (size before relaxing)
- .debug_str     0x00000a81       0x4b uart.o
+ .debug_str     0x00000a93       0x4b uart.o
                                 0x1da (size before relaxing)
 
 .debug_loc      0x00000000     0x16be
@@ -841,14 +842,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x1c0
+.debug_ranges   0x00000000      0x1d8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 adc.o
  .debug_ranges  0x00000010       0x40 I2C.o
- .debug_ranges  0x00000050       0x38 main.o
- .debug_ranges  0x00000088       0x18 SPI.o
- .debug_ranges  0x000000a0       0xd8 ssd1306.o
- .debug_ranges  0x00000178       0x48 uart.o
+ .debug_ranges  0x00000050       0x50 main.o
+ .debug_ranges  0x000000a0       0x18 SPI.o
+ .debug_ranges  0x000000b8       0xd8 ssd1306.o
+ .debug_ranges  0x00000190       0x48 uart.o
 
 .debug_macro
  *(.debug_macro)
