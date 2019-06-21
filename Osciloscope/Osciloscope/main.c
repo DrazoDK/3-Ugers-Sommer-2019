@@ -11,8 +11,6 @@
 #include "uart.h"
 #include "adc.h"
 #include "SPI.h"
-#include "I2C.h"
-#include "ssd1306.h"
 volatile char Sample;
 volatile char flagADC;
 volatile char flagUART = 1;
@@ -47,9 +45,6 @@ unsigned char Amplitude_ref;
 unsigned int x;
 volatile char SampleReady = 0;
 
-uint8_t _i2c_address;
-uint8_t display_buffer[1024];
-
 void init_timer1(unsigned int sps){
 	TCCR1A = 0;
 	TCCR1B = 0;
@@ -57,18 +52,6 @@ void init_timer1(unsigned int sps){
 	TCCR1B |=(1<<WGM12)|(1<<CS11)|(1<<CS10); //CTC mode
 	
 	OCR1A = (250000/sps)-1; //=(16.000.000*(1/sps)-64)/64
-	// 	if ((sps<31)){
-	// 		TCCR1B |=(1<<CS11)|(1<<CS10);
-	// 		OCR1A = (F_CPU/(sps*64))-64;
-	// 	}
-	// 	else if ((sps<245)){
-	// 		TCCR1B |=(1<<CS11);
-	// 		OCR1A = (F_CPU/(sps*8))-8;
-	// 	}
-	// 	else{
-	// 		TCCR1B |=(1<<CS10);
-	// 		OCR1A = (F_CPU/(sps))-1;
-	// 	}
 	TIMSK1 |=(1<<OCIE1A); //interrupt when TCNNT1=OCR1A value
 }
 
@@ -100,9 +83,6 @@ int main(void)
 	init_adc(0x00);
 	uart_Init(16);
 	uart0_Init(16);
-	I2C_Init();
-	InitializeDisplay();
-	reset_display();
 	SPI_MasterInit();
 	sei();
 	init_timer1(100);
@@ -234,14 +214,14 @@ int main(void)
 					Bodeplot_Send[4] = 0x03;
 				
 				for(j=0; j<255; j++){
-					Frequency = (j-1);
+					Frequency = (j);
 
 					MCU_to_FPGA(Shape,Amplitude,Frequency);
 
 					Amplitude_min = 0xff; // sikre at sample er mindre første gang
 					Amplitude_max = 0x00; // sikre at sample er større første gang
 
-					for(x=0; x<=1000; x++){
+					for(x=0; x<=10000; x++){
 						if (SampleReady == 1){
 							SampleReady = 0;
 							if (Sample < Amplitude_min){
@@ -257,7 +237,7 @@ int main(void)
 					}
 
 					Amplitude_Bodeplot = (Amplitude_max - Amplitude_min);
-					Bodeplot_Send[j+5] = Amplitude_Bodeplot;
+					Bodeplot_Send[j+6] = Amplitude_Bodeplot;
 				}
 			
 				Bodeplot_Send[260] = 0x00;

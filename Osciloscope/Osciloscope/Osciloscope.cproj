@@ -141,15 +141,6 @@
     <Compile Include="adc.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="data.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="I2C.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="I2C.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -157,12 +148,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SPI.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="ssd1306.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="ssd1306.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="uart.c">
