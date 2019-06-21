@@ -28,7 +28,7 @@ volatile char data_buffer[11];
 volatile char sample_flag = 1;
 volatile char adc_buffer1[1000];
 volatile char adc_buffer2[1000];
-volatile char adc_send_done = 0;
+volatile char adc_send_done = 1;
 char BTN = 0;
 char SW = 0;
 char ActiveIndicator = 0;
@@ -199,12 +199,16 @@ int main(void)
 			//if(record_length3 > 0){
 			if (flagADC == 1){
 				if(sample_flag == 1){
-					adc_packet_send(adc_buffer2);
-					adc_send_done = 2;
+					if(adc_send_done == 1){
+						adc_packet_send(adc_buffer2);
+						adc_send_done = 2;
+					}	
 					}
 				else if(sample_flag == 0){
-					adc_packet_send(adc_buffer1);
-					adc_send_done = 1;
+					if(adc_send_done == 2){
+						adc_packet_send(adc_buffer1);
+						adc_send_done = 1;	
+					}
 				}
 				flagADC = 0;
 			}
