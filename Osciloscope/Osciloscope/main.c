@@ -45,6 +45,7 @@ unsigned char Amplitude_min;
 unsigned char Amplitude_Bodeplot;
 unsigned char Amplitude_ref;
 unsigned int x;
+volatile char SampleReady = 0;
 
 uint8_t _i2c_address;
 uint8_t display_buffer[1024];
@@ -222,51 +223,48 @@ int main(void)
 		
 			case 3:
 			if(flagUART == 0){
-				flagUART = 1;
-			sendStrXY("Bodeplot    ",5,0);
+				OCR1A = 24; // sample rate 10000 sps
+				Shape = 3; //sinus
+				Amplitude = 0xff; //3,3V
+				
+					Bodeplot_Send[0] = 0x55;
+					Bodeplot_Send[1] = 0xAA;
+					Bodeplot_Send[2] = 0x01;
+					Bodeplot_Send[3] = 0x06;
+					Bodeplot_Send[4] = 0x03;
+				
+				for(j=0; j<255; j++){
+					Frequency = (j-1);
 
-			init_timer1(10000);
-			Shape = 3; //sinus
-			Amplitude = 0xff; //3,3V
+					MCU_to_FPGA(Shape,Amplitude,Frequency);
 
-			for(j=0; j<255; j++){
-				Frequency = (j+1); //+1 da frekvensen ikke m? v?re 0
+					Amplitude_min = 0xff; // sikre at sample er mindre første gang
+					Amplitude_max = 0x00; // sikre at sample er større første gang
 
-				MCU_to_FPGA(Shape,Amplitude,Frequency);
-
-				Amplitude_min = 0xff; // sikre at sample er mindre f?rste gang
-				Amplitude_max = 0x00; // sikre at sample er st?rre f?rste gang
-
-				for(x=0; x<=1000; x++){
-
-					if (Sample < Amplitude_min){
-						Amplitude_min = Sample;
+					for(x=0; x<=1000; x++){
+						if (SampleReady == 1){
+							SampleReady = 0;
+							if (Sample < Amplitude_min){
+								Amplitude_min = Sample;
+							}
+							if (Sample > Amplitude_max){
+								Amplitude_max = Sample;
+							}
+						}
+						else{
+							x--;
+						}
 					}
-					if (Sample > Amplitude_max){
-						Amplitude_max = Sample;
-					}
+
+					Amplitude_Bodeplot = (Amplitude_max - Amplitude_min);
+					Bodeplot_Send[j+5] = Amplitude_Bodeplot;
 				}
+			
+				Bodeplot_Send[260] = 0x00;
+				Bodeplot_Send[261] = 0x00;
 
-				Amplitude_Bodeplot = (Amplitude_max - Amplitude_min)/2;
-
-				Bodeplot_Array[j] = Amplitude_Bodeplot;
-			}
-			Amplitude_ref = Bodeplot_Array[0];
-
-			Bodeplot_Send[0] = 0x55;
-			Bodeplot_Send[1] = 0xAA;
-			Bodeplot_Send[2] = 0x01;
-			Bodeplot_Send[3] = 0x06;
-			Bodeplot_Send[4] = 0x03;
-
-			for(j=0; j<255; j++){
-				Bodeplot_Send[j+5] = Bodeplot_Array[j] / Amplitude_ref;
-			}
-
-			Bodeplot_Send[260] = 0x00;
-			Bodeplot_Send[261] = 0x00;
-
-			putsUSART1(Bodeplot_Send, 261);
+				putsUSART1(Bodeplot_Send, 261);
+				flagUART = 1;
 			}
 			break;
 			}
@@ -282,6 +280,7 @@ ISR(TIMER1_COMPA_vect){
 ISR(ADC_vect){
 	static int i = 0;
 	Sample = ADCH;
+	SampleReady = 1;
 	if(sample_flag == 1){
 		adc_buffer1[i] = ADCH;
 		i++;
