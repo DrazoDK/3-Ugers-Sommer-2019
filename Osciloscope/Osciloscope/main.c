@@ -27,7 +27,7 @@ volatile char sample_flag = 1;
 volatile char adc_buffer1[1000];
 volatile char adc_buffer2[1000];
 volatile char adc_send_done = 1;
-volatile int record_length_min;
+volatile long record_length_min;
 char BTN = 0;
 char SW = 0;
 char ActiveIndicator = 0;
@@ -173,15 +173,18 @@ int main(void)
 				record_length = data_buffer[7];
 				record_length2 = data_buffer[8];
 				record_length3 = (record_length<<8)|record_length2;
-				record_length_min = ((7 * sample_rate3)/(-11520 + sample_rate3))*(-1);
+
+				long calc1 = 7;
+				long calc2 = -11520;
+				record_length_min = -1*((calc1*sample_rate3)/(calc2+sample_rate3))+1;
 				if(record_length3 < record_length_min){
-					record_length3 = record_length_min + 1;
+					record_length3 = record_length_min;
 				}
 				
 				//init_timer1(sample_rate3);
 				OCR1A = (250000/sample_rate3)-1;
 				flagUART = 1;
-			}
+				}
 			//if(record_length3 > 0){
 			if (flagADC == 1){
 				if(sample_flag == 1){
