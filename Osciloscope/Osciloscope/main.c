@@ -27,6 +27,7 @@ volatile char sample_flag = 1;
 volatile char adc_buffer1[1000];
 volatile char adc_buffer2[1000];
 volatile char adc_send_done = 1;
+volatile int record_length_min;
 char BTN = 0;
 char SW = 0;
 char ActiveIndicator = 0;
@@ -172,7 +173,7 @@ int main(void)
 				record_length = data_buffer[7];
 				record_length2 = data_buffer[8];
 				record_length3 = (record_length<<8)|record_length2;
-				int record_length_min = -1 * ((7 * sample_rate3)/(-11520 + sample_rate3));
+				record_length_min = ((7 * sample_rate3)/(-11520 + sample_rate3))*(-1);
 				if(record_length3 < record_length_min){
 					record_length3 = record_length_min + 1;
 				}
